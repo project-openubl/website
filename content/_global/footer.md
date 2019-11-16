@@ -5,17 +5,16 @@ date = "2016-09-07"
 weight = 1200
 #background = ""
 
-menu_title = "Link Title"
+menu_title = "Enlaces"
 
 [asset]
-  title = "Logo Title"
-  image = "logo.svg"
-  text = "Logo Subtext"
-  url = "#"
+  title = "Project OpenUBL"
+  image = "logo.png"
+  text = "Project OpenUBL"
+  url = "https://github.com/project-openubl"
 +++
 
-#### Description Title
+#### Project OpenUBL
 
-Project description such as:
-Open source theme for your next project
-Provided by Okkur Labs
+El primer y más grande proyecto open source
+de facturación electrónica (comprobantes electrónicos).

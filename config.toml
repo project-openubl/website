@@ -1,13 +1,13 @@
 # Site settings
 baseurl = "/"
-languageCode = "en-us"
-title = "Okkur - Syna"
+languageCode = "es"
+title = "Project OpenUBL"
 theme = "syna"
 enableGitInfo = true
 version = "0.15.2"
 
 # Google Analytics tracking
-googleAnalytics = ""
+googleAnalytics = "UA-152706512-2"
 
 [outputs]
   home = ["HTML", "JSON"]
@@ -17,8 +17,8 @@ date = ["date", "lastmod"]
 lastmod = ["lastmod", ":git", "date"]
 
 [params]
-  name = "Okkur Labs"
-  description = "Open Source Theme for your next project"
+  name = "Project OpenUBL"
+  description = "Open Source project for UBL standard"
 
   [params.style]
     #background = "secondary"
@@ -63,29 +63,29 @@ lastmod = ["lastmod", ":git", "date"]
   name = "Home"
   weight = 10
 
-[[menu.main]]
-  url = "/about"
-  name = "About Us"
-  weight = 20
+# [[menu.main]]
+#   url = "/about"
+#   name = "About Us"
+#   weight = 20
 
-[[menu.main]]
-  url = "#contact"
-  name = "Contact"
-  weight = 30
+# [[menu.main]]
+#   url = "#contact"
+#   name = "Contact"
+#   weight = 30
 
 [[menu.footer]]
-  url = "#"
-  name = "Link"
+  url = "https://github.com/project-openubl/xml-builder"
+  name = "Crear XMLs"
   weight = 10
 
 [[menu.footer]]
-  url = "#"
-  name = "Long Link"
+  url = "https://github.com/project-openubl/xml-builder"
+  name = "Firmar tus XMLs"
   weight = 30
 
 [[menu.footer]]
-  url = "#"
-  name = "Tiny Link"
+  url = "https://github.com/project-openubl/xml-sender"
+  name = "Enviar tus XMLs"
   weight = 30
 
 [[menu.copyright_footer]]
@@ -93,19 +93,19 @@ lastmod = ["lastmod", ":git", "date"]
   name = "About Us"
   weight = 10
 
-[[menu.copyright_footer]]
-  url = "#"
-  name = "Another Link"
-  weight = 30
+# [[menu.copyright_footer]]
+#   url = "#"
+#   name = "Another Link"
+#   weight = 30
 
 [[menu.footer_social]]
   weight = 20
-  name = "facebook"
-  pre = "fab fa-facebook-f"
-  url = "#"
+  name = "youtube"
+  pre = "fab fa-youtube"
+  url = "https://www.youtube.com/channel/UChq3xxjyDgjcU346rp0bbtA/"
 
 [[menu.footer_social]]
-  weight = 30
-  name = "linkedin"
-  pre = "fab fa-linkedin-in"
-  url = "#"
+  weight = 20
+  name = "github"
+  pre = "fab fa-github"
+  url = "https://github.com/project-openubl"
