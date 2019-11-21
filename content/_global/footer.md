@@ -17,4 +17,4 @@ menu_title = "Enlaces"
 #### Project OpenUBL
 
 El primer y más grande proyecto open source
-de facturación electrónica (comprobantes electrónicos).
+de facturación electrónica (comprobantes electrónicos)
