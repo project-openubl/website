@@ -9,6 +9,9 @@ version = "0.15.2"
 # Google Analytics tracking
 googleAnalytics = "UA-152706512-2"
 
+# Robots.txt File
+enableRobotsTXT = true
+
 [outputs]
   home = ["HTML", "JSON"]
 
@@ -78,13 +81,13 @@ lastmod = ["lastmod", ":git", "date"]
   name = "Crear XMLs"
   weight = 10
 
-[[menu.footer]]
-  url = "https://github.com/project-openubl/xml-builder"
-  name = "Firmar tus XMLs"
-  weight = 30
+# [[menu.footer]]
+#   url = "https://github.com/project-openubl/xml-builder"
+#   name = "Firmar tus XMLs"
+#   weight = 30
 
 [[menu.footer]]
-  url = "https://github.com/project-openubl/xml-sender"
+  url = "https://github.com/project-openubl/sunat-web-services"
   name = "Enviar tus XMLs"
   weight = 30
 

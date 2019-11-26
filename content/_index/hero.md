@@ -19,7 +19,7 @@ subtitle = "Project OpenUBL"
 
 [[buttons]]
   text = "Documentación"
-  url = "#"
+  url = "https://www.youtube.com/channel/UChq3xxjyDgjcU346rp0bbtA/"
   color = "dark" # primary, secondary, success, danger, warning, info, light, dark, link - default: primary
 
 +++
