@@ -1,0 +1,17 @@
+[[main]]
+  identifier = "xml-builder"
+  name = "XML Builder"
+  url = "xml-builder"
+  weight = 1
+
+[[main]]
+  identifier = "updates"
+  name = "Updates"
+  url = "updates"
+  weight = 2
+
+[[main]]
+  identifier = "blog"
+  name = "Blog"
+  url = "blog"
+  weight = 3
