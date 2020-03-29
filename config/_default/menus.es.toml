@@ -1,7 +1,13 @@
 [[main]]
-  identifier = "xml-builder"
+  identifier = "xml-builder-docs"
   name = "XML Builder"
-  url = "xml-builder"
+  url = "xml-builder-docs"
+  weight = 1
+
+[[main]]
+  identifier = "xml-sender-docs"
+  name = "XML Sender"
+  url = "xml-sender-docs"
   weight = 1
 
 [[main]]
