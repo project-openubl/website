@@ -1,5 +1,5 @@
 root: ./
 
 ​structure:  
-    readme: README.md  
-    summary: SUMMARY.md​
+    readme: GITBOOK_README.md  
+    summary: GITBOOK_SUMMARY.md​

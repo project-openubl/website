@@ -2,6 +2,12 @@
 
 ## XML Builder
 
+* [¿Qué es?](content/xml-builder-docs/que_es.md)
+
+* [Distribuciones](content/xml-builder-docs/instalacion/_index_.md)
+    * [Docker](content/xml-builder-docs/instalacion/docker.md)
+    * [Openshift](content/xml-builder-docs/instalacion/openshift.md)
+
 * [Instalacion](content/xml-builder-docs/instalacion/_index_.md)
     * [Docker](content/xml-builder-docs/instalacion/docker.md)
     * [Openshift](content/xml-builder-docs/instalacion/openshift.md)
