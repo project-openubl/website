@@ -2,4 +2,4 @@ root: ./
 
 ​structure:  
     readme: GITBOOK_README.md  
-    summary: GITBOOK_SUMMARY.md​
+    summary: SUMMARY.md​
