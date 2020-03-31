@@ -51,6 +51,8 @@
     - [Comprobante afectado](content/xml-builder-docs/comprobantes/summarydocument/comprobante-afectado.md)
 
 - [Desarrolladores](content/xml-builder-docs/desarrolladores.md)
+- [Otros recursos](content/xml-builder-docs/otros-recursos.md)
+- [Solicita mejoras](content/xml-builder-docs/solicita-mejoras.md)
 
 <!--
 ## XML Sender

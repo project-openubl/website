@@ -6,4 +6,8 @@ draft: false
 weight: 10
 ---
 
-*Markdown here*
+## Solicita mejoras
+
+Recuerda que puedes interactuar con el projecto a travéz de
+
+- [Github Issues](https://github.com/project-openubl/xml-builder/issues)
