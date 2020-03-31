@@ -1,14 +1,14 @@
 ---
 title: "Openshift"
-description: "openshift post"
+description: "Instalación usando Openshift"
 date: 2020-01-28T00:36:14+09:00
 draft: false
 weight: 4
 ---
 
-# Instalación usando Openshift
+## Instalación usando Openshift
 
-XML Builder puede ser desplegado fácilmente en Openshift. Openshift te permite utilizar todos los beneficios de una plataforma empresarial basada en contenedores.
+`XML Builder` y `XML Builder Signer` pueden ser desplegados fácilmente en Openshift. Openshift te permite utilizar todos los beneficios de una plataforma empresarial basada en contenedores.
 
 Las plantillas Openshift del proyecto se encuentran en:
 
@@ -17,15 +17,17 @@ Las plantillas Openshift del proyecto se encuentran en:
 
 Para conocer un poco más sobre plantillas Openshift puedes leer la documentación oficial [acá](https://docs.openshift.com/container-platform/4.3/openshift_images/using-templates.html).
 
-## Requisitos
+### Requisitos
 
 - Tener acceso a una instancia de Openshift V3 o V4
 
-## Configuración común para XML Builder y XML Builder Signer
+### Notas adicionales
 
-**Clona el código fuente**
+- Este método es el recomendado para `Producción`.
 
-- Clonar el repositorio
+## Descargar las plantillas
+
+Las plantillas se encuentran en el código fuente por lo que podemos descargarlos clonando el proyecto
 
 ```
 git clone https://github.com/project-openubl/xml-builder.git
@@ -37,9 +39,9 @@ git clone https://github.com/project-openubl/xml-builder.git
 cd xml-builder
 ```
 
-**Crea un projecto en Openshift**
+## Crear Projecto Openshift
 
-- Openshift [CLI login] (Puedes encontrar más información en la documentación oficial: CLI logging.)
+- Openshift CLI login
 
 ```
 oc login --server=https://miservidor
@@ -53,19 +55,23 @@ oc new-project project-openubl
 
 ## XML Builder
 
-Sigue todos los pasos de la sección **Configuración común** y ejecuta:
+Sigue todos los pasos de las secciones anteriores y ejecuta:
 
 ```
 oc process -f api/src/main/kubernetes/openshift.yml | oc create -f -
 ```
 
-## XML Builder
+**Eso es todo, podrás ver el servidor en levantado en tu servidor Openshift**
 
-Sigue todos los pasos de la sección **Configuración común** y ejecuta:
+## XML Builder Signer
+
+Sigue todos los pasos de las secciones anteriores y ejecuta:
 
 ```
 oc process -f api-signer/src/main/kubernetes/openshift.yml | oc create -f -
 ```
+
+**Eso es todo, podrás ver el servidor en levantado en tu servidor Openshift**
 
 ## Previsualización
 
