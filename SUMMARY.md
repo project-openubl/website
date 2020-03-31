@@ -16,6 +16,10 @@
   - [Linux](content/xml-builder-docs/instalacion/linux.md)
   - [Windows](content/xml-builder-docs/instalacion/windows.md)
 - [Configuración](content/xml-builder-docs/configuracion.md)
+- [Integración](content/xml-builder-docs/integracion/_index_.md)
+  - [SwaggerHub](content/xml-builder-docs/integracion/swaggerhub.md)
+  - [Java](content/xml-builder-docs/integracion/java.md)
+  - [Javascript](content/xml-builder-docs/integracion/javascript.md)
 - [Comprobantes](content/xml-builder-docs/comprobantes/_index_.md)
 
   - [Boleta/Factura](content/xml-builder-docs/comprobantes/invoice/_index.md)
