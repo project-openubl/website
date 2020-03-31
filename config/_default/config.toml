@@ -1,5 +1,5 @@
-baseURL = "http://example.org"
-title = "Hugo ZDoc Theme"
+baseURL = "https://project-openubl.github.io"
+title = "Project OpenUBL"
 theme = "zdoc"
 
 defaultContentLanguage = "es"
