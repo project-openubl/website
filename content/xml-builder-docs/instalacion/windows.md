@@ -1,20 +1,22 @@
 ---
 title: "Windows"
-description: "windows post"
+description: "Instalación en Windows"
 date: 2020-01-28T00:36:14+09:00
 draft: false
 weight: 8
 ---
 
-# Instalación en Windows
+## Instalación en Windows
 
-## Requisitos
+### Requisitos
 
 - Tener Sistema Operativo Windows
 
-## Pasos para levantar el servidor
+### Notas adicionales
 
-Si usas el sistema operativo Windows, deberías de ser capaz de levantar **XML Builder** y **XML Builder Signer** sin ningún problema. Todos los comandos descritos en las secciones anteriores son válidos, es decir debeás de poder instalarlos usando Java y Docker.
+- Todos los Métodos anteriores: `Java` y `Docker` son válidos para Windows.
+
+## Pasos para levantar el servidor
 
 Solo por cuestiones de ilustración se pondrá el siguiente ejemplo:
 
@@ -32,4 +34,4 @@ java -jar xml-builder-*-runner.jar
 
 ![Windows terminal](./images/install_windows.png)
 
-Eso es todo, podrás ver el servidor en [http://localhost:8080](http://localhost:8080)
+**Eso es todo, podrás ver el servidor en [http://localhost:8080](http://localhost:8080)**

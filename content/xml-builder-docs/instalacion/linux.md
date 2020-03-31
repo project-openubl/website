@@ -1,24 +1,27 @@
 ---
 title: "Linux"
-description: "linux post"
+description: "Instalación usando Linux"
 date: 2020-01-28T00:36:14+09:00
 draft: false
 weight: 7
 ---
 
-# Instalación en Linux
+## Instalación en Linux
 
-## Requisitos
+### Requisitos
 
 - Tener un Sistema Operativo Linux
 
-## Instalación usando Java
+### Notas adicionales
 
-Puedes ejecutar el los artefactos usando Java tal y como se describe en la página **Instalación::Java**
+- El primer método de instalación usando `Java` también es válido en Sistemas Operativos Linux.
+- En Linux, se recomienda la instalación de los artefactos nativos utiliando los pasos descritos en esta página. Este método es recomendado para `Producción`.
 
-## Instalación utilizando los artefactos nativos
+## Instalación nativa
 
 `XML Builder` y `XML Builder Signer` pueden ser compilados utilizando [GraalVM](https://www.graalvm.org/) gracias a las herramientas brindadas por [Quarkus](https://quarkus.io/).
+
+Para instalar los artefactos nativos siga los siguientes pasos:
 
 - Descargar el servidor desde la página [releases](https://github.com/project-openubl/xml-builder/releases). Debes de seleccionar el archivo `native-linux-artifacts.tgz`, este archivo contiene los artefactos para `XML Builder` y `XML Builder Signer`
 - Descomprimir el archivo descargado en el paso anterior.
@@ -32,13 +35,13 @@ Ejecutar el comando:
 ./api/target/xml-builder-api-*-runner
 ```
 
-Eso es todo, podrás ver el servidor en [http://localhost:8080](http://localhost:8080)
+**Eso es todo, podrás ver el servidor en [http://localhost:8080](http://localhost:8080)**
 
 ## XML Builder Signer
 
 Debido a que `XML Builder Signer` requiere de una base de datos deberás tener disponible una instancia de PostgreSQL.
 
-**Exportar la configuración del servidor**
+### Exportar la configuración de la base de datos
 
 ```
 export QUARKUS_DATASOURCE_URL=jdbc:postgresql://postgres:5432/db_name
@@ -56,10 +59,12 @@ export QUARKUS_DATASOURCE_PASSWORD=db_password
 export QUARKUS_DATASOURCE_DRIVER=org.postgresql.Driver
 ```
 
-Ejecutar el comando:
+### Iniciar el servidor
+
+Ejecuta el comando:
 
 ```
 ./api-signer/target/xml-builder-api-signer-*-runner
 ```
 
-Eso es todo, podrás ver el servidor en [http://localhost:8080](http://localhost:8080)
+**Eso es todo, podrás ver el servidor en [http://localhost:8080](http://localhost:8080)**
