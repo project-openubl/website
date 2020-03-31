@@ -15,6 +15,7 @@
   - [Openshift](content/xml-builder-docs/instalacion/openshift.md)
   - [Linux](content/xml-builder-docs/instalacion/linux.md)
   - [Windows](content/xml-builder-docs/instalacion/windows.md)
+- [Configuración](content/xml-builder-docs/configuracion.md)
 - [Comprobantes](content/xml-builder-docs/comprobantes/_index_.md)
 
   - [Boleta/Factura](content/xml-builder-docs/comprobantes/invoice/_index.md)
