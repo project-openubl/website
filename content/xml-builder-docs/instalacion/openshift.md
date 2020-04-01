@@ -77,4 +77,4 @@ oc process -f api-signer/src/main/kubernetes/openshift.yml | oc create -f -
 
 Dependiendo de la version de su servidor Openshift la siguiente imagen podría variar pero deberías de ver algo similar a:
 
-![XML Builder Signer topology](./images/openshift_topology.png)
+![XML Builder Signer topology](images/openshift_topology.png)
