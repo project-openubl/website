@@ -32,6 +32,6 @@ java -jar xml-builder-*-runner.jar
 
 - Debes de esperar unos segundos y deberías de ver el siguiente resultado:
 
-![Windows terminal](images/install_windows.png)
+![Windows terminal](/images/install_windows.png)
 
 **Eso es todo, podrás ver el servidor en [http://localhost:8080](http://localhost:8080)**

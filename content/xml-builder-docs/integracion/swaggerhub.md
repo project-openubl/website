@@ -29,4 +29,4 @@ Tu puedes crear tus librerias clientes utilizando las herramientas que SwaggerHu
 
 Si tu aplicación está hecha utilizando alguno de las opciones de la lista anterior, entonces lo único que tendrás que hacer es descargar el cliente y empezar a utilizarlos directamente en tu aplicación.
 
-![XML Builder Signer topology](images/integracion_swagger.png)
+![XML Builder Signer topology](/images/integracion_swagger.png)
