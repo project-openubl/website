@@ -14,6 +14,8 @@ rssLimit = 100
 
 googleAnalytics = "UA-152706512-2"
 
+disableKinds = ["taxonomyTerm"]
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]

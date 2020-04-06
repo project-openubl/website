@@ -8,8 +8,8 @@ themeOptions = ["light", "dark"] # select options for site color theme
 useFaviconGenerator = true # https://www.favicon-generator.org/
 
 enableSearch = true
-enableLangChange = true
-enableDarkMode = true
+enableLangChange = false
+enableDarkMode = false
 enableBreadcrumb = true
 enableToc = true
 enableMenu = true
