@@ -11,6 +11,12 @@
   weight = 1
 
 [[main]]
+  identifier = "xml-sender-ws-docs"
+  name = "XML Sender WS"
+  url = "xml-sender-ws-docs"
+  weight = 1
+
+[[main]]
   identifier = "updates"
   name = "Updates"
   url = "updates"
