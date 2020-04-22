@@ -5,12 +5,5 @@ date: 2020-01-11T14:09:21+09:00
 ---
 
 # XML Sender
-Libreria 
-- https://github.com/project-openubl/sunat-web-services
 
-{{< alert theme="warning" >}}
-## In progress
-Este proyecto está en progreso y puedes ver el código fuente en:
-- https://github.com/project-openubl/xml-sender
-{{< /alert >}}
-
+Libreria Java para el envío de comprobantes electrónicos a la SUNAT
