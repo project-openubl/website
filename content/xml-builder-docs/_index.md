@@ -6,9 +6,10 @@ draft: false
 ---
 
 {{< alert theme="warning" >}} # XML Builder cambios en la documentación
-**this** Es difícil mantener multiples documentaciónes en un solo repositorio, por lo que decidimos que:
+Es difícil mantener multiples documentaciónes en un solo repositorio, por lo que decidimos que:
 - XML Builder será rebautizado como XBuilder
 - XML Builder ahora viene en dos versiones: [libreria java](https://github.com/project-openubl/xbuilder), y [servidor standalone](https://github.com/project-openubl/xml-builder).
+- La documentación será escrita en Ingles para poder abrir la posibilidad de cubrir otros países.
 - La documentación de XBuilder (XML Builder) está siendo migrada a https://project-openubl.github.io/xbuilder-docs/
 {{< /alert >}}
 
