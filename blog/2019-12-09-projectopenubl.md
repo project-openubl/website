@@ -12,7 +12,7 @@ tags: [project]
 
 Project OpenUBL es un proyecto Open Source que incluye un conjunto de herramientas, librerias, microservicios asociados a la Facturación Electrónica en el Perú.
 
-<!--more-->
+<!--truncate-->
 
 Project OpenUBL nace porque ví que todos crean sus propios softwares y no hay ninguna iniciativa de crear soluciones de nivel empresarial utilizando herramientas Open Source. El conocimiento debe de ser compartido y plasmado en algo concreto.
 
