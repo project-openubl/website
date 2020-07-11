@@ -14,15 +14,15 @@ jobs:
       - name: Setup
         uses: borales/actions-yarn@v2.0.0
         with:
-          cmd: --cwd docusaurus/ install
+          cmd: install
       - name: Build
         uses: borales/actions-yarn@v2.0.0
         with:
-          cmd: --cwd docusaurus/ build
+          cmd: build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
-          publish_dir: docusaurus/build
+          publish_dir: build
           external_repository: project-openubl/project-openubl.github.io
           publish_branch: master
