@@ -110,8 +110,6 @@ module.exports = {
         },
       },
     ],
-  ],
-  plugins: [
     [
       "@docusaurus/plugin-sitemap",
       {
@@ -122,4 +120,5 @@ module.exports = {
       },
     ],
   ],
+  plugins: [],
 };
