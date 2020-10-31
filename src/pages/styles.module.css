@@ -7,7 +7,7 @@
 
 .heroBanner {
   padding: 4rem 0;
-  text-align: left;
+  text-align: center;
   position: relative;
   overflow: hidden;
 }
@@ -21,7 +21,7 @@
 .buttons {
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
 }
 
 .features {

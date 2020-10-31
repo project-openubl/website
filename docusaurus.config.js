@@ -4,23 +4,24 @@ module.exports = {
     "Open Source set of projects for helping you to use Universal Business Language (UBL)",
   url: "https://project-openubl.github.io/",
   baseUrl: "/",
+  onBrokenLinks: "throw",
   favicon: "img/favicon.ico",
   organizationName: "project-openubl", // Usually your GitHub org/user name.
   projectName: "project-openubl.github.io", // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: "",
+      title: "Project OpenUBL",
       logo: {
         alt: "Project OpenUBL Logo",
-        src: "img/logo.svg",
+        src: "img/logo.png",
       },
-      links: [
-        // {
-        //   to: "docs/",
-        //   activeBasePath: "docs",
-        //   label: "Docs",
-        //   position: "left",
-        // },
+      items: [
+        {
+          to: "docs/",
+          activeBasePath: "docs",
+          label: "Docs",
+          position: "left",
+        },
         { to: "blog", label: "Blog", position: "left" },
         {
           href: "https://github.com/project-openubl",
@@ -32,18 +33,30 @@ module.exports = {
     footer: {
       style: "dark",
       links: [
-        // {
-        //   title: "Docs",
-        //   items: [
-        //     {
-        //       label: "Style Guide",
-        //       to: "docs/",
-        //     },
-        //   ],
-        // },
+        {
+          title: "Docs",
+          items: [
+            {
+              label: "Style Guide",
+              to: "docs/",
+            },
+            {
+              label: "Second Doc",
+              to: "docs/doc2/",
+            },
+          ],
+        },
         {
           title: "Community",
           items: [
+            {
+              label: "Stack Overflow",
+              href: "https://stackoverflow.com/questions/tagged/docusaurus",
+            },
+            {
+              label: "Discord",
+              href: "https://discordapp.com/invite/docusaurus",
+            },
             {
               label: "Twitter",
               href: "https://twitter.com/openubl",
@@ -54,8 +67,12 @@ module.exports = {
           title: "More",
           items: [
             {
+              label: "Blog",
+              to: "blog",
+            },
+            {
               label: "GitHub",
-              href: "https://github.com/project-openubl/xsender",
+              href: "https://github.com/project-openubl",
             },
           ],
         },
@@ -78,8 +95,6 @@ module.exports = {
       "@docusaurus/preset-classic",
       {
         docs: {
-          // It is recommended to set document id as docs home page (`docs/` path).
-          homePageId: "doc1",
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           editUrl: "https://github.com/project-openubl/website/edit/master/",
@@ -105,6 +120,7 @@ module.exports = {
         cacheTime: 600 * 1000, // 600 sec - cache purge period
         changefreq: "weekly",
         priority: 0.5,
+        trailingSlash: false,
       },
     ],
   ],
