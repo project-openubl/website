@@ -113,7 +113,6 @@ module.exports = {
   ],
   plugins: [
     "@docusaurus/plugin-google-analytics",
-    "@docusaurus/plugin-google-gtag",
     [
       "@docusaurus/plugin-sitemap",
       {
