@@ -85,6 +85,18 @@ module.exports = {
     gtag: {
       trackingID: "UA-152706512-2",
     },
+    algolia: {
+      apiKey: "YOUR_API_KEY",
+      indexName: "YOUR_INDEX_NAME",
+
+      // Optional: see doc section bellow
+      contextualSearch: true,
+
+      // Optional: Algolia search parameters
+      searchParameters: {},
+
+      //... other Algolia params
+    },
   },
   stylesheets: [
     "https://fonts.googleapis.com/css2?family=Red+Hat+Text&display=swap",
