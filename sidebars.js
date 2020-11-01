@@ -1,15 +1,32 @@
 module.exports = {
   xbuilder: [
+    "xbuilder/index",
     {
       type: "category",
-      label: "Padre1",
-      items: ["xbuilder/index"],
-    },
-    {
-      type: "category",
-      label: "Padre2",
-      items: ["doc2"],
-    },
+      label: "Java library",
+      items: [
+        "xbuilder/library/installation",
+        "xbuilder/library/gettingStarted",
+        "xbuilder/library/concepts",
+        "xbuilder/library/createXml",
+        "xbuilder/library/signXml",
+        {
+          type: "category",
+          label: "Perú",
+          items: [
+            "xbuilder/library/peru/supportedDocs",
+            "xbuilder/library/peru/invoice",
+            "xbuilder/library/peru/creditNote",
+            "xbuilder/library/peru/debitNote",
+            "xbuilder/library/peru/voidedDocument",
+            "xbuilder/library/peru/summaryDocument",
+            "xbuilder/library/peru/igv",
+            "xbuilder/library/peru/icb",
+            "xbuilder/library/peru/sellingPrice",
+          ],
+        },
+      ]
+    }
   ],
   xsender: [
     "xsender/index",
