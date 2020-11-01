@@ -49,12 +49,12 @@ module.exports = {
           title: "Docs",
           items: [
             {
-              label: "Style Guide",
-              to: "docs/",
+              label: "XBuilder",
+              to: "docs/xbuilder/index/",
             },
             {
-              label: "Second Doc",
-              to: "docs/doc2/",
+              label: "XSender",
+              to: "docs/xsender/index/",
             },
           ],
         },
@@ -62,12 +62,12 @@ module.exports = {
           title: "Community",
           items: [
             {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus",
+              label: "Youtube",
+              href: "https://www.youtube.com/channel/UChq3xxjyDgjcU346rp0bbtA?view_as=subscriber",
             },
             {
-              label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
+              label: "Join the chat",
+              href: "https://projectopenubl.zulipchat.com/join/iwvosgykfucbi2wqwfjg2rza/",
             },
             {
               label: "Twitter",
