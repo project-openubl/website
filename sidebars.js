@@ -25,8 +25,21 @@ module.exports = {
             "xbuilder/library/peru/sellingPrice",
           ],
         },
-      ]
-    }
+      ],
+    },
+    {
+      type: "category",
+      label: "Standalone server",
+      items: [
+        "xbuilder/server/introduction",
+        "xbuilder/server/installation",
+        "xbuilder/server/gettingStarted",
+        "xbuilder/server/createXml",
+        "xbuilder/server/signXml",
+        "xbuilder/server/configuration",
+        "xbuilder/server/api",
+      ],
+    },
   ],
   xsender: [
     "xsender/index",
