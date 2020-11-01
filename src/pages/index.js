@@ -59,15 +59,17 @@ function Home() {
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
           <div className={styles.buttons}>
-            <Link
+            <a
               className={clsx(
                 "button button--secondary button--lg",
                 styles.getStarted
               )}
-              to={useBaseUrl("docs/xbuilder/index/")}
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://projectopenubl.zulipchat.com/join/iwvosgykfucbi2wqwfjg2rza/"
             >
-              Get Started
-            </Link>
+              Join the chat
+            </a>
           </div>
         </div>
       </header>
