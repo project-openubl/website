@@ -1,5 +1,5 @@
 ---
-title: Docs Index
+title: XBuilder
 hide_title: true
 ---
 
