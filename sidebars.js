@@ -17,32 +17,37 @@ module.exports = {
       type: "category",
       label: "Java library",
       items: [
-        "xsender/installation",
-        "xsender/gettingStarted",
-        "xsender/smartSend",
+        "xsender/library/installation",
+        "xsender/library/gettingStarted",
+        "xsender/library/smartSend",
         {
           type: "category",
           label: "BillService",
           items: [
-            "xsender/billService/sendBill",
-            "xsender/billService/sendSummary",
-            "xsender/billService/getStatus",
+            "xsender/library/billService/sendBill",
+            "xsender/library/billService/sendSummary",
+            "xsender/library/billService/getStatus",
           ],
         },
         {
           type: "category",
           label: "BillConsultService",
           items: [
-            "xsender/billConsultService/getStatus",
-            "xsender/billConsultService/getStatusCrd",
+            "xsender/library/billConsultService/getStatus",
+            "xsender/library/billConsultService/getStatusCrd",
           ],
         },
         {
           type: "category",
           label: "BillValidService",
-          items: ["xsender/billValidService/getStatus"],
+          items: ["xsender/library/billValidService/getStatus"],
         },
       ],
+    },
+    {
+      type: "category",
+      label: "Standalone server",
+      items: ["xsender/server/installation"],
     },
   ],
 };
