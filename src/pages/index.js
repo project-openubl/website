@@ -8,32 +8,24 @@ import styles from "./styles.module.css";
 
 const features = [
   {
-    title: "Open source",
-    imageUrl: "img/undraw_docusaurus_mountain.svg",
+    title: "XBuilder",
+    imageUrl: "img/xbuilder-logo.svg",
     description: (
       <>
-        All projects under the umbrella of Project OpenUBL are and always be
-        Open Source.
+        Create XML files based on the Universal Bussiness Language (UBL).
+        Supported documents: Invoices, Credit Notes, Debit Notes, Voided
+        Document, SummaryDocument, etc.
       </>
     ),
   },
   {
-    title: "Focus on making you productive",
-    imageUrl: "img/undraw_docusaurus_tree.svg",
+    title: "XSender",
+    imageUrl: "img/xsender-logo.svg",
     description: (
       <>
-        All projects are focused on making you more productive and let you focus
-        on your bussiness.
-      </>
-    ),
-  },
-  {
-    title: "For big and small companies",
-    imageUrl: "img/undraw_docusaurus_react.svg",
-    description: (
-      <>
-        Project OpenUBL is focused in solving problem and it easily can be
-        adapter to your company architecture regardless of the size of it.
+        Tools used for sending XML files based on UBL (Universal Bussiness
+        Language) to Superintendencia Nacional de Aduanas y de Administración
+        Tributaria (SUNAT, Perú). No SOAP knowledge required.
       </>
     ),
   },
@@ -42,13 +34,13 @@ const features = [
 function Feature({ imageUrl, title, description }) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
-    <div className={clsx("col col--4", styles.feature)}>
+    <div className={clsx("col col--6", styles.feature)}>
       {imgUrl && (
         <div className="text--center">
           <img className={styles.featureImage} src={imgUrl} alt={title} />
         </div>
       )}
-      <h3>{title}</h3>
+      <h3 className="text--center">{title}</h3>
       <p>{description}</p>
     </div>
   );
@@ -59,7 +51,7 @@ function Home() {
   const { siteConfig = {} } = context;
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
+      title={`${siteConfig.title}`}
       description="Description will go into a meta tag in <head />"
     >
       <header className={clsx("hero hero--primary", styles.heroBanner)}>
@@ -69,10 +61,10 @@ function Home() {
           <div className={styles.buttons}>
             <Link
               className={clsx(
-                "button button--outline button--secondary button--lg",
+                "button button--secondary button--lg",
                 styles.getStarted
               )}
-              to={useBaseUrl("docs/")}
+              to={useBaseUrl("docs/xbuilder/index/")}
             >
               Get Started
             </Link>
@@ -91,6 +83,26 @@ function Home() {
             </div>
           </section>
         )}
+      </main>
+      <main style={{ padding: 80 }}>
+        <section>
+          <div className="container text--center">
+            <div>
+              <h2>Create and send XMLs based on UBL</h2>
+              <p>
+                You can use <strong>XBuilder</strong> for creating XML files and
+                the <strong>XSender</strong> to send them to the SUNAT.
+              </p>
+            </div>
+            <div className="row">
+              <div className="col col--12">
+                <div className="text--center">
+                  <img alt="Declarative" src="img/xml-example.png" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </Layout>
   );
