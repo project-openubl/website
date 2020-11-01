@@ -1,5 +1,5 @@
 ---
-id: project-openubl
+slug: project-openubl
 title: Project OpenUBL
 author: carlosthe19916
 author_title: Core Team

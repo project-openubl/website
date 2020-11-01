@@ -8,14 +8,14 @@
 /* You can override the default Infima variables here. */
 :root {
   --ifm-font-family-base: "Red Hat Text", "Overpass", helvetica, sans-serif;
-  --ifm-color-primary: #8476D1;
-  --ifm-color-primary-dark: #6753AC;
-  --ifm-color-primary-darker: #40199A;
-  --ifm-color-primary-darkest: #1F0066;
-  --ifm-color-primary-light: #A18FFF;
-  --ifm-color-primary-lighter: #B2A3FF;
-  --ifm-color-primary-lightest: #CBC1FF;
-  --ifm-code-font-size: 95%;
+
+  --ifm-color-primary-lightest: #e7f1fa;
+  --ifm-color-primary-lighter: #bee1f4;
+  --ifm-color-primary-light: #73bcf7;
+  --ifm-color-primary: #2b9af3;
+  --ifm-color-primary-dark: #0066cc;
+  --ifm-color-primary-darker: #004080;
+  --ifm-color-primary-darkest: #002952;
 }
 
 .docusaurus-highlight-code-line {
