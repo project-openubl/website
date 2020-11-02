@@ -52,7 +52,7 @@ function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
+      description="Open Source set of tools for managing XML files based on UBL (Universtal Bussiness Language). Currently we support Perú's specifications based Superintendencia Nacional de Aduanas y de Adminitración Tributaria (SUNAT) but we are open to support other countries requirements as well."
     >
       <header className={clsx("hero hero--primary", styles.heroBanner)}>
         <div className="container">
