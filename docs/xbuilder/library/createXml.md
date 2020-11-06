@@ -2,7 +2,7 @@
 title: Create XML
 ---
 
-Before creating an XML you need to decide which type of XML you will create; there are multiple types of XML files like:
+Beffore creating an XML you need to decide which type of XML you will create; there are multiple types of XML files like:
 
 - Invoices
 - Credit notes
