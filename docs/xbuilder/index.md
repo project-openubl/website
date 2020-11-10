@@ -1,6 +1,15 @@
 ---
 title: XBuilder
+description: Crea XMLs (comprobantes electrónicos) basados en UBL según lo requerido por la SUNAT
+keywords:
+  - crear xml
+  - ubl
+  - ubl 2.1
+  - factura sunat
+  - facturación electrónica
+image: img/xbuilder.svg
 hide_title: true
+slug: /xbuilder
 ---
 
 ![img](../../static/img/xbuilder.svg "XBuilder logo")

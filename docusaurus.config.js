@@ -1,18 +1,21 @@
 module.exports = {
   title: "Project OpenUBL",
-  tagline:
-    "Open Source set of projects for helping you to use Universal Business Language (UBL)",
+  tagline: "Crea XMLs basados en UBL y después envíalos a la SUNAT",
   url: "https://project-openubl.github.io/",
   baseUrl: "/",
   onBrokenLinks: "throw",
   favicon: "img/favicon.ico",
+  customFields: {
+    description:
+      "Herramientas para facturación electrónica. Project OpenUBL te ayudará a crear XMLs basados en UBL y después enviarlos a la SUNAT | Project OpenUBL",
+  },
   organizationName: "project-openubl", // Usually your GitHub org/user name.
   projectName: "project-openubl.github.io", // Usually your repo name.
   themeConfig: {
     announcementBar: {
       id: "supportus",
       content:
-        '⭐️ If you like Project OpenUBL, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/project-openubl">GitHub</a>! ⭐️',
+        '⭐️ Si te gusta Project OpenUBL, danos una estrella en <a target="_blank" rel="noopener noreferrer" href="https://github.com/project-openubl">GitHub</a>! ⭐️',
     },
     navbar: {
       title: "Project OpenUBL",
@@ -36,6 +39,11 @@ module.exports = {
         { to: "blog", label: "Blog", position: "left" },
         // right
         {
+          to: "about",
+          label: "About",
+          position: "right",
+        },
+        {
           href: "https://github.com/project-openubl",
           label: "GitHub",
           position: "right",
@@ -46,15 +54,15 @@ module.exports = {
       style: "dark",
       links: [
         {
-          title: "Docs",
+          title: "Documentación",
           items: [
             {
-              label: "XBuilder",
-              to: "docs/xbuilder/index/",
+              label: "Crear XMLs",
+              to: "docs/xbuilder/",
             },
             {
-              label: "XSender",
-              to: "docs/xsender/index/",
+              label: "Enviar XMLs",
+              to: "docs/xsender/",
             },
           ],
         },
@@ -63,11 +71,13 @@ module.exports = {
           items: [
             {
               label: "Youtube",
-              href: "https://www.youtube.com/channel/UChq3xxjyDgjcU346rp0bbtA?view_as=subscriber",
+              href:
+                "https://www.youtube.com/channel/UChq3xxjyDgjcU346rp0bbtA?view_as=subscriber",
             },
             {
-              label: "Join the chat",
-              href: "https://projectopenubl.zulipchat.com/join/iwvosgykfucbi2wqwfjg2rza/",
+              label: "Únete al chat",
+              href:
+                "https://projectopenubl.zulipchat.com/join/iwvosgykfucbi2wqwfjg2rza/",
             },
             {
               label: "Twitter",
