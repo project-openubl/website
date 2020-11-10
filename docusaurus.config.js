@@ -1,7 +1,7 @@
 module.exports = {
   title: "Project OpenUBL",
   tagline: "Crea XMLs basados en UBL y después envíalos a la SUNAT",
-  url: "https://project-openubl.github.io/",
+  url: "https://project-openubl.github.io",
   baseUrl: "/",
   onBrokenLinks: "throw",
   favicon: "img/favicon.ico",
