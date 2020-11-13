@@ -108,8 +108,8 @@ module.exports = {
       trackingID: "UA-152706512-2",
     },
     algolia: {
-      apiKey: "YOUR_API_KEY",
-      indexName: "YOUR_INDEX_NAME",
+      apiKey: "6e010168a70995156309a77c5164c443",
+      indexName: "project-openubl",
 
       // Optional: see doc section bellow
       contextualSearch: true,
