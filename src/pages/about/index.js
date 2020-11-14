@@ -1,9 +1,9 @@
 import React from "react";
 import Layout from "@theme/Layout";
 
-const TITLE = "About";
+const TITLE = "¿Qué es Project OpenUBL?";
 const DESCRIPTION =
-  "Project OpenUBL son un conjunto de herramientas Open Source para ayudarte a crear tu propio software de Facturación Electrónica";
+  "Project OpenUBL es un conjunto de herramientas Open Source para ayudarte a crear tu propio software de Facturación Electrónica.";
 
 function About() {
   return (
@@ -11,7 +11,11 @@ function About() {
       <main className="container margin-vert--lg">
         <div className="text--center margin-bottom--xl">
           <h1>{TITLE}</h1>
-          <img alt="Logo" src="img/logo.png" style={{ height: 100 }} />
+          <img
+            alt="Project OpenUBL"
+            src="img/project-openubl-logo.png"
+            style={{ height: 100 }}
+          />
           <h4>Project OpenUBL</h4>
           <div className="row">
             <div className="col col--6 col--offset-3">
