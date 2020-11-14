@@ -116,14 +116,7 @@ module.exports = {
     algolia: {
       apiKey: "6e010168a70995156309a77c5164c443",
       indexName: "project-openubl",
-
-      // Optional: see doc section bellow
       contextualSearch: true,
-
-      // Optional: Algolia search parameters
-      searchParameters: {},
-
-      //... other Algolia params
     },
   },
   stylesheets: [
