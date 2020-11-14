@@ -1,4 +1,11 @@
 module.exports = {
+  docs: [
+    {
+      type: "category",
+      label: "Project OpenUBL",
+      items: ["introduction", "design-principles"],
+    },
+  ],
   xbuilder: [
     "xbuilder/index",
     {

@@ -65,7 +65,11 @@ function Home() {
     >
       <header className={clsx("hero hero--primary", styles.heroBanner)}>
         <div className="container">
-          <img alt="Logo" src="img/logo.png" style={{ height: 100 }} />
+          <img
+            alt="Project OpenUBL"
+            src="img/project-openubl-logo.png"
+            style={{ height: 100 }}
+          />
           <h2 className="hero__title">
             Herramientas Open Source para la Facturación Electrónica
           </h2>

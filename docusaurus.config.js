@@ -7,7 +7,7 @@ module.exports = {
   favicon: "img/favicon.ico",
   customFields: {
     description:
-      "Herramientas para facturación electrónica. Project OpenUBL te ayudará a crear XMLs basados en UBL y después enviarlos a la SUNAT | Project OpenUBL",
+      "Herramientas open source para facturación electrónica. Project OpenUBL te ayuda a crear XMLs basados en UBL y después enviarlos a la SUNAT | Project OpenUBL",
   },
   organizationName: "project-openubl", // Usually your GitHub org/user name.
   projectName: "project-openubl.github.io", // Usually your repo name.
@@ -20,10 +20,16 @@ module.exports = {
     navbar: {
       title: "Project OpenUBL",
       logo: {
-        alt: "Project OpenUBL Logo",
-        src: "img/logo.png",
+        alt: "Project OpenUBL",
+        src: "img/project-openubl-logo.png",
       },
       items: [
+        {
+          type: "doc",
+          position: "left",
+          docId: "introduction",
+          label: "Docs",
+        },
         {
           type: "doc",
           docId: "xbuilder/index",
@@ -123,6 +129,13 @@ module.exports = {
   stylesheets: [
     "https://fonts.googleapis.com/css2?family=Red+Hat+Text&display=swap",
     "https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;700&display=swap",
+  ],
+  scripts: [
+    {
+      src:
+        "https://project-openubl.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-T/o2joag/b/24/a44af77267a987a660377e5c46e0fb64/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&collectorId=bd3ea422",
+      async: true,
+    },
   ],
   presets: [
     [
