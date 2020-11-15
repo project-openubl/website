@@ -116,7 +116,7 @@ module.exports = {
     algolia: {
       apiKey: "6e010168a70995156309a77c5164c443",
       indexName: "project-openubl",
-      contextualSearch: true,
+      contextualSearch: false,
     },
   },
   stylesheets: [
