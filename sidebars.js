@@ -3,7 +3,13 @@ module.exports = {
     {
       type: "category",
       label: "Project OpenUBL",
-      items: ["introduction", "design-principles"],
+      items: ["introduction", "design-principles", "contributing"],
+    },
+    {
+      type: "category",
+      label: "Librerías Java",
+      collapsed: false,
+      items: ["java-library-xbuilder", "java-library-xsender"],
     },
   ],
   xbuilder: [
