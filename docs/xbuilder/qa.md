@@ -1,5 +1,5 @@
 ---
-title: Preguntas precuentes
+title: Preguntas frecuentes
 ---
 
 ### ¿Qué es el SignatureID?

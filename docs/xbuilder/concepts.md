@@ -1,5 +1,6 @@
 ---
 title: Conceptos básicos
+description: XBuilder conceptos básicos
 ---
 
 XBuilder crea archivos XMLs basados en 3 objetos:

@@ -2,17 +2,25 @@
 title: ICB
 ---
 
-_Inpuesto al Consumo de Bolsas plásticas (ICB)_ is a type of tax applied only to plastic bags. Whenever you create an **_InvoiceType_, _CreditNoteType_, or _DebitNoteType_** you can define, for each item selled, if you want to apply the _ICB_ taxes or not.
+_Inpuesto al Consumo de Bolsas plásticas (ICB)_ es un impuesto aplicado a cada producto o servicio vendido y puede estar presente en **boleta, factura, nota de cŕedito, o nota de débito**.
 
-The current value of _ICB_ is _0.2 Soles_ but this might change in the future. Don't worry you are safe if you use your own [Config](../concepts#config) default values.
+El valor actual del _ICB_ es _0.3 Soles_ pero este valor puede cambiar con el tiempo. Puedes configurar el valor del ICB en [Conceptos básicos](../concepts#config).
 
-## Examples
+## Valor del _ICB_
+
+El valor del _ICB_ es definido en `Config`. Puedes leer sonbre `Config` en [Conceptos básicos](../concepts#config).
+
+## Valor por defecto del _ICB_
+
+Por defecto el ICB no es aplicado a los productos o servicios vendidos.
+
+## Ejemplos
 
 ### _Invoice (boleta/factura)_
 
-Use the field `icb` in each item selled:
+Usa el campo `icb` en cada item:
 
-```java
+```java {4,7}
 InvoiceInputModel input = InvoiceInputModel.Builder.anInvoiceInputModel()
         .withDetalle(Arrays.asList(
                 DocumentLineInputModel.Builder.aDocumentLineInputModel()
@@ -27,9 +35,9 @@ InvoiceInputModel input = InvoiceInputModel.Builder.anInvoiceInputModel()
 
 ### _CreditNote (nota de crédito)_
 
-Use the field `icb` in each item selled:
+Usa el campo `icb` en cada item:
 
-```java
+```java {4,7}
 CreditNoteInputModel pojo = CreditNoteInputModel.Builder.aCreditNoteInputModel()
         .withDetalle(Arrays.asList(
                 DocumentLineInputModel.Builder.aDocumentLineInputModel()
@@ -44,9 +52,9 @@ CreditNoteInputModel pojo = CreditNoteInputModel.Builder.aCreditNoteInputModel()
 
 ### _DebitNote (nota de débito)_
 
-Use the field `icb` in each item selled:
+Usa el campo `icb` en cada item:
 
-```java
+```java {4,7}
 DebitNoteInputModel pojo = DebitNoteInputModel.Builder.aDebitNoteInputModel()
         .withDetalle(Arrays.asList(
                 DocumentLineInputModel.Builder.aDocumentLineInputModel()
@@ -58,11 +66,3 @@ DebitNoteInputModel pojo = DebitNoteInputModel.Builder.aDebitNoteInputModel()
         )
         .build();
 ```
-
-## Value of _ICB_
-
-The value of _ICB_ is defined by the value you setted in the [Config](../concepts#config) object.
-
-## Default value of _ICB_
-
-If _icb_ is not defined or is `false`, then `XBuilder` won't apply this type of tax.
