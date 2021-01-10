@@ -1,30 +1,28 @@
 ---
-title: Selling price
+title: Precio
 ---
 
-Whenever an item is selled and registered through an **_InvoiceType_, _CreditNoteType_, or _DebitNoteType_** there are two different prices that must be included inside the XML file:
+Cuando creas una **boleta, factura, nota de cŕedito, o nota de débito** existen dos tipos de precios que deben de ser incluidos en el XML:
 
-- Price before taxes
-- Price after taxes
+- Precio antes de impuestos.
+- Precio después de impuestos.
 
-Besides the _pricing_ it is also required to have the _quantity_ of the item you are selling so we are able to have a formula like:
+El precio de un producto o servicio es combinado con la _cantidad_ y como resultado se obtiene el precio final de venta:
 
-> QUANTITY \* PRICE BEFORE TAXES = SELLING PRICE
+> CANTIDAD \* PRECIO ANTES DE IMPUESTOS = PRECIO DE VENTA
 
-You only need 2 of the 3 variables defined in the formula above; the third variable will be calculated by `XBuilder`.
+`XBuilder` requiere solo 2 de las 3 variables de la fórmula anterior, la tercera variable será calculada automáticamente.
 
-- **Case 1** - You have `Quantity` and `price before taxes`.
-- **Case 2** - You have `Quantity` and `price after taxes`.
+- **Caso 1** - `Cantidad` y `precio antes de impuestos`.
+- **Caso 2** - `Cantidad` y `precio después de impuestos`.
 
-## Case 1 - Quantity and Price before taxes
+## Caso 1 - Cantidad y Precio antes de impuestos
 
-You have `Quantity` and `price before taxes`. This is the recommended set of variables you need to use.
-
-You need to use `cantidad` and `precioUnitario`.
+El `precio antes de impuestos` puede ser definido mediante el campo `precioUnitario`:
 
 ### _Invoice (boleta/factura)_
 
-```java
+```java {4,5,8,9}
 InvoiceInputModel pojo = InvoiceInputModel.Builder.anInvoiceInputModel()
         .withDetalle(Arrays.asList(
                 DocumentLineInputModel.Builder.aDocumentLineInputModel()
@@ -41,7 +39,7 @@ InvoiceInputModel pojo = InvoiceInputModel.Builder.anInvoiceInputModel()
 
 ### _CreditNote (nota de crédito)_
 
-```java
+```java {4,5,8,9}
 CreditNoteInputModel pojo = CreditNoteInputModel.Builder.aCreditNoteInputModel()
         .withDetalle(Arrays.asList(
                 DocumentLineInputModel.Builder.aDocumentLineInputModel()
@@ -58,7 +56,7 @@ CreditNoteInputModel pojo = CreditNoteInputModel.Builder.aCreditNoteInputModel()
 
 ### _DebitNote (nota de débito)_
 
-```java
+```java {4,5,8,9}
 DebitNoteInputModel pojo = DebitNoteInputModel.Builder.aDebitNoteInputModel()
         .withDetalle(Arrays.asList(
                 DocumentLineInputModel.Builder.aDocumentLineInputModel()
@@ -73,17 +71,13 @@ DebitNoteInputModel pojo = DebitNoteInputModel.Builder.aDebitNoteInputModel()
         .build();
 ```
 
-## Case 2 - Quantity and Price after taxes
+## Caso 2 - Cantidad y Precio después de impuestos
 
-You have `Quantity` and `price after taxes`.
-
-It is not easy to determine the _price before taxes_ starting from the _price after taxes_ because every single tax is applied in a different way and using a different formula and values. Having said that, `XBuilder` is able to determine the _price before taxes_ starting from the _price with IGV_.
-
-You need to use `cantidad` and `precioConIgv`.
+El `precio después de impuestos` puede ser definido mediante el campo `precioConIgv`:
 
 ### _Invoice (boleta/factura)_
 
-```java
+```java {4,5,8,9}
 InvoiceInputModel pojo = InvoiceInputModel.Builder.anInvoiceInputModel()
         .withDetalle(Arrays.asList(
                 DocumentLineInputModel.Builder.aDocumentLineInputModel()
@@ -100,7 +94,7 @@ InvoiceInputModel pojo = InvoiceInputModel.Builder.anInvoiceInputModel()
 
 ### _CreditNote (nota de crédito)_
 
-```java
+```java {4,5,8,9}
 CreditNoteInputModel pojo = CreditNoteInputModel.Builder.aCreditNoteInputModel()
         .withDetalle(Arrays.asList(
                 DocumentLineInputModel.Builder.aDocumentLineInputModel()
@@ -117,7 +111,7 @@ CreditNoteInputModel pojo = CreditNoteInputModel.Builder.aCreditNoteInputModel()
 
 ### _DebitNote (nota de débito)_
 
-```java
+```java {4,5,8,9}
 DebitNoteInputModel pojo = DebitNoteInputModel.Builder.aDebitNoteInputModel()
         .withDetalle(Arrays.asList(
                 DocumentLineInputModel.Builder.aDocumentLineInputModel()
@@ -130,17 +124,4 @@ DebitNoteInputModel pojo = DebitNoteInputModel.Builder.aDebitNoteInputModel()
                         .build())
         )
         .build();
-```
-
-## How the third variable is calculated
-
-Regarding of the way you are following [Case 1](#case-1---quantity-and-price-before-taxes) or [Case 2](#case-2---quantity-and-price-after-taxes) you need to know that the thrid variable, calculated out of the box by `XBuilder`, is affected by the value of `igv` within [Config](../concepts#config)
-
-When creating the `Config` instance you should define also the value of `igv`. The interface `Config` defines a method `getIgv` which should be implemented by you.
-
-```java
-public interface Config {
-    BigDecimal getIgv();
-    ...
-}
 ```
