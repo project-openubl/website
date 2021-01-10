@@ -4,9 +4,9 @@ title: VoidedDocument (Baja)
 
 ## Create _VoidedDocumentType_
 
-To create a VoidedDocument you only need to create an instance of `VoidedDocumentInputModel`.
+Para crear una baja debes de crear una instancia de `VoidedDocumentInputModel` y usarlo para crear el XML:
 
-```java
+```java {24}
 Config config;
 SystemClock clock;
 

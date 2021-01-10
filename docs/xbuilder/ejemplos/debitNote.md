@@ -1,18 +1,18 @@
 ---
-title: CreditNote (Nota de crédito)
+title: DebitNote (Nota de débito)
 ---
 
-## Create _CreditNoteType_
+## Create _DebitNoteType_
 
-To create a `CreditNoteType` you only need to create an instance of `CreditNoteInputModel`.
+Para crear una nota de débito debes de crear una instancia de `DebitNoteInputModel` y usarlo para crear el XML:
 
-```java
+```java {38}
 Config config;
 SystemClock clock;
 
 // Create the POJO
-CreditNoteInputModel pojo = CreditNoteInputModel.Builder.aCreditNoteInputModel()
-        .withSerie("FC01")
+DebitNoteInputModel pojo = DebitNoteInputModel.Builder.aDebitNoteInputModel()
+        .withSerie("FD01")
         .withNumero(1)
         .withSerieNumeroComprobanteAfectado("F001-1")
         .withDescripcionSustento("mi sustento")
@@ -42,7 +42,7 @@ CreditNoteInputModel pojo = CreditNoteInputModel.Builder.aCreditNoteInputModel()
         .build();
 
 // Create XML
-DocumentWrapper<CreditNoteOutputModel> result = DocumentManager.createXML(pojo, config, systemClock);
-CreditNoteOutputModel output = result.getOutput();
+DocumentWrapper<DebitNoteOutputModel> result = DocumentManager.createXML(pojo, config, systemClock);
+DebitNoteOutputModel output = result.getOutput();
 String xml = result.getXml();
 ```

@@ -2,11 +2,11 @@
 title: Invoice (Boleta/Factura)
 ---
 
-## Create *InvoiceType*
+## Create _InvoiceType_
 
-To create an invoice you only need to create an instance of `InvoiceInputModel`.
+Para crear una boleta/factura debes de crear una instancia de `InvoiceInputModel` y usarlo para crear el XML:
 
-```java
+```java {37}
 Config config;
 SystemClock clock;
 

@@ -5,44 +5,21 @@ keywords:
   - xbuilder
 ---
 
-**XSender** es una librería Java que sirve para:
+Librería Java que sirve para:
 
 - Crear XMLs.
 - Firmar XMLs.
 
 ## Requisitos
 
-El único requisito es que tu aplicación use **JDK 8** o superior.
+- **JDK 8** o superior.
 
-## Instalar
+## Recursos
 
-### Maven
-
-Agrega la dependencia en tu archivo `pom.xml`
-
-```xml
-<dependency>
-    <groupId>io.github.project-openubl</groupId>
-    <artifactId>xbuilder</artifactId>
-    <version>1.0.1.Final</version>
-</dependency>
-```
-
-### Gradle
-
-Agrega la dependencia en tu archivo `build.gradle`
-
-```shell
-compile group: 'io.github.project-openubl', name: 'xbuilder', version: '1.0.1.Final'
-```
-
-## Documentación
-
-La documentación de XBuilder puede ser encontrada en [XBuilder](./xbuilder/index.md)
+- [Documentación](./xbuilder/index.md)
+- [Videos](https://www.youtube.com/playlist?list=PLnRgWcnYy6sbiF96-ZEP7OLzFfDLrFvdU)
 
 ## ¿En qué entornos puedo usar XBuilder?
-
-Sin importar si tu software está hecho para entornos Desktop o Web, XBuilder se integrará fácilmente a tu software.
 
 Alguno de las integraciones más comunes realizadas son:
 

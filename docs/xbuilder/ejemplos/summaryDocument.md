@@ -4,9 +4,9 @@ title: SummaryDocument (Resumen diario)
 
 ## Create _SummaryDocumentType_
 
-To create a SummaryDocument you only need to create an instance of `SummaryDocumentInputModel`.
+Para crear una baja debes de crear una instancia de `SummaryDocumentInputModel` y usarlo para crear el XML:
 
-```java
+```java {46}
 Config config;
 SystemClock clock;
 

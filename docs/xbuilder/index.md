@@ -12,18 +12,26 @@ hide_title: true
 slug: /xbuilder
 ---
 
-![img](../../static/img/xbuilder.svg "XBuilder logo")
+## Introducción
 
-## Introduction
+XBuilder es una libreria Java que puede crear y firmar XMLs basados en UBL (Universtal Bussiness Language) de acuerdo a los estándares establecidos por la SUNAT.
 
-XBuilder is a Java library that can create XML files based on the Universal Bussiness Language (UBL).
+## Principios de diseño
 
-## Design principles
+- **No requieres conocimientos del estandar UBL** -
+  XBuilder expone un conjunto de POJOs que, internamente, son transformados en archivos XMLs siguiendo los estándares y especificaciones de UBL.
+- **Cálculos matemáticos son hechos automáticamente** -
+  XBuilder ejecuta todas las operaciones requeridas para generar determinados valores dentro de los archivos XML, por ejemplo: impuestos, totales, descuentos, etc.
+- **Aplicar valores por defecto siempre que se posible** - XBuilder rellena información no espeficicada por el usuario usando valores por defecto. XBuilder requiere siempre información mínima.
 
-- **You don't have to know UBL standard** - XBuilder do not require you to know the UBL details, it exposes a set of POJOs that are, internally, transpiled into XML files that follows the UBL standards.
-- **Math operations must be provided out of the box** - XBuilder executes all math operations required to fill certain values in the XML files. Math operations like taxes, total amounts, discounts, etc. must be executed internally.
-- **Apply default values when possible** - XBuilder should fill all missing data with default values. XBuilder requires only minimal data.
+## Documentos soportados
 
-## How XBuilder works
-
-We believe that you should provide as minimal data as possible and then allow XBuilder to do the rest for you. The input data provided by whoever uses XBuilder is not based in UBL but based in common and mainstream bussiness language.
+- [x] Boleta (InvoiceType)
+- [x] Factura (InvoiceType)
+- [x] Nota de crédito (CreditNoteType)
+- [x] Nota de débito (DebitNoteType)
+- [x] Baja (VoidedDocumentType)
+- [x] Resumen diario (SummaryDocumentType)
+- [ ] Percepción (PerceptionType)
+- [ ] Retención (RetentionType)
+- [ ] Guía de remisión (DespatchDocumentType)
