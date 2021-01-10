@@ -1,5 +1,6 @@
 ---
 title: DebitNote (Nota de débito)
+description: Crear nota de debito
 ---
 
 ## Create _DebitNoteType_

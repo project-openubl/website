@@ -1,5 +1,6 @@
 ---
 title: Invoice (Boleta/Factura)
+description: Crear boleta o factura
 ---
 
 ## Create _InvoiceType_
