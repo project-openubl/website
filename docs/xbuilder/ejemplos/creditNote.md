@@ -1,5 +1,8 @@
 ---
 title: CreditNote (Nota de crédito)
+description: Crear nota de crédito
+keywords:
+  - crear nota de credito
 ---
 
 ## Create _CreditNoteType_

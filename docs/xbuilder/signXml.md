@@ -1,5 +1,10 @@
 ---
 title: Firmar XML
+description: Fimar XML
+keywords:
+  - certificado digital
+  - .pfx
+  - signatureID
 ---
 
 Para firmar un XML necesitas tener dos objetos:

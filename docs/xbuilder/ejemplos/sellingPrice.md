@@ -1,5 +1,9 @@
 ---
 title: Precio
+description: Precio unitario y precio de venta
+keywords:
+  - precio unitario
+  - precio de venta
 ---
 
 Cuando creas una **boleta, factura, nota de cŕedito, o nota de débito** existen dos tipos de precios que deben de ser incluidos en el XML:

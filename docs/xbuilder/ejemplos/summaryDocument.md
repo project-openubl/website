@@ -1,5 +1,8 @@
 ---
 title: SummaryDocument (Resumen diario)
+description: Crear resumen diario
+keywords:
+  - crear resumen diario
 ---
 
 ## Create _SummaryDocumentType_
