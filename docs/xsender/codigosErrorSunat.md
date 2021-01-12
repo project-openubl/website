@@ -1,12 +1,12 @@
 ---
-title: SUNAT código de errores
-description: Listado de errores manual del programador Factura Electronica SUNAT
+title: Códigos de error Sunat
+description: Catálogo de errores en la Facturación Electrónica
 keywords:
-  - codigo de errores
+  - codigo de errores sunat
 hide_table_of_contents: true
 ---
 
-Los códigos se han clasificado de acuerdo al tipo de error:
+Catálogo de errores en la Facturación Electrónica. Esto funciona para la SUNAT y para el OSE. Los códigos se han clasificado de acuerdo al tipo de error:
 
 - Del 0100 al 1999 **Excepciones** .- Errores graves que imposibilitan el procesamiento del archivo. En estos casos, el documento se considera como no informado, y el emisor deberá corregir el problema para volver a enviar el documento.
 - Del 2000 al 3999 **Errores** que generan rechazo .- En estos casos se procesó el documento electrónico, pero se detectaron errores que no permiten registrarlo como documento válido.
