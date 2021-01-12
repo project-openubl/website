@@ -72,5 +72,6 @@ module.exports = {
       label: "Standalone server",
       items: ["xsender/server/installation"],
     },
+    "xsender/sunatCodigoErrores",
   ],
 };
