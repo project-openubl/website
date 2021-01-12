@@ -8,21 +8,9 @@ hide_table_of_contents: true
 
 Los códigos se han clasificado de acuerdo al tipo de error:
 
-- Del 0100 al 1999 Excepciones
-- Del 2000 al 3999 Errores que generan rechazo
-- Del 4000 en adelante Observaciones
-
-### Excepciones
-
-Son errores graves que imposibilitan el procesamiento del archivo. En estos casos, el documento se considera como no informado, y el emisor deberá corregir el problema para volver a enviar el documento.
-
-### Errores
-
-En estos casos se procesó el documento electrónico, pero se detectaron errores que no permiten registrarlo como documento válido.
-
-### Observaciones
-
-Son errores que no invalidan el documento y por lo tanto el sistema registrará el comprobante como válido. Las observaciones se informarán en la Constancia de Recepción.
+- Del 0100 al 1999 **Excepciones** .- Errores graves que imposibilitan el procesamiento del archivo. En estos casos, el documento se considera como no informado, y el emisor deberá corregir el problema para volver a enviar el documento.
+- Del 2000 al 3999 **Errores** que generan rechazo .- En estos casos se procesó el documento electrónico, pero se detectaron errores que no permiten registrarlo como documento válido.
+- Del 4000 en adelante **Observaciones**.- Son errores que no invalidan el documento y por lo tanto el sistema registrará el comprobante como válido. Las observaciones se informarán en la Constancia de Recepción.
 
 | Código | Descripción                                                                                                                                                                                        |
 | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
