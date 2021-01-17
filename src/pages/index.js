@@ -82,7 +82,7 @@ function Home() {
               )}
               target="_blank"
               rel="noopener noreferrer"
-              href="https://projectopenubl.zulipchat.com/join/iwvosgykfucbi2wqwfjg2rza/"
+              href="https://projectopenubl.zulipchat.com/"
             >
               Únete al chat
             </a>

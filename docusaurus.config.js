@@ -82,8 +82,7 @@ module.exports = {
             },
             {
               label: "Únete al chat",
-              href:
-                "https://projectopenubl.zulipchat.com/join/iwvosgykfucbi2wqwfjg2rza/",
+              href: "https://projectopenubl.zulipchat.com/",
             },
             {
               label: "Twitter",
