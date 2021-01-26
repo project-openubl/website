@@ -54,8 +54,8 @@ Se recomienda que todo proyecto esté hecho usando Maven o Gradle ya que facilit
     <dependencies>
         <dependency>
             <groupId>io.github.project-openubl</groupId>
-            <artifactId>xsender</artifactId>
-            <version>3.0.1.Final</version>
+            <artifactId>xbuilder</artifactId>
+            <version>UltimaVersion</version>
         </dependency>
     </dependencies>
 </project>
