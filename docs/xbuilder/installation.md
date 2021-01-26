@@ -72,4 +72,4 @@ mvn dependency:copy-dependencies
 
 ### Ejemplo
 
-`Carlos Alberto` Nos muestra un ejemplo de cómo usar las dependencias sin Maven o Gradle en [project-xbuilder-xsender-NO-MAVEN-GRADLE](https://github.com/xxsolracxx/project-xbuilder-xsender-NO-MAVEN-GRADLE)
+Este ejemplo muestra cómo usar las dependencias sin Maven o Gradle en [project-xbuilder-xsender-NO-MAVEN-GRADLE](https://github.com/xxsolracxx/project-xbuilder-xsender-NO-MAVEN-GRADLE)
