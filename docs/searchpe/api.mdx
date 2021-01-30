@@ -18,12 +18,11 @@ export const ApiReference = () => {
       wrapper.style.setProperty("padding", "0", "important");
       wrapper.style.maxWidth = "97%";
     }
-    const col = document.getElementsByClassName(
-      "docItemContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocItem-"
-    )[0];
-    if (col) {
-      col.style.setProperty("padding", "0", "important");
-    }
+    wrapper.children[0].children[0].children[0].style.setProperty(
+      "padding",
+      "0",
+      "important"
+    );
   }, []);
   return (
     <div>
