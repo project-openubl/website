@@ -104,7 +104,7 @@ function Home() {
         <section className="margin-bottom--xl">
           <div className="container text--center">
             <div className="row">
-              <div className="col col--4 col--offset-2">
+              <div className="col col--4">
                 <div>
                   <img
                     className={styles.logoImage}
@@ -148,6 +148,20 @@ function Home() {
                   o cualquier OSE haciendo uso de sus servicios web SOAP. No
                   necesitas saber SOAP, <a href="docs/xsender">XSender</a> lo
                   hace todo automáticamente por ti.
+                </p>
+              </div>
+              <div className="col col--4">
+                <div>
+                  <img
+                    className={styles.logoImage}
+                    src="img/searchpe-logo.svg"
+                  />
+                </div>
+                <h3>Searchpe</h3>
+                <p>
+                  <Link to="docs/searchpe">Searchpe</Link> te permite Consultar
+                  el padrón reducido de la SUNAT a través del consumo de REST
+                  enpoints.
                 </p>
               </div>
             </div>

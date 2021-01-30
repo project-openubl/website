@@ -1,6 +1,6 @@
 ---
 title: XSender
-description: Envia tus XMLs (comprobantes electrónicos) a la SUNAT a travez de sus Web Services
+description: Envia tus XMLs (comprobantes electrónicos) a la SUNAT a través de sus Web Services
 keywords:
   - enviar xml a SUNAT
   - web service SUNAT
