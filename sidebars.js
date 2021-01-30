@@ -11,6 +11,12 @@ module.exports = {
       collapsed: false,
       items: ["java-library-xbuilder", "java-library-xsender"],
     },
+    {
+      type: "category",
+      label: "Consulta RUC",
+      collapsed: false,
+      items: ["consulta-ruc"],
+    },
   ],
   xbuilder: [
     "xbuilder/index",
@@ -73,5 +79,15 @@ module.exports = {
       items: ["xsender/server/installation"],
     },
     "xsender/codigosErrorSunat",
+  ],
+  searchpe: [
+    "searchpe/index",
+    {
+      type: "category",
+      label: "Instalación",
+      items: ["searchpe/installation-docker", "searchpe/installation-so"],
+    },
+    "searchpe/uso",
+    "searchpe/rest-api",
   ],
 };

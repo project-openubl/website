@@ -42,6 +42,12 @@ module.exports = {
           label: "XSender",
           position: "left",
         },
+        {
+          type: "doc",
+          docId: "searchpe/index",
+          label: "Searchpe",
+          position: "left",
+        },
         { to: "blog", label: "Blog", position: "left" },
         // right
         {
@@ -69,6 +75,10 @@ module.exports = {
             {
               label: "Enviar XMLs",
               to: "docs/xsender/",
+            },
+            {
+              label: "Consulta RUC",
+              to: "docs/searchpe/",
             },
           ],
         },
