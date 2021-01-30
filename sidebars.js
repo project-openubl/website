@@ -88,6 +88,6 @@ module.exports = {
       items: ["searchpe/installation-docker", "searchpe/installation-so"],
     },
     "searchpe/uso",
-    "searchpe/rest-api",
+    "searchpe/api",
   ],
 };
