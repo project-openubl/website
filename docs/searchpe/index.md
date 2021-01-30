@@ -16,6 +16,10 @@ slug: /searchpe
 - Puedes consumir los datos desde cualquier software sin importar el lenguage de programación.
 - Ofrece mucho más que solo la búsqueda de empresas mediante el número RUC.
 
+## Recursos
+
+- [Videos](https://www.youtube.com/playlist?list=PLnRgWcnYy6sbngfRRE6tZZEp1cSuu7AeV)
+
 ## Requisitos
 
 - JDK 11
