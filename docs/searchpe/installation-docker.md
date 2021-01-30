@@ -25,7 +25,7 @@ docker run --network=host -p 8180:8180 -e QUARKUS_HTTP_PORT=8180 -e QUARKUS_DATA
 ## Iniciar Searchpe UI
 
 ```shell
-docker run --network=host -p 8080:8080 -e API_URL=http://localhost:8180 quay.io/projectopenubl/searchpe-ui
+docker run --network=host -p 8080:8080 -e SEARCHPE_API_URL=http://localhost:8180 quay.io/projectopenubl/searchpe-ui
 ```
 
 Eso es todo, ya puedes abrir tu browser en http://localhost:8080
