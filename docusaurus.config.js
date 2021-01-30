@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   title: "Project OpenUBL",
   tagline: "Crea XMLs basados en UBL y después envíalos a la SUNAT",
@@ -169,5 +171,5 @@ module.exports = {
       },
     ],
   ],
-  plugins: [],
+  plugins: [path.resolve(__dirname, "redoc-plugin")],
 };

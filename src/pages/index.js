@@ -154,23 +154,14 @@ function Home() {
                 <div>
                   <img
                     className={styles.logoImage}
-                    src="img/xsender-logo.svg"
+                    src="img/searchpe-logo.svg"
                   />
                 </div>
-                <h3>XSender</h3>
+                <h3>Searchpe</h3>
                 <p>
-                  <Link to="docs/xsender">XSender</Link> te permite{" "}
-                  <strong>enviar XMLs</strong> a la{" "}
-                  <a
-                    href="http://www.sunat.gob.pe/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    SUNAT
-                  </a>{" "}
-                  o cualquier OSE haciendo uso de sus servicios web SOAP. No
-                  necesitas saber SOAP, <a href="docs/xsender">XSender</a> lo
-                  hace todo automáticamente por ti.
+                  <Link to="docs/searchpe">Searchpe</Link> te permite Consultar
+                  el padrón reducido de la SUNAT a través del consumo de REST
+                  enpoints.
                 </p>
               </div>
             </div>
