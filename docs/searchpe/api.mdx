@@ -11,7 +11,7 @@ export const ApiReference = () => {
   const { siteConfig } = useDocusaurusContext();
   React.useEffect(() => {
     const wrapper = document.getElementsByClassName(
-      "docItemWrapper_node_modules-@docusaurus-theme-classic-lib-theme-DocItem-"
+      "container padding-vert--lg"
     )[0];
     if (wrapper) {
       wrapper.style.margin = 0;
@@ -28,7 +28,7 @@ export const ApiReference = () => {
   return (
     <div>
       <RedocStandalone
-        spec="../../openapi/searchpe.yaml"
+        spec="/openapi/searchpe.yaml"
         options={{
           theme: {
             colors: {
