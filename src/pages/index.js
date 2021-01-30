@@ -104,7 +104,7 @@ function Home() {
         <section className="margin-bottom--xl">
           <div className="container text--center">
             <div className="row">
-              <div className="col col--4 col--offset-2">
+              <div className="col col--4">
                 <div>
                   <img
                     className={styles.logoImage}
@@ -125,6 +125,29 @@ function Home() {
                   </a>
                   . Soporte para boletas, facturas, notas de crédito, notas de
                   débito, bajas, resúmenes diarios, etc.
+                </p>
+              </div>
+              <div className="col col--4">
+                <div>
+                  <img
+                    className={styles.logoImage}
+                    src="img/xsender-logo.svg"
+                  />
+                </div>
+                <h3>XSender</h3>
+                <p>
+                  <Link to="docs/xsender">XSender</Link> te permite{" "}
+                  <strong>enviar XMLs</strong> a la{" "}
+                  <a
+                    href="http://www.sunat.gob.pe/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    SUNAT
+                  </a>{" "}
+                  o cualquier OSE haciendo uso de sus servicios web SOAP. No
+                  necesitas saber SOAP, <a href="docs/xsender">XSender</a> lo
+                  hace todo automáticamente por ti.
                 </p>
               </div>
               <div className="col col--4">

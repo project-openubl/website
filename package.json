@@ -14,6 +14,7 @@
     "@docusaurus/core": "2.0.0-alpha.66",
     "@docusaurus/preset-classic": "2.0.0-alpha.66",
     "@mdx-js/react": "^1.5.8",
+    "buffer": "^6.0.3",
     "clsx": "^1.1.1",
     "core-js": "^3.8.3",
     "mobx": "^6.1.3",
