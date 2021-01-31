@@ -1,5 +1,6 @@
 ---
 title: CreditNote (Nota de crédito)
+description: Crear nota de credito
 ---
 
 ## Create _CreditNoteType_

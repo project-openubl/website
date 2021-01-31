@@ -1,5 +1,6 @@
 ---
 title: VoidedDocument (Baja)
+description: Crear baja
 ---
 
 ## Create _VoidedDocumentType_
