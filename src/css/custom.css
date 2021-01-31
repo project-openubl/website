@@ -24,3 +24,14 @@
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
 }
+
+/* Global */
+.redoc-api-wrapper {
+  margin: 0;
+  padding: 0 !important;
+  max-width: 97%;
+}
+
+.redoc-api-wrapper-third-child {
+  padding: 0 !important;
+}
