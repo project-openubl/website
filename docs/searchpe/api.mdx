@@ -14,15 +14,19 @@ export const ApiReference = () => {
       "container padding-vert--lg"
     )[0];
     if (wrapper) {
-      wrapper.style.margin = 0;
-      wrapper.style.setProperty("padding", "0", "important");
-      wrapper.style.maxWidth = "97%";
+      wrapper.classList.add("redoc-api-wrapper");
+      wrapper.children[0].children[0].children[0].classList.add(
+        "redoc-api-wrapper-third-child"
+      );
     }
-    wrapper.children[0].children[0].children[0].style.setProperty(
-      "padding",
-      "0",
-      "important"
-    );
+    return () => {
+      if (wrapper) {
+        wrapper.classList.remove("redoc-api-wrapper");
+        wrapper.children[0].children[0].children[0].classList.remove(
+          "redoc-api-wrapper-third-child"
+        );
+      }
+    };
   }, []);
   return (
     <div>
