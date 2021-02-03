@@ -46,16 +46,17 @@ Document signedXML = XMLSigner.signXML(xml, signatureID, certificate, privateKey
 
 :::tip
 
-`signatureID` Es el valor de `cbc:URI` dentro del XML, por ejemplo:
+`signatureID` Es el valor de `ds:Signature Id="mySignID"` dentro del XML, por ejemplo:
 
 ```xml {4}
-<cac:Signature>
-    <cac:DigitalSignatureAttachment>
-        <cac:ExternalReference>
-            <cbc:URI>#PROJECT-OPENUBL-SIGN</cbc:URI>
-        </cac:ExternalReference>
-    </cac:DigitalSignatureAttachment>
-</cac:Signature>
+<ext:UBLExtensions>
+    <ext:UBLExtension>
+        <ext:ExtensionContent>
+            <ds:Signature Id="mySignID" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">                              
+            </ds:Signature>
+        </ext:ExtensionContent>
+    </ext:UBLExtension>
+</ext:UBLExtensions>
 ```
 
 :::
