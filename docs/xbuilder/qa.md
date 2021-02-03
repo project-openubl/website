@@ -4,7 +4,7 @@ title: Preguntas frecuentes
 
 ### ¿Qué es el SignatureID?
 
-Es el valor de `cbc:URI` dentro del XML, por ejemplo:
+`signatureID` Es el valor de `ds:Signature Id="mySignID"` dentro del XML, por ejemplo:
 
 ```xml {5}
 <ext:UBLExtensions>
