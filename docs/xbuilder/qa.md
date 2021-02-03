@@ -6,7 +6,7 @@ title: Preguntas frecuentes
 
 `signatureID` Es el valor de `ds:Signature Id="mySignID"` dentro del XML, por ejemplo:
 
-```xml {5}
+```xml {4}
 <ext:UBLExtensions>
     <ext:UBLExtension>
         <ext:ExtensionContent>
