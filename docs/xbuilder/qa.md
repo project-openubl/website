@@ -7,17 +7,17 @@ title: Preguntas frecuentes
 Es el valor de `cbc:URI` dentro del XML, por ejemplo:
 
 ```xml {5}
-<cac:Signature>
-    ...
-    <cac:DigitalSignatureAttachment>
-        <cac:ExternalReference>
-            <cbc:URI>#PROJECT-OPENUBL-SIGN</cbc:URI>
-        </cac:ExternalReference>
-    </cac:DigitalSignatureAttachment>
-</cac:Signature>
+<ext:UBLExtensions>
+    <ext:UBLExtension>
+        <ext:ExtensionContent>
+            <ds:Signature Id="mySignID" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">                              
+            </ds:Signature>
+        </ext:ExtensionContent>
+    </ext:UBLExtension>
+</ext:UBLExtensions>
 ```
 
-Selecciona un buen signatureID. El signatureID no debe de contener números ya que se registró que la SUNAT rechaza signatureIDs como `12345678912` pero si acepta valores como `MiEmpresa`.
+Selecciona un buen signatureID; el signatureID no debe de contener números ni espacios en blanco. La SUNAT rechaza signatureIDs como `12345678912` pero si acepta valores como `MiEmpresa`.
 
 En caso de definir signatureIDs inválidos probablemente tendrás el error `No se puede leer (parsear) el archivo XML al momento de enviar el XML a la SUNAT`.
 
