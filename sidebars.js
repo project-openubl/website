@@ -85,7 +85,11 @@ module.exports = {
     {
       type: "category",
       label: "Instalación",
-      items: ["searchpe/installation-docker", "searchpe/installation-so"],
+      items: [
+        "searchpe/installation-docker",
+        "searchpe/installation-docker-compose",
+        "searchpe/installation-so",
+      ],
     },
     "searchpe/uso",
     "searchpe/api",
