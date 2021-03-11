@@ -36,6 +36,7 @@ module.exports = {
         "xbuilder/ejemplos/igv",
         "xbuilder/ejemplos/icb",
         "xbuilder/ejemplos/sellingPrice",
+        "xbuilder/ejemplos/formaPago",
       ],
     },
     "xbuilder/qa",
