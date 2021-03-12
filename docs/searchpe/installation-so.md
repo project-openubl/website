@@ -28,11 +28,11 @@ Para ver todas las opciones disponibles para instalar Elasticseach visita la doc
 
 - Descarga **Searchpe** desde [Searchpe Releases](https://github.com/project-openubl/searchpe/releases).
 
-![img](../../static/img/searchpe/searchpe-releases.png "Seachpe releases")
+![img](/img/searchpe/searchpe-releases.png "Seachpe releases")
 
 - Descomprime el `.zip` descargado:
 
-![img](../../static/img/searchpe/distribution-folder-tree.png "Distribution folder tree")
+![img](/img/searchpe/distribution-folder-tree.png "Distribution folder tree")
 
 - Abre el archivo `config/application.properties` y configura las conexiones a la base de datos y Elasticsearch:
 
@@ -58,6 +58,6 @@ Reemplaza `db_username`, `db_password`, y `searchpe_db` con los datos de la base
 
 Descarga e instala **Searchpe UI** desde [Searchpe UI Releases](https://github.com/project-openubl/searchpe-ui/releases) y selecciona el archivo correcto dependiendo de tus sistema operativo.
 
-![img](../../static/img/searchpe/searchpe-ui-releases.png "Seachpe UI releases")
+![img](/img/searchpe/searchpe-ui-releases.png "Seachpe UI releases")
 
 Eso es todo, tendrás Searchpe funcionando en tu computador.

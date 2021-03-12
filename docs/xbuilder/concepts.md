@@ -9,7 +9,7 @@ XBuilder crea archivos XMLs basados en 3 objetos:
 - **Config** - Incluye información como los valores de impuestos y valores por defecto a aplicar.
 - **System clock** - Reloj que genera la hora actual del sistema, incluyendo la zona horaria.
 
-![img](../../static/img/concepts-equation.svg "XBuilder concept equation")
+![img](/img/concepts-equation.svg "XBuilder concept equation")
 
 ```java
 DocumentWrapper<InvoiceOutputModel> result = DocumentManager.createXML(pojo, config, systemClock);

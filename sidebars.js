@@ -45,7 +45,7 @@ module.exports = {
     "xsender/index",
     {
       type: "category",
-      label: "Java library",
+      label: "Librería Java",
       items: [
         "xsender/library/installation",
         "xsender/library/gettingStarted",

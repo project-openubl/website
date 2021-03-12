@@ -5,37 +5,39 @@ import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import Translate from "@docusaurus/Translate";
 import styles from "./styles.module.css";
 
 const features = [
   {
-    title: "Open Source",
+    title: "XBuilder",
     imageUrl: "img/undraw_open_source_1qxw.svg",
     description: (
-      <>
-        Todos los proyectos dentro de <i>Project OpenUBL</i> son Open Source.
-      </>
+      <Translate>
+        Crea y firma electrónicamente archivos XMLs basados en UBL y los
+        estándares de la SUNAT. Soporte para boletas, facturas, notas de
+        crédito, notas de débito, etc.
+      </Translate>
     ),
   },
   {
-    title: "Coge solo lo que necesitas",
+    title: "XSender",
     imageUrl: "img/undraw_Choose_bwbs.svg",
     description: (
-      <>
-        <i>Project OpenUBL</i> está diseñado para no obligarte a "todo o nada".
-        Ya sea que desees solamente crear XMLs o solamente enviar XMLs{" "}
-        <i>Project OpenUBL</i> te permite hacerlo.
-      </>
+      <Translate>
+        Envía tus comprobantes electrónicos (archivos XML) a la SUNAT/OSE de
+        manera sensilla y segura.
+      </Translate>
     ),
   },
   {
-    title: "Híbrido",
+    title: "Searchpe",
     imageUrl: "img/undraw_server_q2pb.svg",
     description: (
-      <>
-        Sin importar el lenguaje de programación en el que esté hecho tu
-        software, siempre podrás integrar tu software con <i>Project OpenUBL</i>
-      </>
+      <Translate>
+        Consulta el RUC de cualquier persona jurídica en el territorio peruano.
+        La información es obtenida del padrón reducido de la SUNAT.
+      </Translate>
     ),
   },
 ];
@@ -71,9 +73,13 @@ function Home() {
             style={{ height: 100 }}
           />
           <h2 className="hero__title">
-            Herramientas Open Source para la Facturación Electrónica
+            <Translate>
+              Herramientas Open Source para la Facturación Electrónica
+            </Translate>
           </h2>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <p className="hero__subtitle">
+            <Translate>De desarrolladores para desarrolladores</Translate>
+          </p>
           <div className={styles.buttons}>
             <a
               className={clsx(
@@ -84,7 +90,7 @@ function Home() {
               rel="noopener noreferrer"
               href="https://projectopenubl.zulipchat.com/"
             >
-              Únete al chat
+              <Translate>Únete al chat</Translate>
             </a>
           </div>
         </div>
@@ -101,78 +107,13 @@ function Home() {
             </div>
           </section>
         )}
-        <section className="margin-bottom--xl">
-          <div className="container text--center">
-            <div className="row">
-              <div className="col col--4">
-                <div>
-                  <img
-                    className={styles.logoImage}
-                    src="img/xbuilder-logo.svg"
-                  />
-                </div>
-                <h3>XBuilder</h3>
-                <p>
-                  <Link to="docs/xbuilder">XBuilder</Link> te permite{" "}
-                  <strong>crear y firmar XMLs</strong> basados en UBL según los
-                  estándares de la{" "}
-                  <a
-                    href="http://www.sunat.gob.pe/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    SUNAT
-                  </a>
-                  . Soporte para boletas, facturas, notas de crédito, notas de
-                  débito, bajas, resúmenes diarios, etc.
-                </p>
-              </div>
-              <div className="col col--4">
-                <div>
-                  <img
-                    className={styles.logoImage}
-                    src="img/xsender-logo.svg"
-                  />
-                </div>
-                <h3>XSender</h3>
-                <p>
-                  <Link to="docs/xsender">XSender</Link> te permite{" "}
-                  <strong>enviar XMLs</strong> a la{" "}
-                  <a
-                    href="http://www.sunat.gob.pe/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    SUNAT
-                  </a>{" "}
-                  o cualquier OSE haciendo uso de sus servicios web SOAP. No
-                  necesitas saber SOAP, <a href="docs/xsender">XSender</a> lo
-                  hace todo automáticamente por ti.
-                </p>
-              </div>
-              <div className="col col--4">
-                <div>
-                  <img
-                    className={styles.logoImage}
-                    src="img/searchpe-logo.svg"
-                  />
-                </div>
-                <h3>Searchpe</h3>
-                <p>
-                  <Link to="docs/searchpe">Searchpe</Link> te permite Consultar
-                  el padrón reducido de la SUNAT a través del consumo de REST
-                  enpoints.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
         <section>
           <div className="container text--center">
             <div>
               <h2>
-                Crea tu propio software de Facturación Electrónica usando las
-                librerias y herramientas de Project OpenUBL
+                <Translate>
+                  Crea tu propio software de facturación electrónica.
+                </Translate>
               </h2>
             </div>
             <div className="row">

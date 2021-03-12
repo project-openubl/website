@@ -13,6 +13,18 @@ module.exports = {
   },
   organizationName: "project-openubl", // Usually your GitHub org/user name.
   projectName: "project-openubl.github.io", // Usually your repo name.
+  i18n: {
+    defaultLocale: "es",
+    locales: ["es", "en"],
+    localeConfigs: {
+      es: {
+        label: "Español",
+      },
+      en: {
+        label: "English",
+      },
+    },
+  },
   themeConfig: {
     announcementBar: {
       id: "supportus",
@@ -53,6 +65,10 @@ module.exports = {
         { to: "blog", label: "Blog", position: "left" },
         // right
         {
+          type: "localeDropdown",
+          position: "right",
+        },
+        {
           to: "about",
           label: "About",
           position: "right",
@@ -85,7 +101,7 @@ module.exports = {
           ],
         },
         {
-          title: "Community",
+          title: "Comunidad",
           items: [
             {
               label: "Youtube",
@@ -93,8 +109,8 @@ module.exports = {
                 "https://www.youtube.com/channel/UChq3xxjyDgjcU346rp0bbtA?view_as=subscriber",
             },
             {
-              label: "Únete al chat",
-              href: "https://projectopenubl.zulipchat.com/",
+              label: "Facebook",
+              href: "https://www.facebook.com/Openubl/",
             },
             {
               label: "Twitter",
@@ -103,7 +119,7 @@ module.exports = {
           ],
         },
         {
-          title: "More",
+          title: "Más",
           items: [
             {
               label: "Blog",
@@ -112,6 +128,10 @@ module.exports = {
             {
               label: "GitHub",
               href: "https://github.com/project-openubl",
+            },
+            {
+              label: "Únete al chat",
+              href: "https://projectopenubl.zulipchat.com/",
             },
           ],
         },
