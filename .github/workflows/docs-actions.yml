@@ -1,6 +1,9 @@
 name: Docs
 
-on: push
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   gh-pages:
@@ -8,14 +11,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Setup
-        uses: borales/actions-yarn@v2.0.0
+      - name: Use Node.js
+        uses: actions/setup-node@v1
         with:
-          cmd: install
+          node-version: 12.x
       - name: Build
-        uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: build
+        run: |
+          yarn install
+          yarn crowdin:sync
+          yarn build
+        env:
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

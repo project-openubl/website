@@ -12,7 +12,7 @@ hide_title: true
 slug: /xsender
 ---
 
-![img](../../static/img/xsender.svg "XSender logo")
+![img](/img/xsender.svg "XSender logo")
 
 XSender is a tool used for sending XML files based on UBL (Universal Bussiness Language) to Superintendencia Nacional de Aduanas y de Administración Tributaria (SUNAT, Perú)
 

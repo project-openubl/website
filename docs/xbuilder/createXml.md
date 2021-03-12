@@ -4,7 +4,7 @@ title: Crear XML
 
 Debes de recordar que la creación de un XML dependen de tres componentes principales:
 
-![img](../../static/img/concepts-equation.svg "XBuilder concept equation")
+![img](/img/concepts-equation.svg "XBuilder concept equation")
 
 ## Crea los componentes necesarios
 
