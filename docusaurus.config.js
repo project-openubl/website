@@ -27,7 +27,7 @@ module.exports = {
   },
   themeConfig: {
     prism: {
-      additionalLanguages: ["java", "scala"],
+      additionalLanguages: ["bash", "java", "scala"],
     },
     announcementBar: {
       id: "supportus",
