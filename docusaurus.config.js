@@ -26,6 +26,9 @@ module.exports = {
     },
   },
   themeConfig: {
+    prism: {
+      additionalLanguages: ["java"],
+    },
     announcementBar: {
       id: "supportus",
       content:

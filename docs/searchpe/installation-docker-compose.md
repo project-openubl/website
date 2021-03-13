@@ -80,7 +80,7 @@ services:
 
 Ubica tu terminal en la carpeta donde se encuentra `docker-compose.yml` y ejecuta:
 
-```shell
+```bash
 docker-compose up
 ```
 

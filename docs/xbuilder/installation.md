@@ -64,7 +64,7 @@ Se recomienda que todo proyecto esté hecho usando Maven o Gradle ya que facilit
 - Abre un terminal y ubícate en la carpeta donde creaste el `pom.xml`
 - Ejecuta el comando:
 
-```shell
+```bash
 mvn dependency:copy-dependencies
 ```
 

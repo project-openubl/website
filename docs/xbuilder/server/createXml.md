@@ -8,7 +8,7 @@ For executing the next set of examples you need to have _XBuilder Server_ runnin
 
 ## Invoice
 
-```shell script
+```bash
 curl -X POST \
 -H "Content-Type: application/json" \
 -d '{
@@ -37,7 +37,7 @@ http://localhost:8080/api/documents/invoice/create
 
 ## CreditNote
 
-```shell script
+```bash
 curl -X POST \
 -H "Content-Type: application/json" \
 -d '{
@@ -67,7 +67,7 @@ http://localhost:8080/api/documents/credit-note/create
 
 ## DebitNote
 
-```shell script
+```bash
 curl -X POST \
 -H "Content-Type: application/json" \
 -d '{
@@ -97,7 +97,7 @@ http://localhost:8080/api/documents/debit-note/create
 
 ## VoidedDocument
 
-```shell script
+```bash
 curl -X POST \
 -H "Content-Type: application/json" \
 -d '{
@@ -118,7 +118,7 @@ http://localhost:8080/api/documents/voided-document/create
 
 ## SummaryDocument
 
-```shell script
+```bash
 curl -X POST \
 -H "Content-Type: application/json" \
 -d '{
