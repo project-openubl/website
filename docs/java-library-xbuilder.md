@@ -12,14 +12,14 @@ Librería Java que sirve para:
 
 ## Requisitos
 
-- **JDK 8** o superior.
+El único requisito es que tu aplicación use **JDK 8** o superior.
 
 ## Recursos
 
 - [Documentación](./xbuilder/index.md)
 - [Videos](https://www.youtube.com/playlist?list=PLnRgWcnYy6sbiF96-ZEP7OLzFfDLrFvdU)
 
-## ¿En qué entornos puedo usar XBuilder?
+## ¿Dónde puedo usar XBuilder?
 
 Alguno de las integraciones más comunes realizadas son:
 
