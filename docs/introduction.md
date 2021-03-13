@@ -4,11 +4,15 @@ description: Project OpenUBL fue diseñado y hecho para que puedas empezar a man
 slug: /
 ---
 
-## Características
+## ¿Qué es Project OpenUBL?
 
-- ✅ **Crear XMLs** - Puedes crear tus XMLs (comprobantes electrónicos) basados en UBL y las especificaciones de la SUNAT.
-- ✅ **Firmar XMLs** - Puedes firmar electrónicamente tus archivos XMLs.
-- ✅ **Enviar tus XMLs a la SUNAT** - Puedes enviar tus XMLs firmados a la SUNAT.
+Project OpenUBL es un proyecto Open Source que desarrolla un conjunto de librerias, microservicios asociados al estándar UBL y la Facturación Electrónica en el Perú.
+
+## ¿Que puedes hacer con Project OpenUBL?
+
+- **Crear XMLs** - Crea tus XMLs (comprobantes electrónicos) basados en UBL y las especificaciones de la SUNAT.
+- **Firmar XMLs** - Firma electrónicamente tus archivos XMLs.
+- **Enviar tus XMLs a la SUNAT** - Envía tus XMLs a la SUNAT o cualquier OSE.
 
 ## Comparación con otras soluciones
 
@@ -18,12 +22,12 @@ A diferencia de otras soluciones, Project OpenUBL está orientado a ayudarte a c
 
 ## Mantente informado
 
-- [GitHub](https://github.com/project-openubl)
+- [Facebook](https://www.facebook.com/Openubl/)
 - [Twitter](https://twitter.com/openubl)
 - [Blog](/blog)
 
 ## ¿Hay algo que mejorar?
 
-Si encuentras algún error en la documentación o tienes sugerencias sobre cómo mejorar la documentación o el proyecto en general, puedes crear un tweet mencionando a [@openubl](https://twitter.com/openubl) en tu cuenta de Twitter, o escribirnos por nuestro canal de chat en [Zulip](https://projectopenubl.zulipchat.com/).
+Si encuentras algún error en la documentación, tienes sugerencias sobre cómo mejorar la documentación, o ideas que ayuden a Project OpenUBL entonces crea un tweet mencionando a [@openubl](https://twitter.com/openubl) en tu cuenta de Twitter, o escribirnos por nuestro canal de chat en [Zulip](https://projectopenubl.zulipchat.com/).
 
 Puedes enviarnos una retroalimentación o solicitar mejoras y nuevas funcionalidades creando un post en **Provide feedback**.
