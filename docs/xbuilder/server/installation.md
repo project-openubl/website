@@ -6,7 +6,7 @@ title: Installation
 
 The easiest way of starting _XBuilder Server_ is using Docker.
 
-```shell script
+```bash
 docker run -p 8080:8080 docker.io/projectopenubl/xbuilder-server
 ```
 
@@ -19,7 +19,7 @@ _XBuilder Server_ can be executed as a common _.jar_ application.
 - Download [xbuilder-server-myVersion-jvm.tgz](https://github.com/project-openubl/xbuilder-server/releases) and uncompress it.
 - Open a terminal and move to the folder where you uncompressed the downloaded file. Execute:
 
-```shell script
+```bash
 java -jar xbuilder-*-runner.jar
 ```
 
@@ -32,7 +32,7 @@ _XBuilder Server_ distributes a native Linux executable.
 - Download [xbuilder-server-myVersion-linux](https://github.com/project-openubl/xbuilder-server/releases).
 - Open a terminal and move to the folder where you downloaded the file. Execute:
 
-```shell script
+```bash
 ./xbuilder-server-*
 ```
 
@@ -43,7 +43,7 @@ _XBuilder Server_ distributes a native Windows executable.
 - Download [xbuilder-server-myVersion-win64.exe](https://github.com/project-openubl/xbuilder-server/releases).
 - Open a terminal and move to the folder where you downloaded the file. Execute:
 
-```shell script
+```bash
 start xbuilder-server-*
 ```
 

@@ -51,7 +51,7 @@ _XBuilder Server_ is based on Quarkus and you can take advantage of their system
 
 ### Docker example
 
-```shell script
+```bash
 docker run \
 -e OPENUBL_ICB=0.9 \
 projectopenubl/xbuilder-server
@@ -59,7 +59,7 @@ projectopenubl/xbuilder-server
 
 ### JVM example
 
-```shell script
+```bash
 java -Dopenubl.icb=0.9 -jar xbuilder-*-runner.jar
 ```
 
@@ -67,12 +67,12 @@ java -Dopenubl.icb=0.9 -jar xbuilder-*-runner.jar
 
 Using system properties:
 
-```shell script
+```bash
 ./xbuilder-server-* -Dopenubl.icb=0.9
 ```
 
 Using environment variables:
 
-```shell script
+```bash
 export OPENUBL_ICB=0.9 ; ./xbuilder-server-*
 ```
