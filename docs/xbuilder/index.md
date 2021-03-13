@@ -14,7 +14,7 @@ slug: /xbuilder
 
 ## Introducción
 
-XBuilder es una libreria Java que puede crear y firmar XMLs basados en UBL (Universtal Bussiness Language) de acuerdo a los estándares establecidos por la SUNAT.
+XBuilder es una libreria Java que puede crear y firmar XMLs basados en UBL (Universal Bussiness Language) de acuerdo a los estándares establecidos por la SUNAT.
 
 ## Principios de diseño
 
