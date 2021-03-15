@@ -3,7 +3,7 @@ title: Invoice (Boleta/Factura)
 description: Crear boleta o factura
 ---
 
-## Create _InvoiceType_
+## Crear _InvoiceType_
 
 Para crear una boleta/factura debes de crear una instancia de `InvoiceInputModel` y usarlo para crear el XML:
 
