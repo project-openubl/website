@@ -36,7 +36,7 @@ SummaryDocumentInputModel pojo = SummaryDocumentInputModel.Builder.aSummaryDocum
                                         .build()
                                 )
                                 .withImpuestos(SummaryDocumentImpuestosInputModel.Builder.aSummaryDocumentImpuestosInputModel()
-                                        .withIgv(new BigDecimal("100"))
+                                        .withIgv(new BigDecimal("18"))
                                         .build()
                                 )
                                 .withValorVenta(SummaryDocumentComprobanteValorVentaInputModel.Builder.aSummaryDocumentComprobanteValorVentaInputModel()
