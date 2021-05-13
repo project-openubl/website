@@ -18,7 +18,7 @@
   "dependencies": {
     "@crowdin/cli": "3",
     "@docusaurus/core": "2.0.0-alpha.74",
-    "@docusaurus/plugin-pwa": "2.0.0-alpha.74",
+    "@docusaurus/plugin-pwa": "2.0.0-beta.0",
     "@docusaurus/preset-classic": "2.0.0-alpha.74",
     "@mdx-js/react": "^1.6.21",
     "buffer": "^6.0.3",
