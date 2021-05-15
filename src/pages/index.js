@@ -19,7 +19,12 @@ function HomepageHeader() {
         <div className={clsx(styles.HeaderHero)}>
           <div className={clsx("row", styles.TwoColumns, styles.reverse)}>
             <div
-              className={clsx("col", styles.column, styles.first, styles.right)}
+              className={clsx(
+                "col text--center",
+                styles.column,
+                styles.first,
+                styles.right
+              )}
             >
               <img
                 alt="Project OpenUBL"
