@@ -1,16 +1,12 @@
-const path = require("path");
-
+/** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: "Project OpenUBL",
   tagline: "Crea XMLs basados en UBL y después envíalos a la SUNAT",
   url: "https://project-openubl.github.io",
   baseUrl: "/",
   onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
-  customFields: {
-    description:
-      "Herramientas open source para facturación electrónica. Project OpenUBL te ayuda a crear XMLs basados en UBL y después enviarlos a la SUNAT | Project OpenUBL",
-  },
   organizationName: "project-openubl", // Usually your GitHub org/user name.
   projectName: "project-openubl.github.io", // Usually your repo name.
   i18n: {
@@ -32,7 +28,7 @@ module.exports = {
     announcementBar: {
       id: "supportus",
       content:
-        '⭐️ Si te gusta Project OpenUBL, danos una estrella en <a target="_blank" rel="noopener noreferrer" href="https://github.com/project-openubl">GitHub</a>! ⭐️',
+        '⭐️ Si te gusta Project OpenUBL, síguenos en <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/Openubl">Facebook</a>! ⭐️',
     },
     navbar: {
       title: "Project OpenUBL",
@@ -48,24 +44,16 @@ module.exports = {
           label: "Docs",
         },
         {
-          type: "doc",
-          docId: "xbuilder/index",
-          label: "XBuilder",
+          label: "API",
           position: "left",
+          items: [
+            {
+              label: "Searchpe",
+              to: "/api/searchpe",
+            },
+          ],
         },
-        {
-          type: "doc",
-          docId: "xsender/index",
-          label: "XSender",
-          position: "left",
-        },
-        {
-          type: "doc",
-          docId: "searchpe/index",
-          label: "Searchpe",
-          position: "left",
-        },
-        { to: "blog", label: "Blog", position: "left" },
+        { to: "/blog", label: "Blog", position: "left" },
         // right
         {
           type: "localeDropdown",
@@ -108,8 +96,7 @@ module.exports = {
           items: [
             {
               label: "Youtube",
-              href:
-                "https://www.youtube.com/channel/UChq3xxjyDgjcU346rp0bbtA?view_as=subscriber",
+              href: "https://www.youtube.com/channel/UChq3xxjyDgjcU346rp0bbtA?view_as=subscriber",
             },
             {
               label: "Facebook",
@@ -159,8 +146,7 @@ module.exports = {
   ],
   scripts: [
     {
-      src:
-        "https://project-openubl.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-T/o2joag/b/24/a44af77267a987a660377e5c46e0fb64/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&collectorId=bd3ea422",
+      src: "https://project-openubl.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-T/o2joag/b/24/a44af77267a987a660377e5c46e0fb64/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&collectorId=bd3ea422",
       async: true,
     },
   ],
@@ -193,9 +179,19 @@ module.exports = {
         trailingSlash: false,
       },
     ],
+    [
+      "redocusaurus",
+      {
+        specs: [
+          {
+            routePath: "/api/searchpe",
+            spec: "static/openapi/searchpe.yaml",
+          },
+        ],
+      },
+    ],
   ],
   plugins: [
-    path.resolve(__dirname, "redoc-plugin"),
     [
       "@docusaurus/plugin-pwa",
       {
