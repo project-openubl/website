@@ -8,13 +8,13 @@ export default function HomepageFeatures() {
   return (
     <section className={clsx(styles.announcement, styles.announcementDark)}>
       <div className={clsx(styles.announcementInner)}>
-        ¿Deseas hablar con nosotros?{" "}
+        <Translate>¿Deseas hablar con nosotros?</Translate>{" "}
         <a
           href="https://v1.docusaurus.io/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Únete al chat
+          <Translate>Únete al chat</Translate>
         </a>
         .
       </div>
