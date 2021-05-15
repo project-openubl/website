@@ -10,7 +10,7 @@ export default function HomepageFeatures() {
       <div className={clsx(styles.announcementInner)}>
         <Translate>¿Deseas hablar con nosotros?</Translate>{" "}
         <a
-          href="https://v1.docusaurus.io/"
+          href="https://projectopenubl.zulipchat.com/"
           target="_blank"
           rel="noopener noreferrer"
         >
