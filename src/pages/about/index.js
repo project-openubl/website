@@ -2,17 +2,13 @@ import React from "react";
 import Layout from "@theme/Layout";
 import Translate from "@docusaurus/Translate";
 
+const TITLE = "¿Qué es Project OpenUBL?";
+const DESCRIPTION =
+  "Project OpenUBL es un conjunto de herramientas Open Source para ayudarte a crear tu propio software de Facturación Electrónica.";
+
 function About() {
   return (
-    <Layout
-      title={<Translate>¿Qué es Project OpenUBL?</Translate>}
-      description={
-        <Translate>
-          Project OpenUBL es un conjunto de herramientas Open Source para
-          ayudarte a crear tu propio software de Facturación Electrónica.
-        </Translate>
-      }
-    >
+    <Layout title={TITLE} description={DESCRIPTION}>
       <main className="container margin-vert--lg">
         <div className="text--center margin-bottom--xl">
           <h1>
