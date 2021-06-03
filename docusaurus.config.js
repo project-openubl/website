@@ -120,8 +120,8 @@ module.exports = {
               href: "https://github.com/project-openubl",
             },
             {
-              label: "Únete al chat",
-              href: "https://projectopenubl.zulipchat.com/",
+              label: "SUNAT guías y manuales",
+              href: "https://cpe.sunat.gob.pe/node/88",
             },
           ],
         },
