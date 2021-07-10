@@ -1,5 +1,5 @@
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const lightCodeTheme = require("prism-react-renderer/themes/palenight");
+const darkCodeTheme = require("prism-react-renderer/themes/nightOwl");
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -25,6 +25,11 @@ module.exports = {
     },
   },
   themeConfig: {
+    prism: {
+      theme: lightCodeTheme,
+      darkTheme: darkCodeTheme,
+      additionalLanguages: ["bash", "java", "scala"],
+    },
     announcementBar: {
       id: "supportus",
       content:
@@ -127,11 +132,6 @@ module.exports = {
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Project OpenUBL, Inc.`,
-    },
-    prism: {
-      theme: lightCodeTheme,
-      darkTheme: darkCodeTheme,
-      additionalLanguages: ["bash", "java", "scala"],
     },
     googleAnalytics: {
       trackingID: "UA-152706512-2",
