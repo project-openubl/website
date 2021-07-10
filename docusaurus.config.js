@@ -25,9 +25,6 @@ module.exports = {
     },
   },
   themeConfig: {
-    prism: {
-      additionalLanguages: ["bash", "java", "scala"],
-    },
     announcementBar: {
       id: "supportus",
       content:
@@ -134,6 +131,7 @@ module.exports = {
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
+      additionalLanguages: ["bash", "java", "scala"],
     },
     googleAnalytics: {
       trackingID: "UA-152706512-2",
