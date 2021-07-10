@@ -1,3 +1,6 @@
+const lightCodeTheme = require("prism-react-renderer/themes/palenight");
+const darkCodeTheme = require("prism-react-renderer/themes/nightOwl");
+
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: "Project OpenUBL",
@@ -23,6 +26,8 @@ module.exports = {
   },
   themeConfig: {
     prism: {
+      theme: lightCodeTheme,
+      darkTheme: darkCodeTheme,
       additionalLanguages: ["bash", "java", "scala"],
     },
     announcementBar: {
