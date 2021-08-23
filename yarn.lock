@@ -1589,17 +1589,18 @@
   dependencies:
     "@docusaurus/core" "2.0.0-beta.4"
 
-"@docusaurus/plugin-pwa@2.0.0-beta.3":
-  version "2.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@docusaurus/plugin-pwa/-/plugin-pwa-2.0.0-beta.3.tgz#9f7a2bfdb63e7dfe0f787a354df218ac04a97919"
-  integrity sha512-a6x5Le2BxH/Gs7VvjfjAsbUu1ol3qCpB3D47LtNzYpzXMr+oCE+dHOKJLm2NQ2zNEcQQ+3so4I+sfcjVLd+/AQ==
+"@docusaurus/plugin-pwa@2.0.0-beta.4":
+  version "2.0.0-beta.4"
+  resolved "https://registry.yarnpkg.com/@docusaurus/plugin-pwa/-/plugin-pwa-2.0.0-beta.4.tgz#06c77d58a2ba6c0f6d8b899242fc41bcaf9380ea"
+  integrity sha512-KZXoTzeguvbxG6FRzlPH8Yy9aL4bJWhn1VvVxVE82y8/yzjPpjhI/6ijhx8FBuYPXF6RCYiN8nYJOMenv+r54w==
   dependencies:
     "@babel/plugin-proposal-nullish-coalescing-operator" "^7.12.13"
     "@babel/plugin-proposal-optional-chaining" "^7.12.16"
     "@babel/preset-env" "^7.12.16"
-    "@docusaurus/core" "2.0.0-beta.3"
-    "@docusaurus/theme-common" "2.0.0-beta.3"
-    "@docusaurus/utils-validation" "2.0.0-beta.3"
+    "@docusaurus/core" "2.0.0-beta.4"
+    "@docusaurus/theme-common" "2.0.0-beta.4"
+    "@docusaurus/utils" "2.0.0-beta.4"
+    "@docusaurus/utils-validation" "2.0.0-beta.4"
     babel-loader "^8.2.2"
     clsx "^1.1.1"
     core-js "^2.6.5"
