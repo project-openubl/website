@@ -13,9 +13,6 @@ info:
   x-logo:
     url: https://raw.githubusercontent.com/project-openubl/searchpe/master/src/main/resources/META-INF/resources/assets/images/logo-2-lines.svg
     altText: Searchpe logo
-servers:
-  - url: http://localhost:8080
-    description: Dev mode server
 paths:
   /contribuyentes:
     get:
@@ -41,7 +38,10 @@ paths:
       - name: sort_by
         in: query
         schema:
-          $ref: '#/components/schemas/ListString'
+          default: name
+          type: array
+          items:
+            type: string
       responses:
         "200":
           description: OK
@@ -81,7 +81,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListVersionEntity'
+                type: array
+                items:
+                  $ref: '#/components/schemas/VersionEntity'
     post:
       summary: Create version
       description: Creates a new version and fires the importing process
@@ -161,14 +163,6 @@ components:
           type: string
         ubigeo:
           type: string
-    ListString:
-      type: array
-      items:
-        type: string
-    ListContribuyenteEntity:
-      type: array
-      items:
-        $ref: '#/components/schemas/ContribuyenteEntity'
     Meta:
       type: object
       properties:
@@ -185,7 +179,9 @@ components:
       type: object
       properties:
         data:
-          $ref: '#/components/schemas/ListContribuyenteEntity'
+          type: array
+          items:
+            $ref: '#/components/schemas/ContribuyenteEntity'
         meta:
           $ref: '#/components/schemas/Meta'
     Status:
@@ -225,7 +221,3 @@ components:
           format: date
           type: string
           nullable: false
-    ListVersionEntity:
-      type: array
-      items:
-        $ref: '#/components/schemas/VersionEntity'
