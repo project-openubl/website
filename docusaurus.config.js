@@ -59,6 +59,11 @@ module.exports = {
           ],
         },
         { to: "/blog", label: "Blog", position: "left" },
+        {
+          href: "https://katacoda.com/openubl",
+          label: "Training",
+          position: "left",
+        },
         // right
         {
           type: "localeDropdown",
