@@ -279,33 +279,5 @@ module.exports = {
         showLastUpdateTime: true,
       }),
     ],
-    [
-      "@docusaurus/plugin-client-redirects",
-      /** @type {import('@docusaurus/plugin-client-redirects').Options} */
-      ({
-        fromExtensions: ["html"],
-        createRedirects: function (path) {
-          // redirect to /docs from /docs/introduction,
-          // as introduction has been made the home doc
-          if (allDocHomesPaths.includes(path)) {
-            return [`${path}/introduction`];
-          }
-        },
-        redirects: [
-          {
-            from: ["/docs/support", "/docs/next/support"],
-            to: "/community/support",
-          },
-          {
-            from: ["/docs/team", "/docs/next/team"],
-            to: "/community/team",
-          },
-          {
-            from: ["/docs/resources", "/docs/next/resources"],
-            to: "/community/resources",
-          },
-        ],
-      }),
-    ],
   ],
 };
