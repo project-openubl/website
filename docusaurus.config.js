@@ -64,6 +64,12 @@ module.exports = {
           label: "Training",
           position: "left",
         },
+        {
+          to: "/community/support",
+          label: "Community",
+          position: "left",
+          activeBaseRegex: `/community/`,
+        },
         // right
         {
           type: "localeDropdown",
@@ -256,6 +262,22 @@ module.exports = {
           },
         ],
       },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      /** @type {import('@docusaurus/plugin-content-docs').Options} */
+      ({
+        id: "community",
+        path: "community",
+        routeBasePath: "community",
+        editUrl: ({ versionDocsDirPath, docPath }) => {
+          return `https://github.com/project-openubl/website/edit/master/${versionDocsDirPath}/${docPath}`;
+        },
+        editCurrentVersion: true,
+        sidebarPath: require.resolve("./sidebarsCommunity.js"),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      }),
     ],
   ],
 };
