@@ -28,7 +28,7 @@ module.exports = {
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
-      additionalLanguages: ["bash", "java", "scala"],
+      additionalLanguages: ["bash", "java", "scala", "php"],
     },
     announcementBar: {
       id: "supportus",
@@ -48,16 +48,16 @@ module.exports = {
           docId: "introduction",
           label: "Docs",
         },
-        {
-          label: "API",
-          position: "left",
-          items: [
-            {
-              label: "Searchpe",
-              to: "/api/searchpe",
-            },
-          ],
-        },
+        // {
+        //   label: "API",
+        //   position: "left",
+        //   items: [
+        //     {
+        //       label: "Searchpe",
+        //       to: "/api/searchpe",
+        //     },
+        //   ],
+        // },
         { to: "/blog", label: "Blog", position: "left" },
         {
           href: "https://katacoda.com/openubl",

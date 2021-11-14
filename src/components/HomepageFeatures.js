@@ -31,8 +31,9 @@ const FeatureList = [
     Svg: require("../../static/img/undraw_server_q2pb.svg").default,
     description: (
       <Translate>
-        Consulta el RUC de cualquier persona jurídica en el territorio peruano.
-        La información es obtenida del padrón reducido de la SUNAT.
+        Consulta el DNI o RUC de cualquier persona natural o jurídica registrada
+        en el territorio peruano. La información es obtenida del padrón reducido
+        de la SUNAT.
       </Translate>
     ),
   },

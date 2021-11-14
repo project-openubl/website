@@ -1,0 +1,87 @@
+---
+title: Integración API
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import ApiSchema from "@theme/ApiSchema";
+
+Cualquier software puede consumir Searchpe a travéz de REST.
+
+## API
+
+Puedes ver todos los REST endpoint disponibles en:
+
+- <a href="/api/searchpe" target="_blank">
+    Openapi
+  </a>
+
+## Seguridad
+
+Todos los REST endpoints de Searchpe están protegidos y sólo pueden ser consumidos usando credenciales correctas. [Basic access authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) es el método a usar al consumir los REST endpoints.
+
+Toda petición HTTP debe de contener el Header `Authorization: Basic <credentials>` donde `<credentials>` contiene el usuario y contraseña separados por `:` y cifrado en [Base 64](https://en.wikipedia.org/wiki/Base64). Por ejemplo, si el usuario es "myUsername" y la contraseña es "myPassword" entonces:
+
+1. Unir el usuario y contraseña separados por `:`. Tomando nuestro ejemplo `myUsername:myPassword`
+2. Cifrar `myUsername:myPassword` en base 64. Tomando nuestro ejemplo `bXlVc2VybmFtZTpteVBhc3N3b3Jk`
+3. Consumir Searchpe incluyendo el HTTP Header `Authorization: Basic bXlVc2VybmFtZTpteVBhc3N3b3Jk`
+
+![img](/img/searchpe/searchpe-basic-auth.png "Basic Auth")
+
+## Consumo del API
+
+Puedes utilizar cualquier lenguage de programación para consumir el API de Searchpe lo único que necesitas tener en cuenta es siempre enviar tus credenciales en cada petición tal y como se explicó en la sección anterior.
+
+Observa algunos ejemplos de cómo consumir los API.
+
+<Tabs>
+  <TabItem value="javascript" label="Javascript" default>
+
+```js
+fetch('http://localhost:8180/api/contribuyentes/{numeroDocumento}', {
+  method: "GET",
+  headers: {
+    "Content-type": "application/json",
+    "Authorization": "Basic bXlVc2VybmFtZTpteVBhc3N3b3Jk",
+  }
+})
+.then(response => console.log(response));
+.catch(error => console.log(error));
+```
+
+  </TabItem>
+  <TabItem value="java" label="Java">
+
+```java
+HttpClient client = HttpClients.custom().build();
+HttpUriRequest request = RequestBuilder.get()
+  .setUri("http://localhost:8180/api/contribuyentes/{numeroDocumento}")
+  .setHeader("Content-type", "application/json")
+  .setHeader("Authorization", "Basic bXlVc2VybmFtZTpteVBhc3N3b3Jk")
+  .build();
+client.execute(request);
+```
+
+  </TabItem>
+  <TabItem value="php" label="PHP">
+
+```php
+$httpClient = HttpClient::create();
+$response = $httpClient->request('GET', 'http://localhost:8180/api/contribuyentes/{numeroDocumento}', [
+    'headers' => [
+        'Content-type' => 'application/json',
+        'Authorization' => 'Basic bXlVc2VybmFtZTpteVBhc3N3b3Jk'
+    ]
+]);
+```
+
+  </TabItem>
+</Tabs>
+
+### Consulta DNI/RUC
+
+Probablemente el en endpoint más importante es `/api/contribuyentes/{numeroDocumento}` ya que este es el usado para consultar personas natural o jurídicas a travéz de su número de DNI o RUC.
+
+Puedes usar el ejemplo de la sección anterior para consumor este endpoint. La respuesta del servidor debe de ser un objeto que tenga la siguiente forma:
+
+<ApiSchema pointer="#/components/schemas/ContribuyenteEntity" example />
