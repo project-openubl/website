@@ -18,7 +18,7 @@ jobs:
       - name: Build
         run: |
           yarn install
-          yarn crowdin:sync
+          # yarn crowdin:sync
           yarn build
         env:
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
