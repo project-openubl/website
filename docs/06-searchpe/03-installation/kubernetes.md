@@ -2,46 +2,51 @@
 title: Kubernetes
 ---
 
-Puedes utilizar la máquina virtual de Java para ejecutar Searchpe en modo producción.
+Para poder desplegar Searchpe, puedes cualquier distribución de Kubernetes como por ejemplo [Minikube](https://minikube.sigs.k8s.io/docs/start/), [Openshift](https://docs.openshift.com/), etc.
+
+Para este ejemplo usaremos Minikube aunque tambien aplica a cualquier distribución de Kubernetes que tengas.
 
 ## Requisitos
 
-- PostgreSQL
-- Java (versión 11 o superior)
+- [Minikube](https://minikube.sigs.k8s.io/docs/start/)
+- [Kubectl](https://kubernetes.io/docs/tasks/tools/)
 
-## Instala PostgreSQL
+## Inicia Minikube
 
-Puedes usar https://www.postgresql.org/download/ para descargar e instalar PosgreSQL; sin embargo, puedes utilizar el método de tu preferencia.
+Ejecuta el comando:
 
-Una vez instalado PostgreSQL necesitas crear:
+```shell
+minikube start
+```
 
-- Una base de datos.
-- Un usuario y contraseña que tenga acceso a la base de datos.
+## Crea un Namespace
 
-Puedes utilizar [PgAdmin](https://www.pgadmin.org/download/) para configurar tu base de datos.
+Crea un namespace donde se instalará Searchpe:
+
+```shell
+kubectl create ns openubl
+```
 
 ## Instala Searchpe
 
-- Descarga el archivo **searchpe-${version}.zip** desde [Searchpe Releases](https://github.com/project-openubl/searchpe/releases).
+Utiliza un archivo .yaml pre configurado para instalar Searchpe:
 
-- Descomprime el `.zip` descargado:
-
-![img](/img/searchpe/distribution-folder-tree.png "Distribution folder tree")
-
-- Abre el archivo `config/application.properties` y configura las conexiones a la base de datos:
-
-```yaml
-# Quarkus settings
-quarkus.http.port=8180
-
-# PostgreSQL settings
-quarkus.datasource.username=db_username
-quarkus.datasource.password=db_password
-quarkus.datasource.jdbc.url=jdbc:postgresql://localhost:5432/searchpe_db
+```shell
+kubectl apply -n openubl -f https://raw.githubusercontent.com/project-openubl/searchpe/master/src/main/kubernetes/searchpe.yml
 ```
 
-Reemplaza `db_username`, `db_password`, y `searchpe_db` con los datos de la base de datos que creaste.
+## Verifica tus pods
 
-- Inicia el servidor ejecutando el archivo `bin/standalone.sh` o `bin/standalone.bat` dependiendo del sistema operativo que uses.
+Verifica que todos tus Pods funcionen correctamente:
 
-- Searchpe está funcionando en [http://localhost:8180](http://localhost:8180)
+```shell
+kubectl get pods -n openubl
+```
+
+## Accede a Searchpe
+
+Expone el Service de Searchpe en tu computador local:
+
+```
+minikube service searchpe -n openubl
+```
