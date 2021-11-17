@@ -12,18 +12,18 @@ module.exports = {
   favicon: "img/favicon.ico",
   organizationName: "project-openubl", // Usually your GitHub org/user name.
   projectName: "project-openubl.github.io", // Usually your repo name.
-  i18n: {
-    defaultLocale: "es",
-    locales: ["es", "en"],
-    localeConfigs: {
-      es: {
-        label: "Español",
-      },
-      en: {
-        label: "English",
-      },
-    },
-  },
+  // i18n: {
+  //   defaultLocale: "es",
+  //   locales: ["es", "en"],
+  //   localeConfigs: {
+  //     es: {
+  //       label: "Español",
+  //     },
+  //     en: {
+  //       label: "English",
+  //     },
+  //   },
+  // },
   themeConfig: {
     prism: {
       theme: lightCodeTheme,
@@ -71,10 +71,10 @@ module.exports = {
           activeBaseRegex: `/community/`,
         },
         // right
-        {
-          type: "localeDropdown",
-          position: "right",
-        },
+        // {
+        //   type: "localeDropdown",
+        //   position: "right",
+        // },
         {
           to: "about",
           label: "About",
