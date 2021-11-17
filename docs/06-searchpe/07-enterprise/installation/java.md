@@ -1,8 +1,15 @@
 ---
-title: Local
+title: Java
 ---
 
-Si quieres instalar **Searchpe** en el sistema operativo de tu computador sigue los siguientes pasos:
+Puedes utilizar la máquina virtual de Java para ejecutar Searchpe en modo producción.
+
+## Requisitos
+
+- PostgreSQL
+- Elasticsearch
+- Keycloak
+- Java (versión 11 o superior)
 
 ## Instala PostgreSQL
 
@@ -24,17 +31,19 @@ Elasticsearch puede ser instalado con en método de tu preferencia; aquí tienes
 
 Para ver todas las opciones disponibles para instalar Elasticseach visita la documentación oficial [Install Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html)
 
+## Instala Keycloak
+
+Keycloak puede ser instalado con en método de tu preferencia. Te recomendamos seguir la documentación oficial [Server installation](https://www.keycloak.org/docs/latest/server_installation/index.html)
+
 ## Instala Searchpe
 
-- Descarga **Searchpe** desde [Searchpe Releases](https://github.com/project-openubl/searchpe/releases).
-
-![img](/img/searchpe/searchpe-releases.png "Seachpe releases")
+- Descarga el archivo **searchpe-enterprise-${version}.zip** desde [Searchpe Releases](https://github.com/project-openubl/searchpe/releases).
 
 - Descomprime el `.zip` descargado:
 
 ![img](/img/searchpe/distribution-folder-tree.png "Distribution folder tree")
 
-- Abre el archivo `config/application.properties` y configura las conexiones a la base de datos y Elasticsearch:
+- Abre el archivo `config/application.properties` y configura las conexiones a la base de datos:
 
 ```yaml
 # PostgreSQL settings
@@ -42,22 +51,25 @@ quarkus.datasource.username=db_username
 quarkus.datasource.password=db_password
 quarkus.datasource.jdbc.url=jdbc:postgresql://localhost:5432/searchpe_db
 
-# Elasticsearch settings
+# Oidc Auth
+quarkus.oidc.enabled=true
+quarkus.oidc.client-id=searchpe
+quarkus.oidc.credentials.secret=secret
+quarkus.oidc.auth-server-url=http://localhost:8080/auth/realms/openubl
+
+# Elasticsearch
 quarkus.hibernate-search-orm.elasticsearch.username=es_username
 quarkus.hibernate-search-orm.elasticsearch.password=es_password
 quarkus.hibernate-search-orm.elasticsearch.hosts=localhost:9200
 quarkus.hibernate-search-orm.elasticsearch.protocol=HTTP
 quarkus.hibernate-search-orm.elasticsearch.version=7
+quarkus.hibernate-search-orm.elasticsearch.version-check.enabled=true
+quarkus.hibernate-search-orm.schema-management.strategy=CREATE_OR_VALIDATE
+quarkus.hibernate-search-orm.automatic-indexing.synchronization.strategy=write-sync
 ```
 
-Reemplaza `db_username`, `db_password`, y `searchpe_db` con los datos de la base de datos que creaste.
+Reemplaza los valores de tu servidor PostgreSQL, Keycloak, y Searchpe con correctos valores.
 
-- Inicia el servidor ejecutando el archivo `bin/standalone.bat`.
+- Inicia el servidor ejecutando el archivo `bin/standalone.sh` o `bin/standalone.bat` dependiendo del sistema operativo que uses.
 
-## Instala Searchpe UI
-
-Descarga e instala **Searchpe UI** desde [Searchpe UI Releases](https://github.com/project-openubl/searchpe-ui/releases) y selecciona el archivo correcto dependiendo de tus sistema operativo.
-
-![img](/img/searchpe/searchpe-ui-releases.png "Seachpe UI releases")
-
-Eso es todo, tendrás Searchpe funcionando en tu computador.
+- Searchpe está funcionando en [http://localhost:8180](http://localhost:8180)

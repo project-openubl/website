@@ -1,80 +1,18 @@
 ---
-openapi: 3.0.1
+openapi: 3.0.3
 info:
-  title: Searchpe API
-  contact:
-    name: Searchpe community support
-    url: https://project-openubl.github.io/
-    email: https://project-openubl.github.io/
-  license:
-    name: EPL-2.0
-    url: https://opensource.org/licenses/EPL-2.0
-  version: 2.0.0
+  title: searchpe API
+  version: 3.0.0.Final
   x-logo:
     url: https://raw.githubusercontent.com/project-openubl/searchpe/master/src/main/resources/META-INF/resources/assets/images/logo-2-lines.svg
     altText: Searchpe logo
 paths:
-  /contribuyentes:
+  /api/admin/users:
     get:
-      summary: Search contribuyentes
-      description: Get contribuyentes in a page
-      parameters:
-      - name: filterText
-        in: query
-        schema:
-          type: string
-      - name: limit
-        in: query
-        schema:
-          format: int32
-          default: "10"
-          type: integer
-      - name: offset
-        in: query
-        schema:
-          format: int32
-          default: "0"
-          type: integer
-      - name: sort_by
-        in: query
-        schema:
-          default: name
-          type: array
-          items:
-            type: string
-      responses:
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/PageRepresentationContribuyenteEntity'
-  /contribuyentes/{ruc}:
-    get:
-      summary: Get contribuyente by RUC
-      description: Get contribuyentes by RUC
-      parameters:
-      - name: ruc
-        in: path
-        required: true
-        schema:
-          type: string
-      responses:
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ContribuyenteEntity'
-  /versions:
-    get:
-      summary: Get versions
-      description: Get all versions available
-      parameters:
-      - name: active
-        in: query
-        schema:
-          type: boolean
+      tags:
+        - Basic User Resource
+      summary: Get users
+      description: Get users
       responses:
         "200":
           description: OK
@@ -83,8 +21,259 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/VersionEntity'
+                  $ref: "#/components/schemas/BasicUserRepresentation"
+        "401":
+          description: Not Authorized
+        "403":
+          description: Not Allowed
+      security:
+        - SecurityScheme:
+            - admin:app
+            - user:write
     post:
+      tags:
+        - Basic User Resource
+      summary: Create user
+      description: Creates a new user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BasicUserRepresentation"
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: Not Authorized
+        "403":
+          description: Not Allowed
+      security:
+        - SecurityScheme:
+            - admin:app
+            - user:write
+  /api/admin/users/{id}:
+    get:
+      tags:
+        - Basic User Resource
+      summary: Get user
+      description: Get user
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            format: int64
+            type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BasicUserRepresentation"
+        "401":
+          description: Not Authorized
+        "403":
+          description: Not Allowed
+      security:
+        - SecurityScheme:
+            - admin:app
+            - user:write
+    put:
+      tags:
+        - Basic User Resource
+      summary: Update user
+      description: Update username or password. It won't update current role
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            format: int64
+            type: integer
+            nullable: false
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BasicUserRepresentation"
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: Not Authorized
+        "403":
+          description: Not Allowed
+      security:
+        - SecurityScheme:
+            - admin:app
+            - user:write
+    delete:
+      tags:
+        - Basic User Resource
+      summary: Delete user
+      description: Delete user
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            format: int64
+            type: integer
+            nullable: false
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: Not Authorized
+        "403":
+          description: Not Allowed
+      security:
+        - SecurityScheme:
+            - admin:app
+            - user:write
+  /api/contribuyentes:
+    get:
+      tags:
+        - Contribuyente Resource
+      summary: Search contribuyentes
+      description: Get contribuyentes in a page
+      parameters:
+        - name: filterText
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            format: int32
+            default: "10"
+            maximum: 1000
+            type: integer
+        - name: offset
+          in: query
+          schema:
+            format: int32
+            default: "0"
+            maximum: 9000
+            type: integer
+        - name: sort_by
+          in: query
+          schema:
+            default: name
+            type: array
+            items:
+              type: string
+        - name: tipoContribuyente
+          in: query
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PageRepresentationContribuyenteEntity"
+        "401":
+          description: Not Authorized
+        "403":
+          description: Not Allowed
+      security:
+        - SecurityScheme:
+            - admin:app
+            - search
+  /api/contribuyentes/{numeroDocumento}:
+    get:
+      tags:
+        - Contribuyente Resource
+      summary: Get contribuyente by numeroDocumento
+      description: Get contribuyentes by numeroDocumento
+      parameters:
+        - name: numeroDocumento
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ContribuyenteEntity"
+        "401":
+          description: Not Authorized
+        "403":
+          description: Not Allowed
+      security:
+        - SecurityScheme:
+            - admin:app
+            - search
+  /api/current-user/whoami:
+    get:
+      tags:
+        - Current User Resource
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BasicUserRepresentation"
+  /api/templates/keycloak.json:
+    get:
+      tags:
+        - Frontend Resource
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TemplateInstance"
+  /api/templates/settings.js:
+    get:
+      tags:
+        - Frontend Resource
+      responses:
+        "200":
+          description: OK
+          content:
+            text/javascript:
+              schema:
+                $ref: "#/components/schemas/TemplateInstance"
+  /api/versions:
+    get:
+      tags:
+        - Version Resource
+      summary: Get versions
+      description: Get all versions available
+      parameters:
+        - name: active
+          in: query
+          schema:
+            type: boolean
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/VersionEntity"
+        "401":
+          description: Not Authorized
+        "403":
+          description: Not Allowed
+      security:
+        - SecurityScheme:
+            - admin:app
+            - version:write
+    post:
+      tags:
+        - Version Resource
       summary: Create version
       description: Creates a new version and fires the importing process
       responses:
@@ -93,113 +282,181 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/VersionEntity'
-  /versions/{id}:
+                $ref: "#/components/schemas/VersionEntity"
+        "401":
+          description: Not Authorized
+        "403":
+          description: Not Allowed
+      security:
+        - SecurityScheme:
+            - admin:app
+            - version:write
+  /api/versions/{id}:
     get:
+      tags:
+        - Version Resource
       summary: Get version
       description: Get version by id
       parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          format: int64
-          type: integer
+        - name: id
+          in: path
+          required: true
+          schema:
+            format: int64
+            type: integer
       responses:
         "200":
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/VersionEntity'
+                $ref: "#/components/schemas/VersionEntity"
+        "401":
+          description: Not Authorized
+        "403":
+          description: Not Allowed
+      security:
+        - SecurityScheme:
+            - admin:app
+            - version:write
     delete:
+      tags:
+        - Version Resource
       summary: Delete version
       description: Delete version by id
       parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          format: int64
-          type: integer
+        - name: id
+          in: path
+          required: true
+          schema:
+            format: int64
+            type: integer
       responses:
         "204":
           description: No Content
+        "401":
+          description: Not Authorized
+        "403":
+          description: Not Allowed
+      security:
+        - SecurityScheme:
+            - admin:app
+            - version:write
 components:
   schemas:
-    ContribuyenteEntity:
+    BasicUserRepresentation:
       required:
-      - razonSocial
+        - username
+        - password
+        - permissions
       type: object
       properties:
-        codigoZona:
+        id:
+          format: int64
+          type: integer
+        fullName:
+          type: string
+        username:
+          maxLength: 250
+          minLength: 3
+          type: string
+          nullable: false
+        password:
+          maxLength: 250
+          minLength: 3
+          type: string
+          nullable: false
+        permissions:
+          minItems: 1
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+    ContribuyenteEntity:
+      required:
+        - tipoPersona
+        - nombre
+      type: object
+      properties:
+        tipoPersona:
+          allOf:
+            - $ref: "#/components/schemas/TipoPersona"
+            - nullable: false
+        numeroDocumento:
+          type: string
+        nombre:
+          type: string
+          nullable: false
+        estado:
           type: string
         condicionDomicilio:
           type: string
-        departamento:
-          type: string
-        estadoContribuyente:
-          type: string
-        interior:
-          type: string
-        kilometro:
-          type: string
-        lote:
-          type: string
-        manzana:
-          type: string
-        nombreVia:
-          type: string
-        numero:
-          type: string
-        razonSocial:
-          type: string
-          nullable: false
-        ruc:
+        ubigeo:
           type: string
         tipoVia:
           type: string
+        nombreVia:
+          type: string
+        codigoZona:
+          type: string
         tipoZona:
           type: string
-        ubigeo:
+        numero:
+          type: string
+        interior:
+          type: string
+        lote:
+          type: string
+        departamento:
+          type: string
+        manzana:
+          type: string
+        kilometro:
           type: string
     Meta:
       type: object
       properties:
-        count:
-          format: int64
+        offset:
+          format: int32
           type: integer
         limit:
           format: int32
           type: integer
-        offset:
-          format: int32
+        count:
+          format: int64
           type: integer
     PageRepresentationContribuyenteEntity:
       type: object
       properties:
+        meta:
+          $ref: "#/components/schemas/Meta"
         data:
           type: array
           items:
-            $ref: '#/components/schemas/ContribuyenteEntity'
-        meta:
-          $ref: '#/components/schemas/Meta'
+            $ref: "#/components/schemas/ContribuyenteEntity"
     Status:
       enum:
-      - COMPLETED
-      - DELETING
-      - DOWNLOADING
-      - ERROR
-      - IMPORTING
-      - SCHEDULED
-      - UNZIPPING
+        - COMPLETED
+        - DELETING
+        - DOWNLOADING
+        - ERROR
+        - IMPORTING
+        - SCHEDULED
+        - UNZIPPING
+      type: string
+    TemplateInstance:
+      type: object
+    TipoPersona:
+      enum:
+        - JURIDICA
+        - NATURAL
       type: string
     VersionEntity:
       required:
-      - createdAt
-      - records
-      - status
-      - updatedAt
+        - createdAt
+        - updatedAt
+        - status
+        - records
       type: object
       properties:
         id:
@@ -209,15 +466,18 @@ components:
           format: date
           type: string
           nullable: false
-        records:
-          format: int32
-          type: integer
-          nullable: false
-        status:
-          allOf:
-          - $ref: '#/components/schemas/Status'
-          - nullable: false
         updatedAt:
           format: date
           type: string
           nullable: false
+        status:
+          allOf:
+            - $ref: "#/components/schemas/Status"
+            - nullable: false
+        records:
+          format: int32
+          type: integer
+          nullable: false
+        version:
+          format: int32
+          type: integer
