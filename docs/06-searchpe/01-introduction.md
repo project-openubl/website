@@ -6,7 +6,7 @@ keywords:
 slug: /searchpe
 ---
 
-**Searchpe** es un microservicio que consume el `padrón reducido` de la SUNAT, procesa, almacena, y expone su contenido a través de REST endpoints que pueden luego ser consumidos por cualquier persona o software.
+**Searchpe** es un microservicio que consume el `padrón reducido` de la SUNAT, procesa, almacena, y expone su contenido a través de su interfás gráfica y REST endpoints.
 
 ![img](/img/searchpe/searchpe-overview.png "Seachpe overview")
 
@@ -15,6 +15,7 @@ slug: /searchpe
 - Consulta RUC.
 - Consulta DNI.
 - Expose sus datos a travéz de REST endpoints.
+- Puede ser instalado en tus propios servidores.
 
 ## Recursos
 

@@ -6,7 +6,7 @@ La manera más fácil de utilizar Searchpe es usando la consola de administraci�
 
 ## Crear versiones
 
-Searchpe se almacena datos basado en versiones. Una versión representa la operación de descargar y procesar un `Padrón reducido` de la SUNAT.
+Searchpe almacena datos basado en versiones. Una versión representa la operación de descargar y procesar un `Padrón reducido` de la SUNAT.
 
 Para crear una nueva versión haga click en `Nueva versión`. Debes de esperar que la importación de datos termine, el proceso puede durar entre 15 a 30 minutos dependiendo de tu velocidad de internet y procesador.
 
