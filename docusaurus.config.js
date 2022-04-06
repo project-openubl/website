@@ -166,7 +166,7 @@ const config = {
       },
       algolia: {
         appId: "T6D5AOPGJ0",
-        apiKey: "6e010168a70995156309a77c5164c443",
+        apiKey: "eb158900ba04825f922b4c8c934f502b",
         indexName: "project-openubl",
         contextualSearch: false,
       },
