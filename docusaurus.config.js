@@ -43,10 +43,8 @@ const config = {
           trackingID: "UA-152706512-2",
         },
         sitemap: {
-          cacheTime: 600 * 1000, // 600 sec - cache purge period
           changefreq: "weekly",
           priority: 0.5,
-          trailingSlash: false,
         },
       }),
     ],
