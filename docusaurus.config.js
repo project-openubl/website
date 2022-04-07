@@ -15,7 +15,15 @@ const config = {
   favicon: "img/favicon.ico",
   organizationName: "project-openubl", // Usually your GitHub org/user name.
   projectName: "project-openubl.github.io", // Usually your repo name.
-
+  i18n: {
+    defaultLocale: "es",
+    locales: ["es"],
+    localeConfigs: {
+      es: {
+        label: "Español",
+      },
+    },
+  },
   presets: [
     [
       "classic",
