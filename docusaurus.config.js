@@ -105,8 +105,9 @@ const config = {
           },
           {
             href: "https://github.com/project-openubl",
-            label: "GitHub",
             position: "right",
+            className: "header-github-link",
+            "aria-label": "GitHub repository",
           },
         ],
       },
