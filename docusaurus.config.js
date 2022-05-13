@@ -62,7 +62,7 @@ const config = {
         specs: [
           {
             route: "/api/searchpe",
-            spec: "static/openapi/searchpe.yaml",
+            spec: "static/openapi/searchpe/openapi.yaml",
           },
         ],
       },
