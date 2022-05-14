@@ -85,6 +85,7 @@ const config = {
             docId: "introduction",
             label: "Docs",
           },
+          { to: "/apis", label: "API Reference", position: "left" },
           { to: "/blog", label: "Blog", position: "left" },
           {
             href: "https://katacoda.com/openubl",
