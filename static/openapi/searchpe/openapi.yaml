@@ -1,16 +1,22 @@
 ---
 openapi: 3.0.3
 info:
-  title: searchpe API
-  version: 3.0.0.Final
-  x-logo:
-    url: https://raw.githubusercontent.com/project-openubl/searchpe/master/src/main/resources/META-INF/resources/assets/images/logo-2-lines.svg
-    altText: Searchpe logo
+  title: Searchpe API
+  description: Searchpe REST API definitions for you to consume.
+  termsOfService: https://github.com/project-openubl/searchpe/blob/master/CODE_OF_CONDUCT.md
+  contact:
+    name: Searchpe API Support
+    url: https://project-openubl.github.io/
+    email: projectopenubl@googlegroups.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 4.0.0.Beta2
 paths:
   /api/admin/users:
     get:
       tags:
-        - Basic User Resource
+      - Basic User Resource
       summary: Get users
       description: Get users
       responses:
@@ -21,25 +27,28 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/BasicUserRepresentation"
+                  $ref: '#/components/schemas/BasicUserDto'
         "401":
           description: Not Authorized
         "403":
           description: Not Allowed
       security:
-        - SecurityScheme:
-            - admin:app
-            - user:write
+      - SecurityScheme:
+        - admin:app
+        - user:write
+      - SecurityScheme:
+        - admin:app
+        - user:write
     post:
       tags:
-        - Basic User Resource
+      - Basic User Resource
       summary: Create user
       description: Creates a new user
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/BasicUserRepresentation"
+              $ref: '#/components/schemas/BasicUserDto'
       responses:
         "200":
           description: OK
@@ -48,55 +57,61 @@ paths:
         "403":
           description: Not Allowed
       security:
-        - SecurityScheme:
-            - admin:app
-            - user:write
+      - SecurityScheme:
+        - admin:app
+        - user:write
+      - SecurityScheme:
+        - admin:app
+        - user:write
   /api/admin/users/{id}:
     get:
       tags:
-        - Basic User Resource
+      - Basic User Resource
       summary: Get user
       description: Get user
       parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            format: int64
-            type: integer
+      - name: id
+        in: path
+        required: true
+        schema:
+          format: int64
+          type: integer
       responses:
         "200":
           description: OK
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/BasicUserRepresentation"
+                $ref: '#/components/schemas/BasicUserDto'
         "401":
           description: Not Authorized
         "403":
           description: Not Allowed
       security:
-        - SecurityScheme:
-            - admin:app
-            - user:write
+      - SecurityScheme:
+        - admin:app
+        - user:write
+      - SecurityScheme:
+        - admin:app
+        - user:write
     put:
       tags:
-        - Basic User Resource
+      - Basic User Resource
       summary: Update user
       description: Update username or password. It won't update current role
       parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            format: int64
-            type: integer
-            nullable: false
+      - name: id
+        in: path
+        required: true
+        schema:
+          format: int64
+          type: integer
+          nullable: false
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/BasicUserRepresentation"
+              $ref: '#/components/schemas/BasicUserDto'
       responses:
         "200":
           description: OK
@@ -105,22 +120,25 @@ paths:
         "403":
           description: Not Allowed
       security:
-        - SecurityScheme:
-            - admin:app
-            - user:write
+      - SecurityScheme:
+        - admin:app
+        - user:write
+      - SecurityScheme:
+        - admin:app
+        - user:write
     delete:
       tags:
-        - Basic User Resource
+      - Basic User Resource
       summary: Delete user
       description: Delete user
       parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            format: int64
-            type: integer
-            nullable: false
+      - name: id
+        in: path
+        required: true
+        schema:
+          format: int64
+          type: integer
+          nullable: false
       responses:
         "200":
           description: OK
@@ -129,131 +147,141 @@ paths:
         "403":
           description: Not Allowed
       security:
-        - SecurityScheme:
-            - admin:app
-            - user:write
+      - SecurityScheme:
+        - admin:app
+        - user:write
+      - SecurityScheme:
+        - admin:app
+        - user:write
   /api/contribuyentes:
     get:
       tags:
-        - Contribuyente Resource
+      - Contribuyente Resource
       summary: Search contribuyentes
       description: Get contribuyentes in a page
       parameters:
-        - name: filterText
-          in: query
-          schema:
+      - name: filterText
+        in: query
+        schema:
+          type: string
+      - name: limit
+        in: query
+        schema:
+          format: int32
+          default: "10"
+          maximum: 1000
+          type: integer
+      - name: offset
+        in: query
+        schema:
+          format: int32
+          default: "0"
+          maximum: 9000
+          type: integer
+      - name: sort_by
+        in: query
+        schema:
+          type: array
+          items:
             type: string
-        - name: limit
-          in: query
-          schema:
-            format: int32
-            default: "10"
-            maximum: 1000
-            type: integer
-        - name: offset
-          in: query
-          schema:
-            format: int32
-            default: "0"
-            maximum: 9000
-            type: integer
-        - name: sort_by
-          in: query
-          schema:
-            default: name
-            type: array
-            items:
-              type: string
-        - name: tipoContribuyente
-          in: query
-          schema:
-            type: string
+      - name: tipoPersona
+        in: query
+        schema:
+          type: string
       responses:
         "200":
           description: OK
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/PageRepresentationContribuyenteEntity"
+                $ref: '#/components/schemas/SearchResultDtoContribuyenteEntity'
         "401":
           description: Not Authorized
         "403":
           description: Not Allowed
       security:
-        - SecurityScheme:
-            - admin:app
-            - search
+      - SecurityScheme:
+        - admin:app
+        - search
+      - SecurityScheme:
+        - admin:app
+        - search
   /api/contribuyentes/{numeroDocumento}:
     get:
       tags:
-        - Contribuyente Resource
+      - Contribuyente Resource
       summary: Get contribuyente by numeroDocumento
       description: Get contribuyentes by numeroDocumento
       parameters:
-        - name: numeroDocumento
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: numeroDocumento
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         "200":
           description: OK
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ContribuyenteEntity"
+                $ref: '#/components/schemas/ContribuyenteEntity'
         "401":
           description: Not Authorized
         "403":
           description: Not Allowed
       security:
-        - SecurityScheme:
-            - admin:app
-            - search
-  /api/current-user/whoami:
-    get:
+      - SecurityScheme:
+        - admin:app
+        - search
+      - SecurityScheme:
+        - admin:app
+        - search
+  /api/current-user/credentials:
+    post:
       tags:
-        - Current User Resource
+      - Current User Resource
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BasicUserPasswordChangeDto'
       responses:
         "200":
           description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/BasicUserRepresentation"
-  /api/templates/keycloak.json:
-    get:
+  /api/current-user/profile:
+    put:
       tags:
-        - Frontend Resource
+      - Current User Resource
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BasicUserDto'
       responses:
         "200":
           description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/TemplateInstance"
   /api/templates/settings.js:
     get:
       tags:
-        - Frontend Resource
+      - Frontend Resource
       responses:
         "200":
           description: OK
           content:
             text/javascript:
               schema:
-                $ref: "#/components/schemas/TemplateInstance"
+                $ref: '#/components/schemas/TemplateInstance'
   /api/versions:
     get:
       tags:
-        - Version Resource
+      - Version Resource
       summary: Get versions
       description: Get all versions available
       parameters:
-        - name: active
-          in: query
-          schema:
-            type: boolean
+      - name: active
+        in: query
+        schema:
+          type: boolean
       responses:
         "200":
           description: OK
@@ -262,18 +290,21 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/VersionEntity"
+                  $ref: '#/components/schemas/VersionDto'
         "401":
           description: Not Authorized
         "403":
           description: Not Allowed
       security:
-        - SecurityScheme:
-            - admin:app
-            - version:write
+      - SecurityScheme:
+        - admin:app
+        - version:write
+      - SecurityScheme:
+        - admin:app
+        - version:write
     post:
       tags:
-        - Version Resource
+      - Version Resource
       summary: Create version
       description: Creates a new version and fires the importing process
       responses:
@@ -282,55 +313,66 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/VersionEntity"
+                $ref: '#/components/schemas/VersionDto'
         "401":
           description: Not Authorized
         "403":
           description: Not Allowed
       security:
-        - SecurityScheme:
-            - admin:app
-            - version:write
+      - SecurityScheme:
+        - admin:app
+        - version:write
+      - SecurityScheme:
+        - admin:app
+        - version:write
   /api/versions/{id}:
     get:
       tags:
-        - Version Resource
+      - Version Resource
       summary: Get version
       description: Get version by id
       parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            format: int64
-            type: integer
+      - name: id
+        in: path
+        required: true
+        schema:
+          format: int64
+          type: integer
       responses:
         "200":
           description: OK
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/VersionEntity"
+                $ref: '#/components/schemas/VersionDto'
         "401":
           description: Not Authorized
         "403":
           description: Not Allowed
       security:
-        - SecurityScheme:
-            - admin:app
-            - version:write
-    delete:
+      - SecurityScheme:
+        - admin:app
+        - version:write
+      - SecurityScheme:
+        - admin:app
+        - version:write
+    put:
       tags:
-        - Version Resource
-      summary: Delete version
-      description: Delete version by id
+      - Version Resource
+      summary: Update version
+      description: Update version status
       parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            format: int64
-            type: integer
+      - name: id
+        in: path
+        required: true
+        schema:
+          format: int64
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VersionEntity'
       responses:
         "204":
           description: No Content
@@ -339,16 +381,56 @@ paths:
         "403":
           description: Not Allowed
       security:
-        - SecurityScheme:
-            - admin:app
-            - version:write
+      - SecurityScheme:
+        - admin:app
+        - version:write
+      - SecurityScheme:
+        - admin:app
+        - version:write
+    delete:
+      tags:
+      - Version Resource
+      summary: Delete version
+      description: Delete version by id
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          format: int64
+          type: integer
+      responses:
+        "204":
+          description: No Content
+        "401":
+          description: Not Authorized
+        "403":
+          description: Not Allowed
+      security:
+      - SecurityScheme:
+        - admin:app
+        - version:write
+      - SecurityScheme:
+        - admin:app
+        - version:write
+  /api/whoami:
+    get:
+      tags:
+      - Who Am I Resource
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BasicUserDto'
 components:
   schemas:
-    BasicUserRepresentation:
+    BasicUserDto:
       required:
-        - username
-        - password
-        - permissions
+      - username
+      - password
+      - permissions
       type: object
       properties:
         id:
@@ -372,17 +454,35 @@ components:
           type: array
           items:
             type: string
-    ContribuyenteEntity:
-      required:
-        - tipoPersona
-        - nombre
+    BasicUserPasswordChangeDto:
       type: object
       properties:
-        tipoPersona:
-          allOf:
-            - $ref: "#/components/schemas/TipoPersona"
-            - nullable: false
-        numeroDocumento:
+        newPassword:
+          type: string
+    Charset:
+      type: object
+      properties:
+        name:
+          type: string
+        aliases:
+          type: array
+          items:
+            type: string
+        aliasSet:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+        registered:
+          type: boolean
+    ContribuyenteEntity:
+      required:
+      - nombre
+      type: object
+      properties:
+        ruc:
+          type: string
+        dni:
           type: string
         nombre:
           type: string
@@ -413,6 +513,65 @@ components:
           type: string
         kilometro:
           type: string
+    Expression:
+      type: object
+      properties:
+        namespace:
+          type: string
+        parts:
+          type: array
+          items:
+            $ref: '#/components/schemas/Part'
+        literal:
+          type: boolean
+        literalValue:
+          type: object
+        origin:
+          $ref: '#/components/schemas/Origin'
+        generatedId:
+          format: int32
+          type: integer
+    Locale:
+      type: object
+      properties:
+        language:
+          type: string
+        script:
+          type: string
+        country:
+          type: string
+        variant:
+          type: string
+        extensionKeys:
+          uniqueItems: true
+          type: array
+          items:
+            format: byte
+            type: string
+        unicodeLocaleAttributes:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+        unicodeLocaleKeys:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+        iSO3Language:
+          type: string
+        iSO3Country:
+          type: string
+        displayLanguage:
+          type: string
+        displayScript:
+          type: string
+        displayCountry:
+          type: string
+        displayVariant:
+          type: string
+        displayName:
+          type: string
     Meta:
       type: object
       properties:
@@ -425,38 +584,122 @@ components:
         count:
           format: int64
           type: integer
-    PageRepresentationContribuyenteEntity:
+    Origin:
+      type: object
+      properties:
+        line:
+          format: int32
+          type: integer
+        lineCharacterStart:
+          format: int32
+          type: integer
+        lineCharacterEnd:
+          format: int32
+          type: integer
+        templateId:
+          type: string
+        templateGeneratedId:
+          type: string
+        variant:
+          allOf:
+          - $ref: '#/components/schemas/Variant'
+          - nullable: true
+    Part:
+      type: object
+      properties:
+        name:
+          type: string
+        typeInfo:
+          type: string
+        virtualMethod:
+          type: boolean
+    SearchResultDtoContribuyenteEntity:
       type: object
       properties:
         meta:
-          $ref: "#/components/schemas/Meta"
+          $ref: '#/components/schemas/Meta'
         data:
           type: array
           items:
-            $ref: "#/components/schemas/ContribuyenteEntity"
+            $ref: '#/components/schemas/ContribuyenteEntity'
     Status:
       enum:
-        - COMPLETED
-        - DELETING
-        - DOWNLOADING
-        - ERROR
-        - IMPORTING
-        - SCHEDULED
-        - UNZIPPING
+      - SCHEDULED
+      - DOWNLOADING
+      - UNZIPPING
+      - IMPORTING
+      - ERROR
+      - CANCELLED
+      - COMPLETED
+      - DELETING
+      - CANCELLING
       type: string
+    Template:
+      type: object
+      properties:
+        expressions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Expression'
+        generatedId:
+          type: string
+        id:
+          type: string
+        variant:
+          allOf:
+          - $ref: '#/components/schemas/Variant'
+          - nullable: true
     TemplateInstance:
       type: object
-    TipoPersona:
-      enum:
-        - JURIDICA
-        - NATURAL
-      type: string
+      properties:
+        timeout:
+          format: int64
+          type: integer
+        template:
+          $ref: '#/components/schemas/Template'
+    Variant:
+      type: object
+      properties:
+        locale:
+          $ref: '#/components/schemas/Locale'
+        contentType:
+          type: string
+        encoding:
+          $ref: '#/components/schemas/Charset'
+        hashCode:
+          format: int32
+          type: integer
+        mediaType:
+          type: string
+        charset:
+          $ref: '#/components/schemas/Charset'
+    VersionDto:
+      type: object
+      properties:
+        id:
+          format: int64
+          type: integer
+        createdAt:
+          format: date
+          type: string
+        updatedAt:
+          format: date
+          type: string
+        status:
+          $ref: '#/components/schemas/Status'
+        records:
+          format: int32
+          type: integer
+        isActive:
+          type: boolean
+        active:
+          type: boolean
     VersionEntity:
       required:
-        - createdAt
-        - updatedAt
-        - status
-        - records
+      - createdAt
+      - updatedAt
+      - status
+      - records
       type: object
       properties:
         id:
@@ -472,12 +715,14 @@ components:
           nullable: false
         status:
           allOf:
-            - $ref: "#/components/schemas/Status"
-            - nullable: false
+          - $ref: '#/components/schemas/Status'
+          - nullable: false
         records:
           format: int32
           type: integer
           nullable: false
+        triggerKey:
+          type: string
         version:
           format: int32
           type: integer
