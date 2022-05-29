@@ -2,15 +2,15 @@
 title: Inicio rápido
 ---
 
-:::caution No recomendado para producción
-Los laboratorios están diseñados para experimentación.
+:::caution Laboratorios
+Los laboratorios están hechos para que usted aprenda a usar Searchpe sin dificultad. Recuerde que la configuración no necesariamente es la adecuada para entornos de producción.
 :::
 
 ## Laboratorio online
 
-Experimenta con Searchpe utilizando un laboratorio virtual:
+La manera más sencilla de experimentar con Searchpe es utilizando nuestros laboratorios virtuales disponibles en [Katakoda](https://katacoda.com/openubl/courses)
 
-- [Searchpe quickstart](https://katacoda.com/openubl/courses/searchpe3/quickstart)
+[![Katakoda](https://shields.katacoda.com/katacoda/openubl/count.svg)](https://katacoda.com/openubl/)
 
 ## Laboratorio local
 

@@ -6,16 +6,18 @@ keywords:
 slug: /searchpe
 ---
 
-**Searchpe** es un microservicio que consume el `padrón reducido` de la SUNAT, procesa, almacena, y expone su contenido a través de su interfás gráfica y REST endpoints.
-
-![img](/img/searchpe/searchpe-overview.png "Seachpe overview")
+**Searchpe** es un microservicio que procesa, almacena, y expone el contenido del [Padrón reducido RUC](https://www.sunat.gob.pe/descargaPRR/mrc137_padron_reducido.html) a través de su interfás gráfica (UI) y servicios REST.
 
 ## Características
 
-- Consulta RUC.
-- Consulta DNI.
-- Expose sus datos a travéz de REST endpoints.
-- Puede ser instalado en tus propios servidores.
+- [x] Consulta RUC
+- [x] Consulta DNI
+- [x] Administración de usuarios
+- [x] Integración con OIDC (OpenID Connect). Por ejemplo: [Keycloak](https://www.keycloak.org/), [GitHub](https://github.com/), [Google](https://console.cloud.google.com/), [Microsoft](https://portal.azure.com/), [Facebook](https://developers.facebook.com/), [Twitter](https://developer.twitter.com/), etc.
+
+## Arquitectura
+
+![img](/img/searchpe/searchpe-overview.png "Seachpe overview")
 
 ## Recursos
 
