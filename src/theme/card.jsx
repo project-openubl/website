@@ -38,7 +38,7 @@ export default function Card ({
     return (
         <div className="avatar teamProfile">
             <img
-                className="avatar__photo avatar__photo--lg"
+                className="avatar__photo avatar__photo--xl"
                 src={ avatar }
             />
             <div className="avatar__intro">
