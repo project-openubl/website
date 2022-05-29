@@ -73,8 +73,8 @@
 
 .avatar__photo {
   border-radius: 50%;
-  height: var(--ifm-avatar-photo-size-md);
-  width: var(--ifm-avatar-photo-size-md);
+  height: var(--ifm-avatar-photo-size);
+  width: var(--ifm-avatar-photo-size);
 }
 
 .avatar__photo--lg {
