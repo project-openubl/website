@@ -2,15 +2,19 @@
 title: Inicio rápido
 ---
 
-:::caution No recomendado para producción
-Los laboratorios están diseñados para experimentación.
+:::caution Laboratorios
+Los laboratorios están hechos para que usted aprenda a usar Searchpe sin dificultad. Recuerde que la configuración no necesariamente es la adecuada para entornos de producción.
 :::
 
 ## Laboratorio online
 
-Experimenta con Searchpe utilizando un laboratorio virtual:
+[![Katakoda](https://shields.katacoda.com/katacoda/openubl/count.svg)](https://katacoda.com/openubl/)
 
-- [Searchpe quickstart](https://katacoda.com/openubl/courses/searchpe3/quickstart)
+La manera más sencilla de experimentar con Searchpe es utilizando nuestros laboratorios virtuales disponibles en [Katakoda](https://katacoda.com/openubl/courses)
+
+![img](/img/katacoda-logo.png "Katakoda")
+
+Para ver los laboratorios disponibles haga click [aquí](https://katacoda.com/openubl/courses).
 
 ## Laboratorio local
 
@@ -30,7 +34,7 @@ version: "3"
 
 services:
   postgresql:
-    image: postgres:13.1
+    image: postgres:13.6
     ports:
       - 5432:5432
     environment:
