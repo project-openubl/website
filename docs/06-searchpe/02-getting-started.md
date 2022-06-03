@@ -8,9 +8,13 @@ Los laboratorios están hechos para que usted aprenda a usar Searchpe sin dificu
 
 ## Laboratorio online
 
+[![Katakoda](https://shields.katacoda.com/katacoda/openubl/count.svg)](https://katacoda.com/openubl/)
+
 La manera más sencilla de experimentar con Searchpe es utilizando nuestros laboratorios virtuales disponibles en [Katakoda](https://katacoda.com/openubl/courses)
 
-[![Katakoda](https://shields.katacoda.com/katacoda/openubl/count.svg)](https://katacoda.com/openubl/)
+![img](/img/katacoda-logo.png "Katakoda")
+
+Para ver los laboratorios disponibles haga click [aquí](https://katacoda.com/openubl/courses).
 
 ## Laboratorio local
 
@@ -30,7 +34,7 @@ version: "3"
 
 services:
   postgresql:
-    image: postgres:13.1
+    image: postgres:13.6
     ports:
       - 5432:5432
     environment:

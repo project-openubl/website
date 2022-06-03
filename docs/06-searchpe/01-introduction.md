@@ -18,7 +18,3 @@ slug: /searchpe
 ## Arquitectura
 
 ![img](/img/searchpe/searchpe-overview.png "Seachpe overview")
-
-## Recursos
-
-- [Videos](https://www.youtube.com/playlist?list=PLnRgWcnYy6sbngfRRE6tZZEp1cSuu7AeV)
