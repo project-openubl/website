@@ -13,7 +13,7 @@ slug: /searchpe
 - [x] Consulta RUC
 - [x] Consulta DNI
 - [x] Administración de usuarios
-- [x] Integración con OIDC (OpenID Connect). Por ejemplo: [Keycloak](https://www.keycloak.org/), [GitHub](https://github.com/), [Google](https://console.cloud.google.com/), [Microsoft](https://portal.azure.com/), [Facebook](https://developers.facebook.com/), [Twitter](https://developer.twitter.com/), etc.
+- [x] Integración con OIDC (OpenID Connect). Por ejemplo: [Keycloak](https://www.keycloak.org/)
 
 ## Arquitectura
 
