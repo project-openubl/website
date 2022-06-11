@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: `Project OpenUBL Community`,
@@ -167,6 +171,16 @@ module.exports = {
         },
         // Optional filter to limit indexed nodes
         filter: (node, getNode) => node.frontmatter.hidefromsearch !== true,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-algolia",
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.GATSBY_ALGOLIA_ADMIN_KEY,
+        indexName: "project-openubl",
+        queries: require("./src/utils/algolia"),
+        chunkSize: 10000,
       },
     },
   ],

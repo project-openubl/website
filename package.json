@@ -20,8 +20,10 @@
     "@heroicons/react": "^1.0.6",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "algoliasearch": "^4.13.1",
     "gatsby": "^4.16.0",
     "gatsby-awesome-pagination": "^0.3.8",
+    "gatsby-plugin-algolia": "^0.26.0",
     "gatsby-plugin-catch-links": "^4.16.0",
     "gatsby-plugin-google-analytics": "^4.16.0",
     "gatsby-plugin-image": "^2.16.1",
@@ -40,6 +42,7 @@
     "react-dom": "^18.1.0",
     "react-feather": "^2.0.10",
     "react-helmet": "^6.1.0",
+    "react-instantsearch-hooks-web": "^6.27.0",
     "react-responsive": "^9.0.0-beta.10"
   },
   "devDependencies": {
