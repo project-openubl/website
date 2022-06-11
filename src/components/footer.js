@@ -16,7 +16,11 @@ export const Footer = () => {
   return (
     <footer className="text-gray-500 bg-transparent px-4 py-5 max-w-screen-xl mx-auto">
       <div className="max-w-lg sm:mx-auto sm:text-center">
-        <StaticImage src="../images/icon.png" className="w-32 sm:mx-auto" />
+        <StaticImage
+          src="../images/icon.png"
+          className="w-32 sm:mx-auto"
+          alt="=Logo"
+        />
         <p className="leading-relaxed mt-2 text-[15px]">
           "El conocimiento debe de ser compartido y nada mejor que una comunidad
           Open Source para hacerlo."
@@ -24,8 +28,8 @@ export const Footer = () => {
       </div>
       <ul className="items-center justify-center mt-8 space-y-5 sm:flex sm:space-x-4 sm:space-y-0">
         {footerNavs.map((item, idx) => (
-          <li className=" hover:text-gray-800">
-            <a key={idx} href={item.href}>
+          <li key={idx} className=" hover:text-gray-800">
+            <a href={item.href}>
               {item.name}
             </a>
           </li>
@@ -80,11 +84,15 @@ export const Footer = () => {
 
             <li className="w-10 h-10 border rounded-full flex items-center justify-center">
               <a href="https://projectopenubl.zulipchat.com/">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                  height="24" viewBox="0 0 773 773">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 773 773"
+                >
                   <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0" stop-color="#50adff" />
-                    <stop offset="1" stop-color="#7877fc" />
+                    <stop offset="0" stopColor="#50adff" />
+                    <stop offset="1" stopColor="#7877fc" />
                   </linearGradient>
                   <rect width="100%" height="100%" fill="url(#gradient)" />
                   <path
@@ -97,7 +105,7 @@ export const Footer = () => {
           </ul>
         </div>
       </div>
-      <style jsx>{`
+      <style jsx="true">{`
         .svg-icon path,
         .svg-icon polygon,
         .svg-icon rect {

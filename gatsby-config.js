@@ -31,7 +31,7 @@ module.exports = {
       },
       {
         platform: "twitter",
-        url: "https://twitter.com/windup",
+        url: "https://twitter.com/openubl",
         title: "Conéctate con nosotros en Twitter",
       },
     ],
@@ -88,7 +88,6 @@ module.exports = {
         display: "minimal-ui",
       },
     },
-    "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
@@ -144,8 +143,8 @@ module.exports = {
     "gatsby-plugin-catch-links",
     {
       resolve: "gatsby-plugin-mdx",
-      options: {
-        extensioextensions: [`.md`, `.mdx`],
+      options: {        
+        extensions: [`.mdx`, `.md`],
         defaultLayouts: {
           pages: require.resolve("./src/templates/page.js"),
         },
