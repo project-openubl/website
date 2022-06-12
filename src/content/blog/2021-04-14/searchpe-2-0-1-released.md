@@ -1,10 +1,9 @@
 ---
 title: Searchpe 2.0.1
+date: 2021-04-14T07:00:00Z
 author: carlosthe19916
-author_title: Core Team
-author_url: https://github.com/carlosthe19916
-author_image_url: https://avatars3.githubusercontent.com/u/2582866?s=460&u=8567bb6bedfdc35830b70ce661e3c93cf3edd68a&v=4
-tags: [searchpe]
+tags:
+  - searchpe
 ---
 
 ¡Searchpe 2.0.1 fue lanzado!

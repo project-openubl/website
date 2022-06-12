@@ -1,9 +1,12 @@
 import React from "react";
+import ReactDOMServer from "react-dom/server";
 import { graphql, useStaticQuery } from "gatsby";
-import { MDXProvider } from '@mdx-js/react'
+import { MDXProvider } from "@mdx-js/react";
+import he from "he";
 import { Banner } from "../components/banner";
 import { Header } from "../components/header";
 import { Footer } from "../components/footer";
+import CopyCodeButton from "../components/copycodebutton";
 
 const components = {
   wrapper: ({ children }) => <article>{children}</article>,
@@ -42,12 +45,7 @@ const components = {
   ),
   img: (props) => <img className="my-12" {...props} />,
   hr: (props) => <ol className="mt-3 mb-6 border-base-400 border" {...props} />,
-  // code: props => <Code {...props} />, can use react components to map to mdx
   ul: (props) => <ul className="mb-4 list-disc ml-4" {...props} />,
-  //   <UnorderedList {...props}>
-  //     <ListItem {...props} />
-  //   </UnorderedList>
-  // ),
   ol: (props) => (
     <ol className="mb-4 list-decimal list-inside leading-loose" {...props} />
   ),
@@ -64,22 +62,21 @@ const components = {
       {...props}
     />
   ),
-  //code: (props) => <code className="bg-base-300" {...props} />,
-  // pre: (props) => (
-  //   <div className="relative my-6">
-  //     <CopyCodeButton
-  //       content={he.decode(
-  //         ReactDOMServer.renderToString(props.children.props.children).replace(
-  //           /(<(span|pre|code|div) class=.+?">)|(<\/(span|pre|code|div)>)/g,
-  //           ""
-  //         )
-  //       )}
-  //     />
-  //     <pre {...props} />
-  //   </div>
-  // ),
+  code: (props) => <code className="bg-base-300" {...props} />,
+  pre: (props) => (
+    <div className="relative my-6">
+      <CopyCodeButton
+        content={he.decode(
+          ReactDOMServer.renderToString(props.children.props.children).replace(
+            /(<(span|pre|code|div) class=.+?">)|(<\/(span|pre|code|div)>)/g,
+            ""
+          )
+        )}
+      />
+      <pre {...props} />
+    </div>
+  ),
 };
-//       <CopyCodeButton content="This is the code." />
 
 export default function Layout({ children }) {
   const data = useStaticQuery(graphql`

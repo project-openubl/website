@@ -1,9 +1,8 @@
 ---
 title: Searchpe 4.0.0 released!
-description: 4.0.0 es el último release.
-date: 2022-06-03
+date: 2022-06-03T07:00:00Z
 authors: [carlosthe19916]
-tags: [searchpe, release]
+tags: [searchpe]
 ---
 
 Acabamos de lanzar Searchpe 4.0.0 con un conjunto de nuevas funcionalidades, corrección de errores, y mejor documentación.

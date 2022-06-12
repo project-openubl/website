@@ -1,11 +1,11 @@
 ---
-slug: project-openubl
-title: Project OpenUBL
+title: ¿Qué es Project OpenUBL?
+date: 2019-12-09T00:00:00Z
+description: Project OpenUBL es un proyecto Open Source que incluye un conjunto de herramientas, librerias, microservicios asociados a la Facturación Electrónica en el Perú.
 author: carlosthe19916
-author_title: Core Team
-author_url: https://github.com/carlosthe19916
-author_image_url: https://avatars3.githubusercontent.com/u/2582866?s=460&u=8567bb6bedfdc35830b70ce661e3c93cf3edd68a&v=4
-tags: [project]
+tags:
+  - openubl
+featured: true
 ---
 
 ## ¿Qué es Project OpenUBL?

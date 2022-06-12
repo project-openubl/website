@@ -8,7 +8,7 @@ const title = "Project OpenUBL Blog";
 
 const BlogIndex = ({ data, pageContext }) => {
   const posts = data.allMdx.nodes;
-  
+
   return (
     <div className="max-w-screen-xl page-wrapper">
       <h1 className="sr-only">{title}</h1>
