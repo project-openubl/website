@@ -13,7 +13,7 @@ export const Header = () => {
     { title: "API Reference", path: "/apis" },
     { title: "Blog", path: "/blog" },
     { title: "Training", path: "https://katacoda.com/openubl" },
-    { title: "Community", path: "/community" },
+    { title: "Downloads", path: "/downloads" },
   ];
 
   return (
