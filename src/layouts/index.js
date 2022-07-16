@@ -3,6 +3,7 @@ import ReactDOMServer from "react-dom/server";
 import { graphql, useStaticQuery } from "gatsby";
 import { MDXProvider } from "@mdx-js/react";
 import he from "he";
+
 import { Banner } from "../components/banner";
 import { Header } from "../components/header";
 import { Footer } from "../components/footer";
@@ -95,7 +96,7 @@ export default function Layout({ children }) {
   `);
 
   return (
-    <div className="bg-gray-50 flex flex-col min-h-screen">
+    <div className="bg-white dark:bg-gray-800 flex flex-col min-h-screen">
       <Banner {...data.site.siteMetadata.news} />
       <Header />
       <div className="flex-grow">

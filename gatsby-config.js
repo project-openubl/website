@@ -1,8 +1,14 @@
+const buildEnv = process.env.GATSBY_BUILD_ENV
+  ? process.env.GATSBY_BUILD_ENV
+  : process.env.NODE_ENV;
+const pathPrefix = process.env.GATSBY_PATH_PREFIX;
+
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
 module.exports = {
+  pathPrefix: pathPrefix,
   siteMetadata: {
     title: `Project OpenUBL Community`,
     siteUrl: `https://project-openubl.github.io`,
@@ -79,13 +85,13 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/icon.png",
         name: "Project OpenUBL Community",
         short_name: "OpenUBL",
         start_url: "/",
         background_color: "#fff",
         theme_color: "#fff",
         display: "minimal-ui",
+        icon: "src/images/icon.png",
       },
     },
     "gatsby-plugin-sharp",
@@ -113,6 +119,14 @@ module.exports = {
         path: `${__dirname}/src/content/blog`,
       },
       __key: "blog",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "openapi",
+        path: `${__dirname}/src/openapi`,
+      },
+      __key: "openapi",
     },
     "gatsby-plugin-postcss",
     "gatsby-plugin-svgr",
@@ -143,7 +157,7 @@ module.exports = {
     "gatsby-plugin-catch-links",
     {
       resolve: "gatsby-plugin-mdx",
-      options: {        
+      options: {
         extensions: [`.mdx`, `.md`],
         defaultLayouts: {
           pages: require.resolve("./src/templates/page.js"),

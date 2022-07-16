@@ -14,7 +14,7 @@ export const Footer = () => {
   ];
 
   return (
-    <div>
+    <div className="border-t">
       <footer className="text-gray-500 bg-transparent px-4 py-5 max-w-screen-xl mx-auto">
         <div className="max-w-lg sm:mx-auto sm:text-center">
           <StaticImage
@@ -41,7 +41,7 @@ export const Footer = () => {
           <div className="mt-6 sm:mt-0">
             <ul className="flex items-center space-x-4">
               <li className="w-10 h-10 border rounded-full flex items-center justify-center">
-                <a href="https://twitter.com/windup">
+                <a href="https://twitter.com/openubl">
                   <svg
                     className="svg-icon w-6 h-6 text-blue-400"
                     viewBox="0 0 20 20"

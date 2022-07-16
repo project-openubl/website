@@ -1,5 +1,4 @@
 const path = require("path");
-const fse = require("fs-extra");
 const { paginate } = require("gatsby-awesome-pagination");
 const _ = require("lodash");
 

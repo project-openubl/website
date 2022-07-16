@@ -45,7 +45,8 @@
     "react-helmet": "^6.1.0",
     "react-instantsearch-hooks-web": "^6.27.0",
     "react-responsive": "^9.0.0-beta.10",
-    "react-share": "^4.4.0"
+    "react-share": "^4.4.0",
+    "swagger-ui-react": "^4.12.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.7",

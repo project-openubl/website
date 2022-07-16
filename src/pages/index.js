@@ -1,17 +1,17 @@
 import * as React from "react";
 import { graphql, Link } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 
 import { ReactComponent as XBuilderBanner } from "../images/xbuilder-logo.svg";
 import { ReactComponent as XSenderBanner } from "../images/xsender-logo.svg";
 import { ReactComponent as SearchpeBanner } from "../images/searchpe-logo.svg";
-import { StaticImage } from "gatsby-plugin-image";
 
 const IndexPage = ({ data }) => {
   const zulip = data.site.siteMetadata.socialMedia.find(
     (e) => e.platform === "zulip"
   );
 
-  const posts = [
+  const products = [
     {
       title: "XBuilder",
       desc: "Crea y firma electrónicamente archivos XMLs basados en UBL y los estándares de la SUNAT. Soporte para boletas, facturas, notas de crédito, notas de débito, etc.",
@@ -82,7 +82,7 @@ const IndexPage = ({ data }) => {
             </p>
           </div>
           <div className="mt-12 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-            {posts.map(({ title, desc, href, Icon }, key) => (
+            {products.map(({ title, desc, href, Icon }, key) => (
               <article
                 className="max-w-md mx-auto mt-4 shadow-lg border rounded-md duration-300 hover:shadow-sm"
                 key={key}
