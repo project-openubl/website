@@ -1,0 +1,83 @@
+---
+title: XBuilder 1.1.9.Final
+date: 2021-04-06T07:00:00Z
+author: carlosthe19916
+tags: [xbuilder]
+---
+
+¡XBuilder 1.1.9.Final fue lanzado!
+
+- Esta versión exige cero cambios en tu software.
+- Si tienes el código de error `El XML no contiene el tag o no existe información del código de local anexo del emisor` entonces esta es una actualización recomendada para ti.
+
+## ¿Qué incluye esta versión?
+
+- Si el usuario no define el **Código del domicilio fiscal o de local anexo del emisor** entonces XBuilder utilizará por defecto el código `0000` tal y como se especifica en las nuevas reglas de validación de la SUNAT.
+- Si el usuario no quiere usar el código por defecto `0000` entonces este puede definir su valor al crear el XML.
+
+<!--truncate-->
+
+### Error a resolver
+
+`3030 - El XML no contiene el tag o no existe información del código de local anexo del emisor.`
+
+### Definición del XML afectado
+
+```xml
+<cac:AccountingSupplierParty>
+    <cac:Party>
+        <cac:PartyLegalEntity>
+            <cac:RegistrationAddress>
+                <cbc:AddressTypeCode>0000</cbc:AddressTypeCode>
+            </cac:RegistrationAddress>
+        </cac:PartyLegalEntity>
+    </cac:Party>
+</cac:AccountingSupplierParty>
+```
+
+### Validación SUNAT
+
+| Si Serie del documento no inicia con número, no existe el Tag UBL o es vacío                                                                              | ERROR  | 3030 | El XML no contiene el tag o no existe información del código de local anexo del emisor |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | ---- | -------------------------------------------------------------------------------------- |
+| Si Serie del documento inicia con número, no existe el Tag UBL o es vacío                                                                                 | OBSERV | 4198 | El XML no contiene el tag o no existe información del código de local anexo del emisor |
+| Si Serie del documento no inicia con número y el Tag UBL es diferente de '0000', el valor del Tag UBL no está en el listado                               | ERROR  | 3239 | El código de local anexo consignado no se encuentra declarado en el RUC                |
+| Si el Tag UBL existe y es diferente de vacío y es diferente de '0000' y Serie del documento inicia con número, el valor del Tag UBL no está en el listado | OBSERV | 4199 | El código de local anexo consignado no se encuentra declarado en el RUC                |
+| Si el Tag UBL existe y es diferente de vacío, el valor del Tag es diferente a numérico de 4 dígitos.                                                      | OBSERV | 4242 | El dato ingresado como local anexo no cumple con el formato establecido                |
+
+## ¿Cómo defino mi código de local si no quiero usar el valor por defecto `0000`?
+
+El código `0000` será usado solamente si el usuario no define su valor; si quieres usar un valor definido por ti entonces puedes usar:
+
+```java {8}
+InvoiceInputModel input = InvoiceInputModel.Builder.anInvoiceInputModel()
+        .withSerie("F001")
+        .withNumero(1)
+        .withProveedor(ProveedorInputModel.Builder.aProveedorInputModel()
+                .withRuc("12345678912")
+                .withRazonSocial("Project OpenUBL S.A.C.")
+                .withDireccion(DireccionInputModel.Builder.aDireccionInputModel()
+                        .withCodigoLocal("1234")
+                        .build()
+                )
+                .build()
+        )
+        .withCliente(ClienteInputModel.Builder.aClienteInputModel()
+                .withNombre("Carlos Feria")
+                .withNumeroDocumentoIdentidad("12121212121")
+                .withTipoDocumentoIdentidad(Catalog6.RUC.toString())
+                .build()
+        )
+        .withDetalle(Arrays.asList(
+                DocumentLineInputModel.Builder.aDocumentLineInputModel()
+                        .withDescripcion("Item1")
+                        .withCantidad(new BigDecimal(10))
+                        .withPrecioUnitario(new BigDecimal(100))
+                        .build(),
+                DocumentLineInputModel.Builder.aDocumentLineInputModel()
+                        .withDescripcion("Item2")
+                        .withCantidad(new BigDecimal(10))
+                        .withPrecioUnitario(new BigDecimal(100))
+                        .build())
+        )
+        .build();
+```

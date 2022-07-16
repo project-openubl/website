@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.skip-to-content {
+  @apply absolute opacity-0 pointer-events-none -top-10 left-1/2 transform -translate-x-1/2 z-50 rounded-b-lg border-2 border-t-0 p-2;
+}
+
+.page-wrapper {
+  @apply px-4 md:px-6 mx-auto max-w-[1440px];
+}
