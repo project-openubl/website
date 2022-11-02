@@ -22,7 +22,7 @@ module.exports = {
         "!Buenas noticias! Estamos felices de anunciar nuestra nueva página web.",
       shortTitle: "!Tenemos página web nueva!",
       linkTitle: "Conoce más",
-      linkURL: "https://github.com/project-openubl/searchpe",
+      linkURL: "https://project-openubl.github.io//blog",
     },
     socialMedia: [
       {

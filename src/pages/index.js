@@ -2,9 +2,10 @@ import * as React from "react";
 import { graphql, Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
-import { ReactComponent as XBuilderBanner } from "../images/xbuilder-logo.svg";
-import { ReactComponent as XSenderBanner } from "../images/xsender-logo.svg";
-import { ReactComponent as SearchpeBanner } from "../images/searchpe-logo.svg";
+import { ReactComponent as XBuilderBanner } from "../images/xbuilder-banner.svg";
+import { ReactComponent as XSenderBanner } from "../images/xsender-banner.svg";
+import { ReactComponent as SearchpeBanner } from "../images/searchpe-banner.svg";
+import { ReactComponent as UblhubBanner } from "../images/ublhub-banner.svg";
 
 const IndexPage = ({ data }) => {
   const zulip = data.site.siteMetadata.socialMedia.find(
@@ -29,6 +30,12 @@ const IndexPage = ({ data }) => {
       desc: "Consulta el DNI o RUC de cualquier persona natural o jurídica registrada en el territorio peruano. La información es obtenida del padrón reducido de la SUNAT.",
       Icon: SearchpeBanner,
       href: "/docs/searchpe",
+    },    
+    {
+      title: "Ublhub",
+      desc: "Admnistra tus archivos XML. Crea, envia y almacena tus comprobantes electronicos y decláralos a la SUNAT.",
+      Icon: UblhubBanner,
+      href: "/docs/ublhub",
     },
   ];
 

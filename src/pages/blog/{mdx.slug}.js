@@ -9,7 +9,7 @@ import ShareButtons from "../../components/sharebuttons";
 export default function PostPage({ data, ...props }) {
   const {
     body,
-    frontmatter: { title, date, description, image, tags },
+    frontmatter: { title, date, image, tags },
   } = data.mdx;
   const url = props.location.href;
 

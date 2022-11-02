@@ -1,10 +1,7 @@
 import * as React from "react";
-import { graphql, Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
 
-import { ReactComponent as XBuilderBanner } from "../images/xbuilder-logo.svg";
-import { ReactComponent as XSenderBanner } from "../images/xsender-logo.svg";
 import { ReactComponent as SearchpeBanner } from "../images/searchpe-logo.svg";
+import { ReactComponent as UblhubBanner } from "../images/ublhub-logo.svg";
 
 import SwaggerUI from "swagger-ui-react";
 import "swagger-ui-react/swagger-ui.css";
@@ -18,6 +15,12 @@ const ApisPage = () => {
       desc: "Consulta el DNI o RUC de cualquier persona natural o jurídica registrada en el territorio peruano. La información es obtenida del padrón reducido de la SUNAT.",
       Icon: SearchpeBanner,
       schema: require("../openapi/searchpe/openapi.yaml"),
+    },
+    {
+      title: "Ublhub",
+      desc: "Admnistra tus archivos XML. Crea, envia y almacena tus comprobantes electronicos y decláralos a la SUNAT.",
+      Icon: UblhubBanner,
+      schema: require("../openapi/ublhub/openapi.yaml"),
     },
   ];
 
