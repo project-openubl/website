@@ -11,7 +11,7 @@ info:
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
-  version: 4.0.2
+  version: 4.1.0
 servers:
 - url: http://localhost:8080
   description: Auto generated value
@@ -699,6 +699,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ParameterDeclaration'
+        fragment:
+          type: boolean
     TemplateInstance:
       type: object
       properties:
