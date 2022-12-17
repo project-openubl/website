@@ -1,8 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require("prism-react-renderer/themes/palenight");
-const darkCodeTheme = require("prism-react-renderer/themes/nightOwl");
+const lightCodeTheme = require("prism-react-renderer/themes/github");
+const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -13,17 +13,20 @@ const config = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
+
+  // GitHub pages deployment config.
+  // If you aren't using GitHub pages, you don't need these.
   organizationName: "project-openubl", // Usually your GitHub org/user name.
   projectName: "project-openubl.github.io", // Usually your repo name.
+
+  // Even if you don't use internalization, you can use this field to set useful
+  // metadata like html lang. For example, if your site is Chinese, you may want
+  // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: "es",
-    locales: ["es"],
-    localeConfigs: {
-      es: {
-        label: "Español",
-      },
-    },
+    defaultLocale: "en",
+    locales: ["en"],
   },
+
   presets: [
     [
       "classic",
@@ -32,12 +35,14 @@ const config = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
           editUrl:
             "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
           editUrl:
             "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
@@ -56,17 +61,6 @@ const config = {
         },
       }),
     ],
-    [
-      "redocusaurus",
-      {
-        specs: [
-          {
-            route: "/api/searchpe",
-            spec: "static/openapi/searchpe/openapi.yaml",
-          },
-        ],
-      },
-    ],
   ],
 
   themeConfig:
@@ -81,8 +75,8 @@ const config = {
         items: [
           {
             type: "doc",
-            position: "left",
             docId: "introduction",
+            position: "left",
             label: "Docs",
           },
           { to: "/apis", label: "API Reference", position: "left" },
@@ -116,7 +110,7 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "Documentación",
+            title: "Docs",
             items: [
               {
                 label: "Crear XMLs",
@@ -133,7 +127,7 @@ const config = {
             ],
           },
           {
-            title: "Comunidad",
+            title: "Community",
             items: [
               {
                 label: "Youtube",
@@ -150,11 +144,11 @@ const config = {
             ],
           },
           {
-            title: "Más",
+            title: "More",
             items: [
               {
                 label: "Blog",
-                to: "blog",
+                to: "/blog",
               },
               {
                 label: "GitHub",
