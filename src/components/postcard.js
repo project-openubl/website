@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import HeroImage from "./hero-image";
 
 const PostCard = ({ post, condensed }) => {
-  const url = `/blog/${post.slug}`;
+  const url = `/blog${post.fields.slug}`;
 
   return (
     <>

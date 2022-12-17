@@ -1,14 +1,12 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
 import BlogSidebar from "../../components/blogsidebar";
 import HeroImage from "../../components/hero-image";
 import Tags from "../../components/tags";
 import ShareButtons from "../../components/sharebuttons";
 
-export default function PostPage({ data, ...props }) {
+export default function PostPage({ data, children, ...props }) {
   const {
-    body,
     frontmatter: { title, date, image, tags },
   } = data.mdx;
   const url = props.location.href;
@@ -41,7 +39,7 @@ export default function PostPage({ data, ...props }) {
               </div>
             )}
           </div>
-          <MDXRenderer>{body}</MDXRenderer>
+          <div>{children}</div>
         </div>
         <aside className="md:w-1/4 flex-shrink-0 md:border-l md:border-base-300 md:pl-4 pt-4 pb-10 md:pb-20">
           <BlogSidebar />
@@ -52,10 +50,12 @@ export default function PostPage({ data, ...props }) {
 }
 
 export const query = graphql`
-  query PostBySlug($slug: String) {
-    mdx(slug: { eq: $slug }) {
+  query PostBySlug($id: String) {
+    mdx(id: { eq: $id }) {
       id
-      slug
+      fields {
+        slug
+      }
       body
       frontmatter {
         date(formatString: "MMM D, YYYY")

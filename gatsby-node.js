@@ -17,10 +17,12 @@ exports.createPages = async ({ actions, graphql }) => {
 
       posts: allMdx(
         sort: { order: DESC, fields: frontmatter___date }
-        filter: { fileAbsolutePath: { regex: "/blog/" } }
+        filter: { internal: { contentFilePath: { regex: "/blog/" } } }
       ) {
         nodes {
-          slug
+          fields {
+            slug
+          }
         }
       }
 

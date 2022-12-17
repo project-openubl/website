@@ -22,7 +22,7 @@ module.exports = {
         "!Buenas noticias! Estamos felices de anunciar nuestra nueva página web.",
       shortTitle: "!Tenemos página web nueva!",
       linkTitle: "Conoce más",
-      linkURL: "https://project-openubl.github.io//blog",
+      linkURL: "https://project-openubl.github.io/blog",
     },
     socialMedia: [
       {
@@ -159,10 +159,17 @@ module.exports = {
       resolve: "gatsby-plugin-mdx",
       options: {
         extensions: [`.mdx`, `.md`],
-        defaultLayouts: {
-          pages: require.resolve("./src/templates/page.js"),
-        },
-        gatsbyRemarkPlugins: [],
+        // defaultLayouts: {
+        //   pages: require.resolve("./src/templates/page.js"),
+        // },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: "gatsby-remark-prismjs",
+            // options: {
+            //   showLineNumbers: false, //messes up when lines wrap
+            // },
+          },
+        ],
       },
     },
     "gatsby-awesome-pagination",

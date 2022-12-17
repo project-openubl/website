@@ -1,15 +1,17 @@
 const mdxQuery = `{
   pages: allMdx(
     filter: {
-      fileAbsolutePath: { regex: "/docs/" },
+      filter: { internal: { contentFilePath: { regex: "/docs/" } } }
     }
   ) {
     edges {
       node {
         excerpt
+        fields {
+          slug
+        }
         frontmatter {
           description
-          slug
           subtitle
           tags
           title

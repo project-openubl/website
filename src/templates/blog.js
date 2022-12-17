@@ -38,11 +38,13 @@ export const pageQuery = graphql`
       sort: { order: DESC, fields: frontmatter___date }
       limit: $limit
       skip: $skip
-      filter: { fileAbsolutePath: { regex: "/blog/" } }
+      filter: { internal: { contentFilePath: { regex: "/blog/" } } }
     ) {
       nodes {
         id
-        slug
+        fields {
+          slug
+        }
         excerpt
         frontmatter {
           date(formatString: "MMM D, YYYY")

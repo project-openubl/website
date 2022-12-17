@@ -63,7 +63,7 @@ const components = {
       {...props}
     />
   ),
-  code: (props) => <code className="bg-base-300" {...props} />,
+  //code: (props) => <code className="bg-base-300" {...props} />,
   pre: (props) => (
     <div className="relative my-6">
       <CopyCodeButton
