@@ -67,8 +67,9 @@ const config = {
         // Plugin Options for loading OpenAPI files
         specs: [
           {
+            id: "searchpe",
             spec: "static/openapi/searchpe/openapi.yaml",
-            route: "/api/",
+            route: "/api/searchpe",
           },
         ],
         // Theme Options for modifying how redoc renders them
