@@ -2,91 +2,121 @@
 title: Kubernetes
 ---
 
-Para poder desplegar Searchpe, puedes cualquier distribución de Kubernetes como por ejemplo [Minikube](https://minikube.sigs.k8s.io/docs/start/), [Openshift](https://docs.openshift.com/), etc.
-
-Para este ejemplo usaremos Minikube aunque tambien aplica a cualquier distribución de Kubernetes que tengas.
-
-[![asciicast](https://asciinema.org/a/h3GSvzwkmgRkSgXAGlD0v1q6g.svg)](https://asciinema.org/a/h3GSvzwkmgRkSgXAGlD0v1q6g)
+# Instala [Searchpe Operator](https://operatorhub.io/operator/searchpe-operator)
 
 ## Requisitos
 
 - [Minikube](https://minikube.sigs.k8s.io/docs/start/)
 - [Kubectl](https://kubernetes.io/docs/tasks/tools/)
-- [Helm](https://helm.sh/)
 
 ## Inicia Minikube
 
 Ejecuta el comando:
 
 ```shell
-minikube start
+minikube start --kubernetes-version 1.24.7
 ```
 
-## Crea un Namespace
+Habilita addons:
+
+```shell
+minikube addons enable ingress
+```
+
+Instala OLM:
+
+```shell
+curl -sL https://github.com/operator-framework/operator-lifecycle-manager/releases/download/v0.22.0/install.sh | bash -s v0.22.0
+```
+
+## Crea un namespace
+
+```shell
+kubectl create ns my-searchpe-operator
+```
+
+## Crea una base de datos
 
 Crea un namespace donde se instalará Searchpe:
 
 ```shell
-kubectl create ns openubl
+kubectl create -f https://operatorhub.io/install/postgresql.yaml
+kubectl get csv -n operators
 ```
 
-## Agrega Searchpe a tu repositorio Helm
-
-Agrega el repositorio:
+Instancia la base de datos:
 
 ```shell
-helm repo add openubl https://gitlab.com/api/v4/projects/36554180/packages/helm/stable
+cat << EOF | kubectl -n my-searchpe-operator apply -f -
+apiVersion: postgres-operator.crunchydata.com/v1beta1
+kind: PostgresCluster
+metadata:
+  name: postgresql
+spec:
+  postgresVersion: 14
+  instances:
+    - name: pg-1
+      replicas: 1
+      dataVolumeClaimSpec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 1Gi
+  backups:
+    pgbackrest:
+      repos:
+      - name: repo1
+        volume:
+          volumeClaimSpec:
+            accessModes:
+            - ReadWriteOnce
+            resources:
+              requests:
+                storage: 1Gi
+  users:
+    - name: foo
+      databases:
+        - searchpedb
+      options: "SUPERUSER"
+EOF
 ```
 
-Actualiza tus repositorios:
-
-```shell
-helm repo update
-```
+Espera hasta que tus Pods esten listos.
 
 ## Instala Searchpe
 
-Utiliza un archivo .yaml pre configurado para instalar Searchpe:
+```shell
+kubectl create -f https://operatorhub.io/install/searchpe-operator.yaml
+kubectl get csv -n my-searchpe-operator
+```
 
 ```shell
-helm install my-release openubl/searchpe -n openubl
+cat << EOF | kubectl -n my-searchpe-operator apply -f -
+kind: "Searchpe"
+apiVersion: "searchpe.openubl.io/v1alpha1"
+metadata:
+  name: searchpe
+spec:
+  db:
+    usernameSecret:
+      name: postgresql-pguser-foo
+      key: user
+    passwordSecret:
+      name: postgresql-pguser-foo
+      key: password
+    url: jdbc:postgresql://postgresql-primary.my-searchpe-operator.svc:5432/searchpedb
+EOF
 ```
 
-> `my-release` es el nombre del Helm desplegado.
+## Ingresa a la consola web
 
-## Espera a que tus Deployments estén listos
-
-Verifica que todos tus Pods funcionen correctamente:
+- Ingresa a la consola de Minikube
 
 ```shell
-kubectl get deployments -n openubl -w
+minikube dashboard
 ```
 
-Espera a que los deployments estén listos:
-
-```
-my-release-searchpe-db   1/1     1            1           22s
-my-release-searchpe      1/1     1            1           34s
-```
-
-En este punto ya tienes Searchpe funcionando en tu servidor Kubernetes. Dependiendo del proveedor del cluster tendrás diferentes formas de exponer tus pods a travéz de una URL.
-
-## Accede a Searchpe usando port-forward
-
-Obtén el nombre de un pod:
-
-```
-kubectl get pods -n openubl
-```
-
-Debemos de hacer `port-forward` a un Pod:
-
-```
-kubectl -n openubl port-forward NOMBRE_DE_UN_POD 8180:8080
-```
-
-podrás acceder a Searchpe a travéz del `localhost`, por ejemplo:
-
-```shell
-curl http://localhost:8180/q/health
-```
+- Selecciona el namespace `my-searchpe-operator`
+- Click en `Service/Ingresses`
+- Click en el Enpoint de Searchpe

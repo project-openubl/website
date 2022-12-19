@@ -6,16 +6,6 @@ title: Inicio rápido
 Los laboratorios están hechos para que usted aprenda a usar Searchpe sin dificultad. Recuerde que la configuración no necesariamente es la adecuada para entornos de producción.
 :::
 
-## Laboratorio online
-
-[![Katakoda](https://shields.katacoda.com/katacoda/openubl/count.svg)](https://katacoda.com/openubl/)
-
-La manera más sencilla de experimentar con Searchpe es utilizando nuestros laboratorios virtuales disponibles en [Katakoda](https://katacoda.com/openubl/courses)
-
-![img](/img/katacoda-logo.png "Katakoda")
-
-Para ver los laboratorios disponibles haga click [aquí](https://katacoda.com/openubl/courses).
-
 ## Laboratorio local
 
 Experimenta con Searchpe en tu laptop.
@@ -57,7 +47,7 @@ services:
       QUARKUS_DATASOURCE_PASSWORD: db_password
       QUARKUS_DATASOURCE_JDBC_URL: jdbc:postgresql://postgresql:5432/searchpe_db
       // highlight-next-line
-      SEARCHPE_SUNAT_PADRONREDUCIDOURL: https://raw.githubusercontent.com/project-openubl/searchpe/master/src/test/resources/padron_reducido_ruc.zip
+      SEARCHPE_SUNAT_PADRONREDUCIDOURL: https://raw.githubusercontent.com/project-openubl/searchpe/master/application/src/test/resources/padron_reducido_ruc.zip
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8080/q/health"]
       interval: 10s
