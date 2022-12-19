@@ -20,5 +20,5 @@ XSender está creado [Apache Camel](https://camel.apache.org/)
 :::info
 Para ver documentación de versiones anteriores visite:
 
-[Previous versions](https://github.com/project-openubl/website/archived/docs/xsender)
+[Previous versions](https://github.com/project-openubl/website/tree/master/archived/docs/xsender/v3)
 :::
