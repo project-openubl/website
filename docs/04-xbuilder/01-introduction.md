@@ -2,33 +2,35 @@
 title: Introducción
 description: Crea XMLs (comprobantes electrónicos) basados en UBL según lo requerido por la SUNAT
 keywords:
+  - xbuilder
   - crear xml
-  - ubl
-  - ubl 2.1
-  - factura sunat
-  - facturación electrónica
+  - firmar xml
 image: img/xbuilder.svg
 slug: /xbuilder
 ---
 
-XBuilder es una libreria Java que puede crear y firmar XMLs basados en UBL (Universal Bussiness Language) de acuerdo a los estándares establecidos por la SUNAT.
+XBuilder es una libreria Java que crea y firma comprobantes electrónicos en formato UBL (XML)
 
-## Principios de diseño
+### Maven central
 
-- **No requieres conocimientos del estandar UBL** -
-  XBuilder expone un conjunto de POJOs que, internamente, son transformados en archivos XMLs siguiendo los estándares y especificaciones de UBL.
-- **Cálculos matemáticos son hechos automáticamente** -
-  XBuilder ejecuta todas las operaciones requeridas para generar determinados valores dentro de los archivos XML, por ejemplo: impuestos, totales, descuentos, etc.
-- **Aplicar valores por defecto siempre que se posible** - XBuilder rellena información no espeficicada por el usuario usando valores por defecto. XBuilder requiere siempre información mínima.
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.project-openubl/xbuilder)](https://search.maven.org/artifact/io.github.project-openubl/xbuilder/)
+
+### Versiones anteriores
+
+:::info
+Para ver documentación de versiones anteriores visite:
+
+[Previous versions](https://github.com/project-openubl/website/tree/master/archived/docs/xbuilder)
+:::
 
 ## Documentos soportados
 
-- [x] Boleta (InvoiceType)
-- [x] Factura (InvoiceType)
-- [x] Nota de crédito (CreditNoteType)
-- [x] Nota de débito (DebitNoteType)
-- [x] Baja (VoidedDocumentType)
-- [x] Resumen diario (SummaryDocumentType)
-- [ ] Percepción (PerceptionType)
-- [ ] Retención (RetentionType)
-- [ ] Guía de remisión (DespatchDocumentType)
+- [x] Boleta (Invoice)
+- [x] Factura (Invoice)
+- [x] Nota de crédito (CreditNote)
+- [x] Nota de débito (DebitNote)
+- [x] Baja (VoidedDocuments)
+- [x] Resumen diario (SummaryDocuments)
+- [x] Percepción (Perception)
+- [x] Retención (Retention)
+- [ ] Guía de remisión (DespatchDocument)
