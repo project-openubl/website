@@ -1,19 +1,24 @@
 ---
 title: Introducción
-description: Envia tus XMLs (comprobantes electrónicos) a la SUNAT a través de sus Web Services
+description: Envia tus XMLs (comprobantes electrónicos) a la SUNAT
 keywords:
-  - enviar xml a SUNAT
-  - web service SUNAT
-  - obtener CDR de SUNAT
-  - consultar ticket SUNAT
-  - facturación electrónica
-image: img/xsender.svg
+  - xsender
+  - cdr
 slug: /xsender
 ---
 
-XSender es una librería que sirve para enviar archivos, XML basados en UBL (Universal Bussiness Language), a la SUNAT (Perú).
+XSender es una librería Java que envía tus comprobantes electrónicos, archivos XML, a la SUNAT.
 
-## Principios de diseño
+XSender está creado [Apache Camel](https://camel.apache.org/)
 
-- **Conocimiento de SOAP no requerido**.- XSender expone un conjunto de clases/métodos Java para hacerte fácil la interacción con servicios SOAP.
-- **Fácil de integrar**.- Solamente con unos pocos pasos podrás integrar XSender a tu propio software.
+### Maven central
+
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.project-openubl/xsender)](https://search.maven.org/artifact/io.github.project-openubl/xsender/)
+
+### Versiones anteriores
+
+:::info
+Para ver documentación de versiones anteriores visite:
+
+[Previous versions](https://github.com/project-openubl/website/archived/docs/xsender)
+:::
