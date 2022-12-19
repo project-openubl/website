@@ -29,5 +29,3 @@ A diferencia de otras soluciones, Project OpenUBL está orientado a ayudarte a c
 ## ¿Hay algo que mejorar?
 
 Si encuentras algún error en la documentación, tienes sugerencias sobre cómo mejorar la documentación, o ideas que ayuden a Project OpenUBL entonces crea un tweet mencionando a [@openubl](https://twitter.com/openubl) en tu cuenta de Twitter, o escríbenos por nuestro canal de chat en [Zulip](https://projectopenubl.zulipchat.com/).
-
-Puedes enviarnos una retroalimentación o solicitar mejoras y nuevas funcionalidades creando un post en **Provide feedback**.
