@@ -10,4 +10,4 @@ Acabamos de lanzar Xsender 4.0.0.Final con un conjunto de nuevas funcionalidades
 
 ## Full changelog
 
-Puedes ver (https://github.com/project-openubl/xsender/releases/tag/v4.0.0.Final)[the full changelog of 4.0.0.Final on GitHub].
+Puedes ver [the full changelog of 4.0.0.Final on GitHub](https://github.com/project-openubl/xsender/releases/tag/v4.0.0.Final).
