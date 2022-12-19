@@ -96,13 +96,8 @@ const config = {
             position: "left",
             label: "Docs",
           },
-          { to: "/apis", label: "API Reference", position: "left" },
+          // { to: "/apis", label: "API Reference", position: "left" },
           { to: "/blog", label: "Blog", position: "left" },
-          {
-            href: "https://katacoda.com/openubl",
-            label: "Training",
-            position: "left",
-          },
           {
             to: "/community/support",
             label: "Community",
@@ -110,11 +105,11 @@ const config = {
             activeBaseRegex: `/community/`,
           },
           // right
-          {
-            to: "about",
-            label: "About",
-            position: "right",
-          },
+          // {
+          //   to: "about",
+          //   label: "About",
+          //   position: "right",
+          // },
           {
             href: "https://github.com/project-openubl",
             position: "right",
@@ -198,10 +193,10 @@ const config = {
     "https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;700&display=swap",
   ],
   scripts: [
-    {
-      src: "https://project-openubl.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-T/o2joag/b/24/a44af77267a987a660377e5c46e0fb64/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&collectorId=bd3ea422",
-      async: true,
-    },
+    // {
+    //   src: "https://project-openubl.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-T/o2joag/b/24/a44af77267a987a660377e5c46e0fb64/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&collectorId=bd3ea422",
+    //   async: true,
+    // },
   ],
   plugins: [
     [
@@ -275,6 +270,17 @@ const config = {
         showLastUpdateTime: true,
       }),
     ],
+    async function myPlugin(context, options) {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require("tailwindcss"));
+          postcssOptions.plugins.push(require("autoprefixer"));
+          return postcssOptions;
+        },
+      };
+    },
   ],
 };
 
