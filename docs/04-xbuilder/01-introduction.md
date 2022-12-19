@@ -25,12 +25,12 @@ Para ver documentación de versiones anteriores visite:
 
 ## Documentos soportados
 
-- [x] Boleta (InvoiceType)
-- [x] Factura (InvoiceType)
-- [x] Nota de crédito (CreditNoteType)
-- [x] Nota de débito (DebitNoteType)
-- [x] Baja (VoidedDocumentType)
-- [x] Resumen diario (SummaryDocumentType)
-- [x] Percepción (PerceptionType)
-- [x] Retención (RetentionType)
-- [ ] Guía de remisión (DespatchDocumentType)
+- [x] Boleta (Invoice)
+- [x] Factura (Invoice)
+- [x] Nota de crédito (CreditNote)
+- [x] Nota de débito (DebitNote)
+- [x] Baja (VoidedDocuments)
+- [x] Resumen diario (SummaryDocuments)
+- [x] Percepción (Perception)
+- [x] Retención (Retention)
+- [ ] Guía de remisión (DespatchDocument)

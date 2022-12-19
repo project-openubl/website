@@ -3,7 +3,7 @@ title: SummaryDocument (Resumen diario)
 description: Crear resumen diario
 ---
 
-## Create _SummaryDocumentType_
+## Create _SummaryDocument_
 
 Para crear una baja debes de crear una instancia de `SummaryDocumentInputModel` y usarlo para crear el XML:
 

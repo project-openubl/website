@@ -23,12 +23,12 @@ XBuilder es una libreria Java que puede crear y firmar XMLs basados en UBL (Univ
 
 ## Documentos soportados
 
-- [x] Boleta (InvoiceType)
-- [x] Factura (InvoiceType)
-- [x] Nota de crédito (CreditNoteType)
-- [x] Nota de débito (DebitNoteType)
-- [x] Baja (VoidedDocumentType)
-- [x] Resumen diario (SummaryDocumentType)
-- [ ] Percepción (PerceptionType)
-- [ ] Retención (RetentionType)
-- [ ] Guía de remisión (DespatchDocumentType)
+- [x] Boleta (Invoice)
+- [x] Factura (Invoice)
+- [x] Nota de crédito (CreditNote)
+- [x] Nota de débito (DebitNote)
+- [x] Baja (VoidedDocuments)
+- [x] Resumen diario (SummaryDocuments)
+- [ ] Percepción (Perception)
+- [ ] Retención (Retention)
+- [ ] Guía de remisión (DespatchDocument)
