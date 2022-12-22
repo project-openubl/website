@@ -11,14 +11,14 @@ info:
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
-  version: 2.0.0-Beta1
+  version: 2.0.0-Beta3
 servers:
 - url: http://localhost:8080
   description: Auto generated value
 - url: http://0.0.0.0:8080
   description: Auto generated value
 paths:
-  /api/api/namespaces/{namespaceId}/document-files/{documentId}:
+  /api/api/namespaces/{projectId}/document-files/{documentId}:
     get:
       tags:
       - Document File Resource
@@ -27,12 +27,14 @@ paths:
         in: path
         required: true
         schema:
-          type: string
-      - name: namespaceId
+          format: int64
+          type: integer
+      - name: projectId
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       - name: requestedFile
         in: query
         schema:
@@ -46,9 +48,6 @@ paths:
       responses:
         "200":
           description: OK
-          content:
-            text/xml: {}
-            application/octet-stream: {}
   /api/api/projects:
     get:
       tags:
@@ -134,7 +133,8 @@ paths:
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       responses:
         "200":
           description: OK
@@ -165,7 +165,8 @@ paths:
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       requestBody:
         content:
           application/json:
@@ -199,14 +200,11 @@ paths:
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       responses:
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
+        "204":
+          description: No Content
         "401":
           description: Not Authorized
         "403":
@@ -229,7 +227,8 @@ paths:
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       responses:
         "200":
           description: OK
@@ -262,7 +261,8 @@ paths:
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       requestBody:
         content:
           application/json:
@@ -297,12 +297,14 @@ paths:
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       - name: projectId
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       responses:
         "200":
           description: OK
@@ -333,12 +335,14 @@ paths:
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       - name: projectId
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       requestBody:
         content:
           application/json:
@@ -372,19 +376,17 @@ paths:
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       - name: projectId
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       responses:
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
+        "204":
+          description: No Content
         "401":
           description: Not Authorized
         "403":
@@ -407,12 +409,14 @@ paths:
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       - name: projectId
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       - name: name
         in: query
         schema:
@@ -420,7 +424,8 @@ paths:
       - name: parent
         in: query
         schema:
-          type: string
+          format: int64
+          type: integer
       - name: type
         in: query
         schema:
@@ -455,12 +460,14 @@ paths:
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       - name: projectId
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       requestBody:
         content:
           application/json:
@@ -495,17 +502,20 @@ paths:
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       - name: componentId
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       - name: projectId
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       responses:
         "200":
           description: OK
@@ -534,17 +544,20 @@ paths:
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       - name: componentId
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       - name: projectId
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       requestBody:
         content:
           application/json:
@@ -578,24 +591,23 @@ paths:
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       - name: componentId
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       - name: projectId
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       responses:
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
+        "204":
+          description: No Content
         "401":
           description: Not Authorized
         "403":
@@ -618,12 +630,14 @@ paths:
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       - name: projectId
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       responses:
         "200":
           description: OK
@@ -653,7 +667,8 @@ paths:
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       - name: name
         in: query
         schema:
@@ -661,7 +676,8 @@ paths:
       - name: parent
         in: query
         schema:
-          type: string
+          format: int64
+          type: integer
       - name: type
         in: query
         schema:
@@ -696,7 +712,8 @@ paths:
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       requestBody:
         content:
           application/json:
@@ -731,12 +748,14 @@ paths:
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       - name: projectId
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       responses:
         "200":
           description: OK
@@ -765,12 +784,14 @@ paths:
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       - name: projectId
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       requestBody:
         content:
           application/json:
@@ -804,19 +825,17 @@ paths:
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       - name: projectId
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       responses:
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
+        "204":
+          description: No Content
         "401":
           description: Not Authorized
         "403":
@@ -837,7 +856,8 @@ paths:
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       - name: documentType
         in: query
         schema:
@@ -888,7 +908,8 @@ paths:
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       requestBody:
         content:
           application/json:
@@ -910,12 +931,14 @@ paths:
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       - name: projectId
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       responses:
         "200":
           description: OK
@@ -932,12 +955,14 @@ paths:
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       - name: projectId
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       - name: unzip
         in: query
         schema:
@@ -946,9 +971,6 @@ paths:
       responses:
         "200":
           description: OK
-          content:
-            text/xml: {}
-            application/octet-stream: {}
   /api/api/projects/{projectId}/documents/{documentId}/xml:
     get:
       tags:
@@ -958,12 +980,14 @@ paths:
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       - name: projectId
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       - name: unzip
         in: query
         schema:
@@ -972,9 +996,29 @@ paths:
       responses:
         "200":
           description: OK
+  /api/api/projects/{projectId}/enrich-document:
+    post:
+      tags:
+      - Document Resource
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          format: int64
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JsonObject'
+      responses:
+        "200":
+          description: OK
           content:
-            text/xml: {}
-            application/octet-stream: {}
+            application/json:
+              schema:
+                type: object
   /api/api/projects/{projectId}/keys:
     get:
       tags:
@@ -986,7 +1030,8 @@ paths:
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       responses:
         "200":
           description: OK
@@ -1005,6 +1050,32 @@ paths:
       - SecurityScheme:
         - admin:app
         - project:read
+  /api/api/projects/{projectId}/render-document:
+    post:
+      tags:
+      - Document Resource
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          format: int64
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JsonObject'
+      responses:
+        "200":
+          description: OK
+          content:
+            text/xml:
+              schema:
+                type: string
+            application/octet-stream:
+              schema:
+                type: string
   /api/api/projects/{projectId}/upload/document:
     post:
       tags:
@@ -1014,7 +1085,8 @@ paths:
         in: path
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
       requestBody:
         content:
           multipart/form-data:
@@ -1155,10 +1227,8 @@ components:
       type: object
     JobPhaseType:
       enum:
-      - FETCH_XML_FILE
       - READ_XML_FILE
       - SEND_XML_FILE
-      - SAVE_CDR
       - VERIFY_TICKET
       type: string
     JobRecoveryActionType:
