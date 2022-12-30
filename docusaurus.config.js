@@ -68,6 +68,11 @@ const config = {
             spec: "static/openapi/searchpe/openapi.yaml",
             route: "/api/searchpe",
           },
+          {
+            id: "ublhub",
+            spec: "static/openapi/ublhub/openapi.yaml",
+            route: "/api/ublhub",
+          },
         ],
         // Theme Options for modifying how redoc renders them
         theme: {

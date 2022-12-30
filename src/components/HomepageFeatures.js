@@ -75,7 +75,7 @@ export default function HomepageFeatures() {
                   </Link>
                 </div>
               </div>
-              {/* <div className="flex space-x-4 pt-12">
+              <div className="flex space-x-4 pt-12">
                 <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-violet-100 lg:h-12 lg:w-12 dark:bg-violet-900">
                   <svg
                     class="w-4 h-4 text-violet-600 lg:w-6 lg:h-6 dark:text-violet-300"
@@ -120,7 +120,7 @@ export default function HomepageFeatures() {
                     </svg>
                   </Link>
                 </div>
-              </div> */}
+              </div>
             </div>
           </div>
         </div>
