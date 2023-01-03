@@ -51,7 +51,7 @@ CamelContext camelContext = StandaloneCamel.getInstance()
     .getMainCamel()
     .getCamelContext();
 
-CamelData camelData = CamelUtils.getBillServiceCamelData(zipFile, destination, credentials);
+CamelData camelData = CamelUtils.getBillServiceCamelData(zipFile, fileDestination, credentials);
 
 SunatResponse sendFileSunatResponse = camelContext.createProducerTemplate()
     .requestBodyAndHeaders(
