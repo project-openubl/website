@@ -43,7 +43,7 @@ public class XSenderController {
 
 ## Quarkus
 
-Para aplicaciones hechas en [Quarkus](quarkus.io/)
+Para aplicaciones hechas en [Quarkus](https://quay.io/)
 
 Si usas Maven: en tu archivo `pom.xml` agrega:
 
