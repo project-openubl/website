@@ -4,9 +4,11 @@ title: Instalación
 
 XBuilder puede ser usado y descargado desde el repositorio central de Maven. Las versiones pueden ser consultadas en:
 
-[![Maven Central](https://img.shields.io/maven-central/v/io.github.project-openubl/xsender)](https://search.maven.org/artifact/io.github.project-openubl/xsender/)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.project-openubl/xsender)](https://central.sonatype.com/artifact/io.github.project-openubl/xsender)
 
-## Maven
+## Standalone
+
+Ideal para aplicaciones de escritorio o aplicaciones desplegadas en servidores como Tomcat.
 
 Si usas Maven: en tu archivo `pom.xml` agrega:
 
@@ -14,8 +16,111 @@ Si usas Maven: en tu archivo `pom.xml` agrega:
 <dependency>
     <groupId>io.github.project-openubl</groupId>
     <artifactId>xsender</artifactId>
-    <version>VERSION</version>
+    <version>${xsender.version}</version>
 </dependency>
+```
+
+### Inicializa CamelContext y utilizalo con XSender
+
+```java
+public class XSenderController {
+
+    public String test() {
+        CamelContext camelContext = StandaloneCamel.getInstance()
+            .getMainCamel()
+            .getCamelContext();
+        
+        SunatResponse sendFileSunatResponse = camelContext.createProducerTemplate()
+                .requestBodyAndHeaders(
+                        Constants.XSENDER_BILL_SERVICE_URI,
+                        camelData.getBody(),
+                        camelData.getHeaders(),
+                        SunatResponse.class
+                );
+    }
+
+```
+
+## Quarkus
+
+Para aplicaciones hechas en [Quarkus](quarkus.io/)
+
+Si usas Maven: en tu archivo `pom.xml` agrega:
+
+```xml
+<dependency>
+    <groupId>io.github.project-openubl</groupId>
+    <artifactId>quarkus-xsender</artifactId>
+    <version>${xsender.version}</version>
+</dependency>
+```
+
+### Injecta CamelContext y utilizalo con XSender
+
+```java
+@ApplicationScoped
+public class XSenderController {
+
+    @Inject
+    private CamelContext camelContext;
+
+    public String test() {
+        SunatResponse sendFileSunatResponse = camelContext.createProducerTemplate()
+                .requestBodyAndHeaders(
+                        Constants.XSENDER_BILL_SERVICE_URI,
+                        camelData.getBody(),
+                        camelData.getHeaders(),
+                        SunatResponse.class
+                );
+    }
+```
+
+## Spring Boot
+
+Para aplicaciones hechas en [Spring Boot](https://spring.io/)
+
+Si usas Maven: en tu archivo `pom.xml` agrega:
+
+```xml
+<dependency>
+    <groupId>io.github.project-openubl</groupId>
+    <artifactId>spring-boot-xsender</artifactId>
+    <version>${xsender.version}</version>
+</dependency>
+```
+
+### Configura la clase principal de Spring Boot
+
+```java
+@ComponentScan
+@ComponentScan("io.github.project.openubl.spring.xsender.runtime")
+@SpringBootApplication
+public class Application {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+
+}
+```
+
+### Injecta CamelContext y utilizalo con XSender
+
+```java
+public class XSenderController {
+
+    @Autowired
+    private CamelContext camelContext;
+
+    public String test() {
+        SunatResponse sendFileSunatResponse = camelContext.createProducerTemplate()
+                .requestBodyAndHeaders(
+                        Constants.XSENDER_BILL_SERVICE_URI,
+                        camelData.getBody(),
+                        camelData.getHeaders(),
+                        SunatResponse.class
+                );
+    }
 ```
 
 ## Gradle
