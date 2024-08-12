@@ -6,4 +6,4 @@ title: Criterios de diseño
 
 - **Fácil integración** - Podrás empezar a usar las herramientas ofrecidas por Project OpenUBL fácilmente ya que no tendrás que aprender todo lo ya implementado dentro de las herramientas.
 
-- **Bajo acoplamiento al lenguaje de programación** - Project OpenUBL ofrece librerias en Java; sin embargo, también ofrece un conjunto de microservicios para que puedas usarlos sin importar el lenguaje de programación que uses.
+- **Bajo acoplamiento al lenguaje de programación** - Project OpenUBL ofrece librerias; sin embargo, también ofrece un conjunto de microservicios para que puedas usarlos sin importar el lenguaje de programación que uses.

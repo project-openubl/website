@@ -1,0 +1,58 @@
+---
+title: Instalación
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<Tabs>
+  <TabItem value="java" label="Java" default>
+
+## Maven
+
+```xml
+<dependency>
+    <groupId>io.github.project-openubl</groupId>
+    <artifactId>xhandler</artifactId>
+    <version>VERSION</version>
+</dependency>
+```
+
+## Gradle
+
+```java
+compile group: 'io.github.project-openubl', name: 'xbuilder', version: 'VERSION'
+```
+
+  </TabItem>
+  <TabItem value="rust" label="Rust">
+
+## Crates
+
+Ejecuta el comando Cargo:
+
+```shell
+cargo add xbuilder
+```
+
+O agrega la siguiente linea a tu Cargo.toml:
+
+```shell
+xbuilder = "VERSION"
+```
+
+  </TabItem> 
+</Tabs>
+
+## Versión actual
+
+|      |                                                                                                                                                                      |
+| ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Java | [![Maven Central](https://img.shields.io/maven-central/v/io.github.project-openubl/xhandler)](https://search.maven.org/artifact/io.github.project-openubl/xhandler/) |
+| Rust | [![Crates.io Version](https://img.shields.io/crates/v/xhandler)](https://crates.io/crates/xhandler)                                                                  |
+
+:::info
+Para ver documentación de versiones anteriores visite:
+
+[Previous versions](https://github.com/project-openubl/website/tree/master/archived/docs)
+:::

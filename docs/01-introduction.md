@@ -22,7 +22,6 @@ A diferencia de otras soluciones, Project OpenUBL está orientado a ayudarte a c
 
 ## Mantente informado
 
-- [Facebook](https://www.facebook.com/Openubl/)
 - [Twitter](https://twitter.com/openubl)
 - [Blog](/blog)
 
