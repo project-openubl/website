@@ -33,4 +33,4 @@ Para ver documentación de versiones anteriores visite:
 - [x] Resumen diario (SummaryDocuments)
 - [x] Percepción (Perception)
 - [x] Retención (Retention)
-- [ ] Guía de remisión (DespatchDocument)
+- [x] Guía de remisión (DespatchDocument)
